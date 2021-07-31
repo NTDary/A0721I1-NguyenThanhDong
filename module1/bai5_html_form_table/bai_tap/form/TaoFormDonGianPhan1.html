@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>FormCoBan</title>
+    <style>
+        .font {
+            color: blue;
+        }
+        label {
+            color: orange;
+        }
+        form {
+
+            display: block;
+            width: 400px;
+            margin: 0 auto;
+        }
+        table {
+            background-color: antiquewhite;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+        }
+
+    </style>
+</head>
+<body>
+   <form>
+       <table>
+           <tr>
+               <th style=" background: red; color: white" colspan="3">SỞ THÍCH CỦA BẠN</th>
+           </tr>
+           <tr>
+               <td class="font">Họ và tên</td>
+               <td ><input  type="text" name="name" value=""></td>
+           </tr>
+           <tr>
+               <td class="font">Email </td>
+               <td><input type="email" name="email" size="15"></td>
+           </tr>
+           <tr>
+               <td class="font" rowspan="4">Sở thích </td>
+               <td>
+                   <input type="checkbox"  name="hobby" value="thethao"><label>Thể thao</label>
+                   <input type="checkbox"  name="hobby" value="amnhac"><label>Âm nhạc</label>
+                   <input type="checkbox"  name="hobby" value="docsach"><label>Đọc sách</label>
+               </td>
+           </tr>
+           <tr>
+               <td>
+                   <input type="checkbox"  name="hobby" value="luotweb"><label>Lướt web</label>
+                   <input type="checkbox"  name="hobby" value="choigame"><label>Chơi game</label>
+                   <input type="checkbox"  name="hobby" value="dienanh"><label>Điện ảnh</label>
+               </td>
+           </tr>
+           <tr>
+               <td>
+                   <input type="checkbox"  name="hobby" value="dulich"><label>Du lịch</label>
+               </td>
+           </tr>
+           <tr>
+               <td>
+                   <input type="submit" name="sentinfor" value="Gửi thông tin">
+                   <input type="reset" name="reset" value="Reset">
+               </td>
+
+           </tr>
+       </table>
+        <br>
+        <br>
+
+
+   </form>
+</body>
+</html>

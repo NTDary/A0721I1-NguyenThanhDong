@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body {
+            margin: 0;
+            bottom: 0;
+        }
+        form ul {
+            margin: 0;
+            padding: 0;
+            list-style-type: none;
+        }
+        form li {
+            padding: 6px 1% 9px 1%;
+        }
+        form li select {
+            margin-top: 5px;
+        }
+        form li .inline {
+            margin: 0 .3em 0 0;
+            padding: 0;
+            float: left;
+        }
+        table {
+            margin: 0 0 .9em 0;
+            background: #fff;
+            width: 100%;
+            border: 1px solid #dedede;
+            border-bottom: none;
+        }
+        table tbody th {
+            padding: 8px 8px;
+            text-align: left;
+        }
+        table th,td {
+            border-bottom: 1px solid #dedede;
+        }
+        table td {
+            width:14.5%;
+            border-left: 1px solid #ccc;
+            text-align: center;
+            padding: 4px 6px;
+        }
+        .title {
+            font-weight: bold;
+        }
+
+    </style>
+</head>
+<body>
+    <form action="#" method="post">
+        <header style="border-bottom: 1px dotted #ccc; padding: 0 1% 1.1em 1%;">
+            <h2 style=" margin: 0 0 5px 0;">
+                Market Research Survey
+            </h2>
+            <span>Please take a few moments to complete this satisfaction survey. </span>
+        </header>
+        <ul>
+            <li>
+                <label class="title">What is your age range?</label><br/>
+                <select style="width: 50%;">
+                    <option value="18-24">18-24</option>
+                    <option value="25-34">25-34</option>
+                    <option value="35-50">35-40</option>
+                    <option value="50+">50+</option>
+                </select>
+            </li>
+            <li>
+                <label class="title">What is your yearly income range?</label><br/>
+                <select style="width: 50%">
+                    <option value="$0 - $25,000">$0 - $25,000</option>
+                    <option value="$25,001 - $50,000">$25,001 - $50,000</option>
+                    <option value="$50,001 - $100,000">$50,001 - $100,000</option>
+                    <option value="$100,000+">$100,000+</option>
+                </select>
+            </li>
+            <li>
+                <label class="title">Gender Identity</label><br/>
+                <span>
+                    <input type="radio" name="gioitinh">
+                    <label>Male</label>
+                </span><br/>
+                <span>
+                    <input type="radio" name="gioitinh">
+                    <label>Female</label>
+                </span><br/>
+                <span>
+                    <input type="radio" name="gioitinh">
+                    <label>Nonbinary</label></span><br/>
+                <span>
+                    <input type="radio" name="gioitinh">
+                    <label style="display: inline-block; width: 88%;">
+                        Other
+                    </label>
+                    <input style="margin-left: 25px" type="text" name="gioitinh">
+                </span><br/>
+            </li>
+            <li>
+                <label class="title">
+                    Which of the following products have your purchased in the last 2 months.
+                    Please check all that apply.
+                </label><br/>
+                <span>
+                    <input type="checkbox" name="Product1">
+                    <label>Product 1</label>
+                </span><br/>
+                <span>
+                    <input type="checkbox" name="Product2">
+                    <label>Product 2</label>
+                </span><br/>
+                <span>
+                    <input type="checkbox" name="Product3">
+                    <label>Product 3</label>
+                </span><br/>
+            </li>
+            <li>
+                <label class="title">
+                    How often would you use our new product?
+                </label><br/>
+                <span>
+                    <input type="radio" name="timework">
+                    <label>Daily</label>
+                </span><br/>
+                <span>
+                    <input type="radio" name="timework">
+                    <label>Weekly</label>
+                </span><br/>
+                <span>
+                    <input type="radio" name="timework">
+                    <label>Monthly</label>
+                </span>
+            </li>
+            <li>
+                <label class="title">
+                    What would you pay for the new product?
+                </label><br/>
+                <span class="inline">$</span>
+                <span class="inline">
+                    <input type="text" size="10">
+                    <label style="display: block">Dollars</label>
+                </span>
+                <span class="inline">.</span>
+                <span class="inline">
+                    <input type="text" size="10">
+                    <label style="display: block">Cents</label>
+                </span>
+            </li>
+            <li style="margin-top: 40px">
+                <label class="title">
+                    What features would you like to see in the new product.
+                </label>
+                <textarea style="height: 10em;min-width: 100%;max-width: 100%;"></textarea>
+            </li>
+            <li>
+                <table>
+                    <caption style="text-align: left">
+                        Please rate your level of agreement with the following statements.
+                    </caption>
+                    <thead>
+                        <tr style="background-color: #e6e6e6;">
+                            <th> </th>
+                            <td>Strongly Disagree</td>
+                            <td>Disagree</td>
+                            <td>Agree</td>
+                            <td>Strongly Agree</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th>
+                                <label>
+                                    Our products are priced fairly.
+                                </label>
+                            </th>
+                            <td title="Strongly Disagree">
+                                <input type="radio" name="row1">
+                                <label>1</label>
+                            </td>
+                            <td title="Disagree">
+                                <input type="radio" name="row1">
+                                <label>2</label>
+                            </td>
+                            <td title="Agree">
+                                <input type="radio" name="row1">
+                                <label>3</label>
+                            </td>
+                            <td title="Strongly Agree">
+                                <input type="radio" name="row1">
+                                <label>4</label>
+                            </td>
+                        </tr>
+                        <tr style="background-color: #f5f5f5;">
+                            <th>
+                                <label>
+                                    Our products are high quality.
+                                </label>
+                            </th>
+                            <td title="Strongly Disagree">
+                                <input type="radio" name="row1">
+                                <label>1</label>
+                            </td>
+                            <td title="Disagree">
+                                <input type="radio" name="row1">
+                                <label>2</label>
+                            </td>
+                            <td title="Agree">
+                                <input type="radio" name="row1">
+                                <label>3</label>
+                            </td>
+                            <td title="Strongly Agree">
+                                <input type="radio" name="row1">
+                                <label>4</label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>
+                                <label>
+                                    You would recommend our product to a friend or coworker.
+                                </label>
+                            </th>
+                            <td title="Strongly Disagree">
+                                <input type="radio" name="row1">
+                                <label>1</label>
+                            </td>
+                            <td title="Disagree">
+                                <input type="radio" name="row1">
+                                <label>2</label>
+                            </td>
+                            <td title="Agree">
+                                <input type="radio" name="row1">
+                                <label>3</label>
+                            </td>
+                            <td title="Strongly Agree">
+                                <input type="radio" name="row1">
+                                <label>4</label>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </li>
+            <li>
+                <input type="submit" value="submit">
+            </li>
+        </ul>
+    </form>
+</body>
+</html>
