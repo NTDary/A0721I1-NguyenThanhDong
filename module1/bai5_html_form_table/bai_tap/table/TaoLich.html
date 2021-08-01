@@ -3,10 +3,186 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <style>
+        table {
+            border-collapse: collapse;
+        }
+        caption {
+            color: blue;
+        }
+        tr td {
+            text-align: center;
+            border: 2px solid silver;
+            font-weight: bold;
+        }
+        td{
+            position: relative;
+            height: 30px;
+        }
+        label{
+            position: absolute;
+            font-size: 10px;
+            bottom: 6px;
+        }
+        th {
+            width: 70px;
+        }
+        td:nth-child(1){
+            color: red;
+        }
+        td:nth-child(7) {
+            color: blue;
+        }
+        tr:nth-child(1) th:nth-child(1){
+            background-color: red;
+        }
+        tr:nth-child(1) th:nth-child(7){
+            background-color: blue;
+        }
+        tr:nth-child(1) th {
+            color: white;
+            background-color: orange;
+        }
+        tr:nth-child(2) th:nth-child(1) {
+            color: red;
+        }
+        tr:nth-child(2) th:nth-child(7) {
+            color: blue;
+        }
+        tr:nth-child(2) th{
+            font-weight: normal;
+        }
+
+    </style>
 </head>
 <body>
     <table>
-        <caption>Tháng 10 - </caption>
+        <caption><h2>Tháng 10 - October</h2></caption>
+        <tr>
+            <th>C.Nhật</th>
+            <th>T.Hai</th>
+            <th>T.Ba</th>
+            <th>T.Tư</th>
+            <th>T.Năm</th>
+            <th>T.Sáu</th>
+            <th>T.Bảy</th>
+        </tr>
+        <tr>
+            <th>Sun</th>
+            <th>Mon</th>
+            <th>Tue</th>
+            <th>Web</th>
+            <th>Thu</th>
+            <th>Fri</th>
+            <th>Sat</th>
+        </tr>
+        <tr>
+            <td> </td>
+            <td> </td>
+            <td> </td>
+            <td> </td>
+            <td>1
+                <label>13</label>
+            </td>
+            <td>2
+                <label>14</label>
+            </td>
+            <td>3
+                <label>15</label>
+            </td>
+        </tr>
+        <tr>
+            <td>4
+                <label>16</label>
+            </td>
+            <td>5
+                <label>17</label>
+            </td>
+            <td>6
+                <label>18</label>
+            </td>
+            <td>7
+                <label>19</label>
+            </td>
+            <td>8
+                <label>20</label>
+            </td>
+            <td>9
+                <label>21</label>
+            </td>
+            <td>10
+                <label>22</label>
+            </td>
+        </tr>
+        <tr>
+            <td>11
+                <label>23</label>
+            </td>
+            <td>12
+                <label>24</label>
+            </td>
+            <td>13
+                <label>25</label>
+            </td>
+            <td>14
+                <label>26</label>
+            </td>
+            <td>15
+                <label>27</label>
+            </td>
+            <td>16
+                <label>28</label>
+            </td>
+            <td>17
+                <label>29</label>
+            </td>
+        </tr>
+        <tr>
+            <td>18
+                <label>1.9</label>
+            </td>
+            <td>19
+                <label>2</label>
+            </td>
+            <td>20
+                <label>3</label>
+            </td>
+            <td>21
+                <label>4</label>
+            </td>
+            <td>22
+                <label>5</label>
+            </td>
+            <td>23
+                <label>6</label>
+            </td>
+            <td>24
+                <label>7</label>
+            </td>
+        </tr>
+        <tr>
+            <td>25
+                <label>8</label>
+            </td>
+            <td>26
+                <label>9</label>
+            </td>
+            <td>27
+                <label>10</label>
+            </td>
+            <td>28
+                <label>11</label>
+            </td>
+            <td>29
+                <label>12</label>
+            </td>
+            <td>30
+                <label>13</label>
+            </td>
+            <td>31
+                <label>14</label>
+            </td>
+        </tr>
     </table>
 </body>
 </html>
