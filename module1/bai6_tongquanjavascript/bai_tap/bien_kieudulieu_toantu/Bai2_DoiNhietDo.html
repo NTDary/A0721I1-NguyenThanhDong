@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bai2</title>
+</head>
+<body>
+
+<table>
+    <tr>
+        <th><label>Nhập Độ C: </label></th>
+        <td><input type="number" id="doC" value=""></td>
+    </tr>
+    <tr>
+        <th><label>Độ F là: </label></th>
+        <td><input id="doF" value=""></td>
+
+    </tr>
+    <tr>
+        <td> </td>
+        <td><button type="button" onclick="doinhietdo();">Đổi Nhiệt Độ</button></td>
+    </tr>
+</table>
+
+
+<script>
+    function doinhietdo() {
+        let getIdDoC     = document.getElementById('doC');
+        let doC       = getIdDoC.value;
+
+        let F             = (parseInt(doC)/5) * 9 + 32  ;
+
+
+        console.log(F);
+        document.getElementById('doF').value = F;
+    }
+</script>
+</body>
+</html>
