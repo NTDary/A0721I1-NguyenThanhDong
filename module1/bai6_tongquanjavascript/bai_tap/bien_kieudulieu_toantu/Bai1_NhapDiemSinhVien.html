@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bai1</title>
+</head>
+<body>
+
+        <table>
+            <tr>
+                <th><label>Nhập điểm Vật Lý: </label></th>
+                <td><input type="number" id="vatly" value=""></td>
+            </tr>
+            <tr>
+                <th><label>Nhập điểm Hóa Học: </label></th>
+                <td><input type="number" id="hoahoc" value=""></td>
+
+            </tr>
+            <tr>
+                <th><label>Nhập điểm Sinh Học: </label></th>
+                <td><input type="number" id="sinhhoc" value=""></td>
+            </tr>
+            <tr>
+                <th><label>Điểm Trung Bình Là: </label></th>
+                <td id="diemtrungbinh"></td>
+            </tr>
+            <tr>
+                <td> </td>
+                <td><button type="number" onclick="diemtrungbinh();">Tính Điểm Trung Bình</button></td>
+            </tr>
+        </table>
+
+
+    <script>
+        function diemtrungbinh() {
+            let getIdVatly      = document.getElementById('vatly');
+            let getIdHoahoc     = document.getElementById('hoahoc');
+            let getIdSinhhoc    = document.getElementById('sinhhoc');
+            let diemVatly       = getIdVatly.value;
+            let diemHoahoc      = getIdHoahoc.value;
+            let diemSinhhoc     = getIdSinhhoc.value;
+            let avg             = (parseInt(diemHoahoc) + parseInt(diemSinhhoc) + parseInt(diemVatly)) / 3;
+
+
+            console.log(avg);
+            document.getElementById('diemtrungbinh').innerHTML = avg;
+        }
+    </script>
+</body>
+</html>
