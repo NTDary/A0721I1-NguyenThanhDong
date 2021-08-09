@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Caculator</title>
+</head>
+<body>
+    <from>
+
+        <input id="number1" type="text" value="">
+        <input id="number2" type="text" value="">
+        <input id="kq" type="text" value="">
+        <br/>
+        <br/>
+        <button id="cong" type="button" onclick="tinhCong()">Addition(+)</button>
+        <button id="tru" type="button" onclick="tinhTru()">Subtraction(-)</button>
+        <button id="nhan" type="button" onclick="tinhNhan()">Mutiplication(X)</button>
+        <button id="chia" type="button" onclick="tinhChia()">Division(/)</button>
+
+    </from>
+
+    <script>
+        function tinhCong() {
+            let getNumber1 = document.getElementById('number1').value;
+            let getNumber2 = document.getElementById('number2').value;
+
+            if(getNumber1 && getNumber2){
+                document.getElementById('kq').value = parseFloat(getNumber1) + parseFloat(getNumber2);
+            }else{
+                alert("Vui Lòng Nhập Giá Trị");
+            }
+        }
+        function tinhTru() {
+            let getNumber1 = document.getElementById('number1').value;
+            let getNumber2 = document.getElementById('number2').value;
+
+            if(getNumber1 && getNumber2){
+                document.getElementById('kq').value = parseFloat(getNumber1) - parseFloat(getNumber2);
+            }else{
+                alert("Vui Lòng Nhập Giá Trị");
+            }
+        }
+        function tinhNhan() {
+           let getNumber1 = document.getElementById('number1').value;
+           let getNumber2 = document.getElementById('number2').value;
+
+            if(getNumber1 && getNumber2){
+                document.getElementById('kq').value = parseFloat(getNumber1) * parseFloat(getNumber2);
+            }else{
+                alert("Vui Lòng Nhập Giá Trị");
+            }
+        }
+        function tinhChia() {
+           let getNumber1 = document.getElementById('number1').value;
+           let getNumber2 = document.getElementById('number2').value;
+
+            if(getNumber1 && getNumber2){
+                document.getElementById('kq').value = parseFloat(getNumber1) / parseFloat(getNumber2);
+            }else{
+                alert("Vui Lòng Nhập Giá Trị");
+            }
+        }
+
+    </script>
+</body>
+</html>
