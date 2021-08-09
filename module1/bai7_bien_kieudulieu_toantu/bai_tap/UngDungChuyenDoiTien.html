@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Convert</title>
+</head>
+<body>
+    <form>
+        <h2>Chuyển Đổi Tiền Tệ</h2>
+        <table>
+            <tr>
+                <th><label>Amount</label></th>
+                <th><label>From Currency</label></th>
+                <th><label>To Currency</label></th>
+            </tr>
+            <tr>
+                <td><input id="amount" type="text" value=""></td>
+                <td>
+                    <select id="from" action="#" onchange="chuyenDonVi()">
+                        <option value="vietnam">Vietnam</option>
+                        <option value="usd">USD</option>
+                    </select>
+                </td>
+                <td>
+                    <select id="to" action="#" onchange="chuyenDonVi1()">
+                        <option value="vietnam">Vietnam</option>
+                        <option selected="selected" value="usd">USD</option>
+                    </select>
+                </td>
+                <td><input type="button" value="convert" onclick="conVert()"></td>
+            </tr>
+        </table>
+        <p id="change"></p>
+    </form>
+
+    <script>
+        function chuyenDonVi(){
+            let getvalueFrom = document.getElementById("from").value;
+            let getvalueTo = document.getElementById("to").value;
+            let getvalueAmount = document.getElementById("amount").value;
+            if(getvalueFrom == "vietnam"){
+                document.getElementById("to").value = "usd";
+            }else {
+                document.getElementById("to").value = "vietnam";
+            }
+        }
+        function chuyenDonVi1(){
+            let getvalueFrom = document.getElementById("from").value;
+            let getvalueTo = document.getElementById("to").value;
+            let getvalueAmount = document.getElementById("amount").value;
+            if(getvalueTo == "vietnam"){
+                document.getElementById("from").value = "usd";
+            }else {
+                document.getElementById("from").value = "vietnam";
+            }
+        }
+
+        function conVert(){
+            let getvalueFrom = document.getElementById("from").value;
+            let getvalueTo = document.getElementById("to").value;
+            let getvalueAmount = document.getElementById("amount").value;
+
+            if(getvalueAmount){
+               if(getvalueFrom == "vietnam"){
+                   if(getvalueTo == "usd"){
+                       let change = parseInt(getvalueAmount) / 23000;
+                       // alert(getvalueAmount+"VND" + " chuyển rổi qua usd là: "+ change);
+                       document.getElementById('change').innerText = getvalueAmount+"VND" + " chuyển rổi qua USD là: "+ change + "$"
+                   }
+               }else {
+                   let change = parseInt(getvalueAmount) * 23000;
+                   // alert(getvalueAmount+"$" + " chuyển rổi qua VND là: "+ change);
+                   document.getElementById('change').innerText = getvalueAmount+"$" + " chuyển rổi qua VND là: "+ change + "VND"
+               }
+            }else {
+                alert("Vui Lòng Nhập Số Tiền")
+            }
+
+        }
+
+
+    </script>
+</body>
+</html>

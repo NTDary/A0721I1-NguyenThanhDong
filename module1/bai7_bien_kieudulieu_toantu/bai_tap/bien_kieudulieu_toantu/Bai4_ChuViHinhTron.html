@@ -2,11 +2,12 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Bai3</title>
+    <title>Bai4</title>
 </head>
 <body>
 
 <table>
+    <caption>Tính Chu Vi Hình Tròn</caption>
     <tr>
         <th><label>Nhập Bán Kính r: </label></th>
         <td><input type="number" id="r" value=""></td>
@@ -16,28 +17,28 @@
         <td><input type="number" id="d" value=""></td>
     </tr>
     <tr>
-        <th><label>Diện tích hình tròn S là: </label></th>
-        <td><input id="s" value=""></td>
+        <th><label>Chu vi hình tròn C là: </label></th>
+        <td><input id="c" value=""></td>
     </tr>
     <tr>
         <td> </td>
-        <td><button type="button" onclick="dientichHinhTron();">Tính diện tích</button></td>
+        <td><button type="button" onclick="chuviHinhTron();">Tính chu vi</button></td>
     </tr>
 </table>
 
 
 <script>
-    function dientichHinhTron() {
+    function chuviHinhTron() {
         let getR     = document.getElementById('r').value;
         let getD     = document.getElementById('d').value;
 
         if((getR == "" && getD != "") || (getR != "" && getD == "") ){
             if(getR == ""){
-                let S = ((getD * getD)/4) * 3.14;
-                document.getElementById('s').value = S;
+                let C = getD * 3.14;
+                document.getElementById('c').value = C;
             }else {
-                let S = (getR * getR) * 3.14;
-                document.getElementById('s').value = S;
+                let C = 2 * getR * 3.14;
+                document.getElementById('c').value = C;
             }
         }else{
             alert("Vui lòng nhập r hoặc d")
