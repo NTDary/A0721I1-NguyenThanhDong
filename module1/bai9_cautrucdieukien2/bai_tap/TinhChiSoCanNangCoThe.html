@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <label>Nhap Can Nang:</label>
+    <input id="cannang" type="text" value="">
+    <label>Nhap Chieu Cao:</label>
+    <input id="chieucao" type="text" value="">
+    <p id="kq"></p>
+    <button type="button" onclick="tinhChiso()">Send</button>
+</body>
+    <script>
+        function tinhChiso() {
+            let getCannang = document.getElementById('cannang').value;
+            let getChieucao = document.getElementById('chieucao').value;
+
+            let bmi = parseFloat(getCannang) / (parseFloat(getChieucao) * parseFloat(getChieucao));
+            document.getElementById('kq').innerText = bmi;
+
+            if(bmi < 18){
+                document.getElementById('kq').innerText = "Underweight";
+            }else if (bmi < 25.0){
+                document.getElementById('kq').innerText = "Normal";
+            }else if (bmi < 30.0){
+                document.getElementById('kq').innerText = "Overweight";
+            }else {
+                document.getElementById('kq').innerText = "Obese";
+            }
+        }
+    </script>
+</html>
