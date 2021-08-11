@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>calculator</title>
+</head>
+<body>
+    <table>
+        <tr>
+            <td colspan="4"><input id="screen" type="text" value=""></td>
+        </tr>
+        <tr>
+            <td><input type="button" value="1" style="height: 40px; width: 40px" onclick="nhap(this.value)"></td>
+            <td><input type="button" value="2" style="height: 40px; width: 40px" onclick="nhap(this.value)"></td>
+            <td><input type="button" value="3" style="height: 40px; width: 40px" onclick="nhap(this.value)"></td>
+            <td><input type="button" value="+" style="height: 40px; width: 40px" onclick="nhap(this.value)"></td>
+        </tr>
+        <tr>
+            <td><input type="button" value="4" style="height: 40px; width: 40px" onclick="nhap(this.value)"></td>
+            <td><input type="button" value="5" style="height: 40px; width: 40px" onclick="nhap(this.value)"></td>
+            <td><input type="button" value="6" style="height: 40px; width: 40px" onclick="nhap(this.value)"></td>
+            <td><input type="button" value="-" style="height: 40px; width: 40px" onclick="nhap(this.value)"></td>
+        </tr>
+        <tr>
+            <td><input type="button" value="7" style="height: 40px; width: 40px" onclick="nhap(this.value)"></td>
+            <td><input type="button" value="8" style="height: 40px; width: 40px" onclick="nhap(this.value)"></td>
+            <td><input type="button" value="9" style="height: 40px; width: 40px" onclick="nhap(this.value)"></td>
+            <td><input type="button" value="*" style="height: 40px; width: 40px" onclick="nhap(this.value)"></td>
+        </tr>
+        <tr>
+            <td><input type="button" value="C" style="height: 40px; width: 40px" onclick="xoaKiTu()"></td>
+            <td><input type="button" value="0" style="height: 40px; width: 40px" onclick="nhap(this.value)"></td>
+            <td><input type="button" value="=" style="height: 40px; width: 40px" onclick="tinh()"></td>
+            <td><input type="button" value="/" style="height: 40px; width: 40px" onclick="nhap(this.value)"></td>
+        </tr>
+    </table>
+
+<script>
+    function nhap(so) {
+        document.getElementById('screen').value += so;
+        console.log(so);
+    }
+    function tinh() {
+        document.getElementById('screen').value = eval(document.getElementById('screen').value);
+    }
+    function xoaKiTu() {
+        let chuoi = document.getElementById('screen').value;
+        let xoa = chuoi.substr(1, chuoi.length - 1);
+        document.getElementById('screen').value = xoa;
+    }
+
+</script>
+</body>
+</html>

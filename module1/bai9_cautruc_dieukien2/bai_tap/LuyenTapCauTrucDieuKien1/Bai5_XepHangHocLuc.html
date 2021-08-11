@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bai5</title>
+</head>
+<body>
+<!--Bài 5: Xếp hạng học lực của học sinh dựa trên các điểm bài kiểm tra, điểm thi giữa kỳ, điểm thi cuối kỳ-->
+<!--Điểm trung bình >= 9.0 là hạng A.-->
+<!--Điểm trung bình >=7.0 và < 9.0 là hạng B-->
+<!--Điểm trung bình >=5.0 và < 7.0 là hạng C-->
+<!--Điểm trung bình <5.0 là hạng F-->
+
+<script>
+    let diemKiemTra = prompt("Nhập Điểm Kiểm Tra:");
+    let diemGiuaKy = prompt("Nhập Điểm Giữa Kỳ:");
+    let diemCuoiKy = prompt("Nhập Điểm Cuối Kỳ:");
+    let diemTrungBinh = (parseInt(diemKiemTra) + parseInt(diemGiuaKy) + parseInt(diemCuoiKy)) / 3;
+    alert(diemTrungBinh);
+    //Kiểm tra điểm trong khoản từ 0 đến 10
+    if(diemTrungBinh <= 10 && diemTrungBinh >=0){
+        if(diemTrungBinh >= 9.0){
+            alert("Hạng A");
+        }else if(diemTrungBinh >= 7.0 && diemTrungBinh < 9.0){
+            alert("Hạng B");
+        }else if(diemTrungBinh >= 5.0 && diemTrungBinh < 7.0){
+            alert("Hạng C");
+        }else {
+            alert("Hạng F");
+        }
+    }else{
+        alert("Vui lòng nhập điểm trong khoản từ 0 đến 10");
+    }
+
+</script>
+</body>
+</html>
