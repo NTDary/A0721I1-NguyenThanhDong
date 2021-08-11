@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SwitchCase</title>
+</head>
+<body>
+    <input id="month" type="text" value="">
+    <p id="kq"></p>
+    <button type="button" onclick="tinhSoNgay()">Tinh So Ngay</button>
+
+<script>
+    function tinhSoNgay() {
+        let month = document.getElementById('month').value;
+        let ketqua = document.getElementById('kq');
+        if(month > 0 && month <= 12 ){
+            switch (parseInt(month)) {
+                case 2:
+                    ketqua.innerText = "Tháng " + month + " có 28 hoặc 29 ngày";
+                    break;
+                case 4:
+                case 6:
+                case 9:
+                case 11:
+                    ketqua.innerText = "Tháng " + month + " có 30 ngày";
+                    break;
+                default:
+                    ketqua.innerText = "Tháng " + month + " có 31 ngày";
+            }
+        }else {
+            alert("Vui lòng nhập tháng 1 đến tháng 12")
+        }
+
+    }
+</script>
+</body>
+</html>
