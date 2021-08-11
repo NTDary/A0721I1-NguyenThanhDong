@@ -16,18 +16,18 @@
         function tinhChiso() {
             let getCannang = document.getElementById('cannang').value;
             let getChieucao = document.getElementById('chieucao').value;
+            let getIdKetQua = document.getElementById('kq');
 
             let bmi = parseFloat(getCannang) / (parseFloat(getChieucao) * parseFloat(getChieucao));
-            document.getElementById('kq').innerText = bmi;
 
             if(bmi < 18){
-                document.getElementById('kq').innerText = "Underweight";
+                getIdKetQua.innerText = "Underweight";
             }else if (bmi < 25.0){
-                document.getElementById('kq').innerText = "Normal";
+                getIdKetQua.innerText = "Normal";
             }else if (bmi < 30.0){
-                document.getElementById('kq').innerText = "Overweight";
+                getIdKetQua.innerText = "Overweight";
             }else {
-                document.getElementById('kq').innerText = "Obese";
+                getIdKetQua.innerText = "Obese";
             }
         }
     </script>
