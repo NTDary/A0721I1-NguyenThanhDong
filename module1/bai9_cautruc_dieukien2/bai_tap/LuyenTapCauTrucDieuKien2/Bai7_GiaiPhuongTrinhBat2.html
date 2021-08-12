@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bai7</title>
+</head>
+<body>
+<!--Bài 7: Giải phương trình bậc 2.-->
+<script>
+    //PT bật 2: ax2 + bx + c = 0
+    //denta = b*b - 4*a*c
+    //denta < 0 : PT vô nghiệm
+    //denta > 0 : PT có 2 nghiệm phân biệt x1 = (-b + sqrt(denta))/2a và x2 = ( -b - sqrt(denta))/2a
+    //denta = 0 : PT có nghiệm kép x1 = x2 = -b/2a
+
+    let a = prompt("Nhập a:");
+    let b = prompt("Nhập b:");
+    let c = prompt("Nhập c:");
+    let denta = (b*b) - (4*a*c);
+    let x1;
+    let x2;
+    let kq;
+
+    alert("Denta là: "+denta);
+    if(denta == 0){
+        kq = "Phương trình có nghiệm kép là: " + (-b/2*a);
+    }else if(denta > 0){
+        x1 = (-b + Math.sqrt(denta))/(2*a);
+        x2 = (-b - Math.sqrt(denta))/(2*a);
+        kq = "Phương trình có 2 nghiệm phân biệt" + " x1 = " + x1 + "; x2 = " + x2;
+    }else {
+        kq = "Phương trình vô nghiệm";
+    }
+    alert(kq);
+
+</script>
+</body>
+</html>

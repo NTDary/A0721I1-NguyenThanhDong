@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bai11</title>
+</head>
+<body>
+<script>
+    // Bài 11: Viết chương trình tính thuế thu nhập cá nhân.
+    // Bậc 1: 4 triệu đồng/tháng 0%;                        ||  4000            => 0%
+    // Bậc 2: Trên 4 - 6 triệu đồng/tháng: 5%;              ||  4000 - 6000     => 5%
+    // Bậc 3: Trên 6 - 9 triệu đồng: 10%;                   ||  6000 - 9000     => 10%
+    // Bậc 4: Trên 9 triệu đồng/tháng: 15%;                 ||  > 9000          => 15%
+
+
+    let tienLuong = prompt("Nhập thu nhập:");
+    let thueThuNhap;
+    if(tienLuong <= 4000){
+        thueThuNhap = tienLuong;
+    }else if(tienLuong > 4000 && tienLuong <= 6000){
+        thueThuNhap = tienLuong * 5/100;
+    }else if(tienLuong > 6000 && tienLuong <= 9000){
+        thueThuNhap = tienLuong * 10/100;
+    }else{
+        thueThuNhap = tienLuong * 15/100;
+    }
+    alert("Thuế thu nhập cá nhân là: "+ thueThuNhap);
+
+</script>
+</body>
+</html>

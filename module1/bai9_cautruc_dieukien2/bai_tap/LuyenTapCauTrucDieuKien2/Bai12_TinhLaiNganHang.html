@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bai12</title>
+</head>
+<body>
+<script>
+    // Bài 12: Viết chương trình tính lãi ngân hàng (lãi mẹ đẻ lãi con) khi biết số tiền ban đầu, số tháng cho vay và lãi xuất hàng tháng.
+    // Công thức tính lãi kép: T = M*(1+r)^6
+    // T là số tiền phải trả
+    // M là số tiền gốc
+    // r là suất hàng tháng
+    // n là tháng vay
+
+    let m     = prompt("Nhập số tiền vay:");
+    let r     = prompt("Nhập lãi suất hàng tháng:");
+    let n     = prompt("Nhập số tháng vay:");
+    let T     = m * Math.pow(1 + r/100, n);
+    alert("Lãi Ngân Hàng là trong "+ n + " tháng là: " + T);
+
+
+</script>
+</body>
+</html>

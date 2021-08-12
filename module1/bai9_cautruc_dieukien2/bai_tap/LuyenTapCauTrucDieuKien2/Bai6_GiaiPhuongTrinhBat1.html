@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bai6</title>
+</head>
+<body>
+<!--Bài 6: Giải phương trình bậc 1.-->
+<script>
+    //ax + b = 0
+    //Nếu a = 0 và b  = 0   : Pt có vô số nghiệm
+    //Nếu a = 0 và b  =! 0  : Pt vô nghiệm
+    //Nếu a =!              : Pt có nghiệm x = -b/a
+
+    let a = prompt("Nhập số a: ");
+    let b = prompt("Nhập số b: ");
+    let kq;
+    if(a == 0){
+        if(b == 0){
+            kq = "PT có vô số nghiệm";
+        }else{
+           kq =  "PT vô nghiệm";
+        }
+    }else{
+        kq = -b / a;
+    }
+    alert(kq);
+</script>
+
+</body>
+</html>

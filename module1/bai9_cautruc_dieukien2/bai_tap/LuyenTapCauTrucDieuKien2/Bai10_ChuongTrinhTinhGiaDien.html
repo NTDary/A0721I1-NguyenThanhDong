@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bai10</title>
+</head>
+<body>
+<script>
+    // viết chương trình nhập vào số Kwh tiêu thụ điện. Tính tiền điện phải trả biết các thức tính tiền như sau
+    // 1. 100Kwh định mức đầu tiên có đơn giá trung bình là 600 đ/kwh
+    // 2. các kwh từ 101 --> 150 có đơn giá là 700 đ/kwh
+    // 3. các kwh từ 151--> 200 có đơn giá là 900 đ/kwh
+    // 4. các kwh từ 201 trở đi có đơn giá là 1100 đ/kwh
+
+    let dienTieuThu = prompt("Nhập số Kwh:");
+    let tienDien;
+    if(dienTieuThu < 100){
+        tienDien = dienTieuThu * 600;
+    }else if(dienTieuThu > 100 && dienTieuThu <= 150){
+        tienDien = dienTieuThu * 700;
+    }else if(dienTieuThu > 150 && dienTieuThu <= 200){
+        tienDien = dienTieuThu * 900;
+    }else{
+        tienDien = dienTieuThu * 1100;
+    }
+    alert(tienDien);
+
+</script>
+
+</body>
+</html>
