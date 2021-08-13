@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>GamePuzzle</title>
+</head>
+<body>
+    <div id="game">
+        <img id="line1" src="images/panda_swap_part1x1.jpg" style="width: 500px; height: 100px" onclick="doiHinh(1)"></br>
+        <img id="line2" src="images/panda_swap_part2x1.jpg" style="width: 500px; height: 100px" onclick="doiHinh(2)"></br>
+        <img id="line3" src="images/monkey_part3x1.jpg" style="width: 500px; height: 100px" onclick="doiHinh(3)"></br>
+        <img id="line4" src="images/funny-cat1_part4x1.jpg" style="width: 500px; height: 100px" onclick="doiHinh(4)"></br>
+        <img id="line5" src="images/funny-cat1_part5x1.jpg" style="width: 500px; height: 100px" onclick="doiHinh(5)">
+    </div>
+
+
+    <script>
+        let idHinh1 = document.getElementById("line1");
+        let idHinh2 = document.getElementById("line2");
+        let idHinh3 = document.getElementById("line3");
+        let idHinh4 = document.getElementById("line4");
+        let idHinh5 = document.getElementById("line5");
+        function doiHinh(choose) {
+              switch (choose) {
+                  case 1:
+                      if(idHinh1.getAttribute('src') == "images/panda_swap_part1x1.jpg"){
+                          idHinh1.src = "images/monkey_part1x1.jpg";
+                      }else if(idHinh1.getAttribute('src') == "images/monkey_part1x1.jpg"){
+                          idHinh1.src = "images/funny-cat1_part1x1.jpg";
+                      }else{
+                          idHinh1.src = "images/panda_swap_part1x1.jpg";
+                      }
+                      setTimeout(check,2000);
+                      break;
+                  case 2:
+                      if(idHinh2.getAttribute('src') == "images/panda_swap_part2x1.jpg"){
+                          idHinh2.src = "images/monkey_part2x1.jpg";
+                      }else if(idHinh2.getAttribute('src') == "images/monkey_part2x1.jpg"){
+                          idHinh2.src = "images/funny-cat1_part2x1.jpg";
+                      }else{
+                          idHinh2.src = "images/panda_swap_part2x1.jpg";
+                      }
+                      setTimeout(check,2000);
+                      break;
+                  case 3:
+                      if(idHinh3.getAttribute('src') == "images/panda_swap_part3x1.jpg"){
+                          idHinh3.src = "images/monkey_part3x1.jpg";
+                      }else if(idHinh3.getAttribute('src') == "images/monkey_part3x1.jpg"){
+                          idHinh3.src = "images/funny-cat1_part3x1.jpg";
+                      }else{
+                          idHinh3.src = "images/panda_swap_part3x1.jpg";
+                      }
+                      setTimeout(check,2000);
+                      break;
+                  case 4:
+                      if(idHinh4.getAttribute('src') == "images/panda_swap_part4x1.jpg"){
+                          idHinh4.src = "images/monkey_part4x1.jpg";
+                      }else if(idHinh4.getAttribute('src') == "images/monkey_part4x1.jpg"){
+                          idHinh4.src = "images/funny-cat1_part4x1.jpg";
+                      }else{
+                          idHinh4.src = "images/panda_swap_part4x1.jpg";
+                      }
+                      setTimeout(check,2000);
+                      break;
+                  case 5:
+                      if(idHinh5.getAttribute('src') == "images/panda_swap_part5x1.jpg"){
+                          idHinh5.src = "images/monkey_part5x1.jpg";
+                      }else if(idHinh5.getAttribute('src') == "images/monkey_part5x1.jpg"){
+                          idHinh5.src = "images/funny-cat1_part5x1.jpg";
+                      }else{
+                          idHinh5.src = "images/panda_swap_part5x1.jpg";
+                      }
+                      setTimeout(check,2000);
+                      break;
+              }
+
+        }
+        function check() {
+            if(idHinh1.getAttribute('src') == "images/panda_swap_part1x1.jpg" && idHinh2.getAttribute('src') == "images/panda_swap_part2x1.jpg" &&
+                idHinh3.getAttribute('src') == "images/panda_swap_part3x1.jpg" && idHinh4.getAttribute('src') == "images/panda_swap_part4x1.jpg" &&
+                idHinh5.getAttribute('src') == "images/panda_swap_part5x1.jpg"){
+                alert("Won");
+            }else if(idHinh1.getAttribute('src') == "images/monkey_part1x1.jpg" && idHinh2.getAttribute('src') == "images/monkey_part2x1.jpg" &&
+                idHinh3.getAttribute('src') == "images/monkey_part3x1.jpg" && idHinh4.getAttribute('src') == "images/monkey_part4x1.jpg" &&
+                idHinh5.getAttribute('src') == "images/monkey_part5x1.jpg"){
+                alert("Won");
+            }else if(idHinh1.getAttribute('src') == "images/funny-cat1_part1x1.jpg" && idHinh2.getAttribute('src') == "images/funny-cat1_part2x1.jpg" &&
+                idHinh3.getAttribute('src') == "images/funny-cat1_part3x1.jpg" && idHinh4.getAttribute('src') == "images/funny-cat1_part4x1.jpg" &&
+                idHinh5.getAttribute('src') == "images/funny-cat1_part5x1.jpg"){
+                alert("Won");
+            }
+        }
+    </script>
+</body>
+</html>
