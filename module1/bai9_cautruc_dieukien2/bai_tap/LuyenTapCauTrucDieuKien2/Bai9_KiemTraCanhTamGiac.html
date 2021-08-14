@@ -16,11 +16,16 @@
     let b = prompt("Nhập cạnh b");
     let c = prompt("Nhập cạnh c");
 
-    if((a + b > c) && (a + c > b) && (b + c > a)){
-        alert("cạnh a, b, c là cạnh tam giác")
+    if(a > 0 && b > 0 && c > 0){
+        if((a + b > c) && (a + c > b) && (b + c > a)){
+            alert("cạnh a, b, c là cạnh tam giác");
+        }else{
+            alert("cạnh a, b, c không là cạnh tam giác");
+        }
     }else{
-        alert("cạnh a, b, c không là cạnh tam giác")
+        alert("cạnh a, b, c không là cạnh tam giác");
     }
+
 </script>
 </body>
 </html>
