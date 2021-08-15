@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AppDoYouLoveMe</title>
+    <style>
+        body {
+            display: block;
+            margin:0;
+            padding:0;
+
+        }
+    </style>
+</head>
+<body>
+<h2>Do you love me?</h2>
+<input type="button" onclick="congViec1()" value="Yes">
+<input id="btnNo" type="button" onmouseover="congViec2()" value="No" style="position: absolute;" >
+<script>
+    function congViec1() {
+        alert("Yes. you are right");
+    }
+    function congViec2() {
+        let x = window.innerWidth;
+        let y  = window.innerHeight;
+        let randomX = Math.floor(Math.random() * x);
+        let randomY =  Math.floor(Math.random() * y);;
+
+       document.getElementById("btnNo").style.left = randomX + "px";
+        document.getElementById("btnNo").style.top = randomY + "px";
+        // alert(window.innerHeight);
+        // alert(window.innerWidth);
+        // alert(chieuCao);
+        // alert(chieuRong);
+
+    }
+</script>
+</body>
+</html>
