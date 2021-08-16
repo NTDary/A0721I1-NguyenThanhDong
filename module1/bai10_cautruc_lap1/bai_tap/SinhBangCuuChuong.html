@@ -6,13 +6,16 @@
 </head>
 <body>
 <script>
-    let bangCuuChuong = "<table>"
-    for(let i = 0; i < 9; i++){
+    let bangCuuChuong = "<table border='1' width='500' cellspacing='0' cellpadding='3'>";
+    for(let i = 1; i <= 9; i++){
         bangCuuChuong += "<tr>";
-        for(let j = 0 < 8; j++){
-            bangCuuChuong += "<td>"
+        for(let j = 2; j <= 9; j++){
+            bangCuuChuong += "<td>" + j + "x" + i + "= " + j*i +"</td>";
         }
+        bangCuuChuong += "</tr>";
     }
+    bangCuuChuong += "</table>";
+    document.write(bangCuuChuong);
 </script>
 </body>
 </html>
