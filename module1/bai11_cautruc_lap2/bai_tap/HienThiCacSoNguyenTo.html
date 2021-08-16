@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SoNguyenTo</title>
+</head>
+<body>
+<script>
+    //Hàm kiểm tra số nguyên tố
+    function ktSNT(number) {
+        if(number < 2){
+            return false;
+        }else {
+            for(let n = 2; n < number ; n++){
+                if(number%n==0){
+                    return false;
+                }
+            }
+        }
+        return true;
+    }
+
+    let numbers = prompt("Nhập số lượng nguyên tố cần tìm:");
+    let count = 0;
+    let kq ='';
+
+    while (count <= numbers){
+        if(ktSNT(count)){
+            kq += count + "; ";
+            count++
+        }else{
+            count++
+        }
+    }
+    alert(kq);
+
+
+
+
+</script>
+</body>
+</html>
