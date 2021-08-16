@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="range" max="1" min="0" value="0" id="good" onclick="change('good')">GOOD<br>
+<input type="range" max="1" min="0" value="0" id="cheap" onclick="change('cheap')">CHEAP<br>
+<input type="range" max="1" min="0" value="0" id="fast" onclick="change('fast')">FAST
+</body>
+<script>
+    function change(choose) {
+        let objGood = document.getElementById("good");
+        let objCheap = document.getElementById("cheap");
+        let objFast = document.getElementById("fast");
+        switch (choose) {
+            case "good":
+                if (objCheap.value==1){
+                    objFast.value=0;
+                }
+                break;
+            case "cheap":
+                if (objFast.value==1){
+                    objGood.value=0;
+                }
+                break;
+            case "fast":
+                if (objGood.value==1){
+                    objCheap.value=0;
+                }
+                break;
+        }
+    }
+</script>
+</html>
