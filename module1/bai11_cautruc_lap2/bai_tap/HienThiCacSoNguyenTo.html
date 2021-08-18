@@ -6,14 +6,14 @@
 </head>
 <body>
 <script>
-
+    //STN: 2 3 5
     //Hàm kiểm tra số nguyên tố
     function ktSNT(number) {
         if(number < 2){
-            return false;
+            return false; //ko phai snt
         }else {
             for(let n = 2; n < number ; n++){
-                if(number%n==0){
+                if(number%n==0){  // 2%2 = 0; 4%2 = 0; 3%2 != 0; 5%2 != 0;
                     return false;
                 }
             }
