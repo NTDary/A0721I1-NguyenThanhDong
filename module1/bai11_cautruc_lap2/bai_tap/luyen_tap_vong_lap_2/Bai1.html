@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bai1</title>
+</head>
+<body>
+<script>
+    //Bài 1: In dãy fibonacci đầu tiên.
+
+    function fibonacci(n) {
+        let a = 0;
+        let b = 1;
+        let c = 1;
+        if(n == 0 || n == 1){
+            return n;
+        }else{
+            for(let i = 2; i<n; i++){ //n=3
+                //0 + 1 = 1
+                //a + b = c
+                //1 + 1 = 2 //a = b; b = c; c = a + b
+                a = b;
+                b = c;
+                c = a + b;
+            }
+            //n=2 return c = 1
+            return c;
+        }
+    }
+
+    let iNum = prompt("Nhập n số fibonacci");
+    let kq = '';
+    for(let i = 0; i < iNum; i++){
+        kq += fibonacci(i) + " ";
+    }
+    alert(kq);
+
+
+
+
+
+
+</script>
+</body>
+</html>

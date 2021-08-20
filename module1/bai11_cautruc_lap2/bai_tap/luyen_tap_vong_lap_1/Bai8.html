@@ -6,18 +6,43 @@
 </head>
 <body style="text-align: center">
 <h2>GAME ĐOÁN SỐ</h2>
-<input id="" type="button" value="Chơi" onclick="randomNumber()">
-<h3 id="heath" style="color: red;"></h3>
+<input id="btn" type="button" value="Chơi" onclick="playGame()">
 <script>
-
-    function randomNumber() {
-        let getHeath    = document.getElementById("heath");
-        // let getBtn      = document.getElementById("btn");
-        let minNumber   = prompt("Nhập Só Thấp Nhất");
-        let maxNumber   = prompt("Nhập số Lớn Nhất");
-        alert(1);
-
+    function randomNum(maxNumber,minNumber) {
+        let kqRandom =  Math.floor(Math.random() * (parseInt(maxNumber) - parseInt(minNumber) + 1) ) + parseInt(minNumber);
+        return kqRandom;
     }
+    function playGame() {
+        let getIdBtn    = document.getElementById("btn");
+        let heath       = 3;
+        let kqRandom;
+        let minNumber   = prompt("Nhập khoản Thấp Nhất");
+        let maxNumber   = prompt("Nhập khoản Lớn Nhất");
+
+        while (true){
+            kqRandom = randomNum(maxNumber,minNumber);
+            let numPlayer = prompt("Nhập số cần đoán")
+            if(kqRandom == numPlayer){
+                alert("Bạn đã chiến thắng");
+                break;
+            }else{
+                heath--
+                alert("Bạn đã đoán sai, kết quả là : " + kqRandom + "\nSố lượt còn lại: " + heath);
+            }
+            if(heath == 0){
+                alert("Bạn thua rồi");
+                getIdBtn.value = "Chơi lại"
+                break;
+            }
+
+        }
+    }
+
+
+
+
+
+
 </script>
 </body>
 </html>
