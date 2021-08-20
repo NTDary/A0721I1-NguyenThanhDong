@@ -8,18 +8,45 @@
 <script>
     //Bài 3: In tam giác vuông. Các góc vuông nằm ở các vị trí khác nhau
     // *                *****
-    // **                ****
-    // ***                ***
-    // ****                **
-    // *****                *
+    // **               ****
+    // ***              ***
+    // ****             **
+    // *****            *
 
 
-        for(let i = 1; i < 6; i++){
-            for(let j = 0; j < i; j++){
-                  document.writeln("*");
-            }
-            document.writeln("<br>");
+    for(let i = 1; i < 6; i++){
+        for(let j = 0; j < i; j++){
+            document.writeln("*");
         }
+        document.writeln("<br>");
+    }
+
+    let n = 5;
+    for(let i = 1; i < 6; i++){
+        for(let j = 0; j < n; j++){
+            document.writeln("*");
+        }
+        n--;
+        document.writeln("<br>");
+    }
+
+    //    *   *****
+    //   **    ****
+    //  ***     ***
+    // ****      **
+    //*****       *
+    for(let i = 1; i < 6; i++){
+        for(let j=0;j < n; j++){
+            document.writeln(" ");
+        }
+        n--;
+        for(let k=0; k < i; k++ ){
+            document.writeln("*");
+        }
+        document.writeln("<br>");
+    }
+
+
 
 </script>
 </body>
