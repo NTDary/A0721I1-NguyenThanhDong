@@ -13,7 +13,7 @@
     // ****             **
     // *****            *
 
-
+    // -----------Hình 1:----------
     for(let i = 1; i < 6; i++){
         for(let j = 0; j < i; j++){
             document.writeln("*");
@@ -21,12 +21,16 @@
         document.writeln("<br>");
     }
 
-    let n = 5;
+    document.writeln("<br>");
+
+    // -----------Hình 2:----------
+
+    let a = 5;
     for(let i = 1; i < 6; i++){
-        for(let j = 0; j < n; j++){
+        for(let j = 0; j < a; j++){
             document.writeln("*");
         }
-        n--;
+        a--;
         document.writeln("<br>");
     }
 
@@ -35,18 +39,37 @@
     //  ***     ***
     // ****      **
     //*****       *
-    for(let i = 1; i < 6; i++){
+    //
+
+    // -----------Hình 3:----------
+
+    let n = 4;
+    for(let i = 0; i < 5; i++){
         for(let j=0;j < n; j++){
-            document.writeln(" ");
+            document.writeln("&nbsp&nbsp");
         }
         n--;
-        for(let k=0; k < i; k++ ){
+        for(let k=0; k <= i; k++ ){
             document.writeln("*");
         }
         document.writeln("<br>");
     }
 
+    document.writeln("<br>");
 
+    // -----------Hình 4:----------
+
+    let m = 5;
+    for(let i=0; i<5; i++){
+        for(let j = 0; j < i; j++){
+            document.writeln("&nbsp&nbsp");
+        }
+        for(let k=0; k < m; k++ ){
+            document.writeln("*");
+        }
+        m--;
+        document.writeln("<br>");
+    }
 
 </script>
 </body>
