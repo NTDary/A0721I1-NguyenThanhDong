@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bai2</title>
+</head>
+<body>
+<script>
+    //Bài 2: Viết một chương trình nhận một số nhập vào và chèn dấu (-) giữa 2  số chẵn.
+    // Ví dụ nếu bạn nhập vào 025468 thì kết quả của chương trình sẽ là 0-254-6-8.
+
+    //
+    const myNum = prompt("Nhập dãy số");
+    const myStrNum = myNum.toString();
+    const myArray = [];
+    // const str1 = num.toString();
+
+    console.log(myStrNum.length)
+     for(let i=0; i < myStrNum.length; i++){
+         if(myStrNum[i]%2 == 0){
+             myArray[i] = myStrNum[i] + "-";
+         }else{
+             myArray[i] = myStrNum[i];
+         }
+     }
+     console.log(myArray.join(''));
+
+    // const num=window.prompt();
+    // const str = num.toString();
+    // const result = [str[0]];
+    //
+    // for(let x=1; x<str.length; x++)
+    // {
+    //     if((str[x-1]%2 === 0)&&(str[x]%2 === 0))
+    //     {
+    //         result.push('-', str[x]);
+    //     }
+    //     else
+    //     {
+    //         result.push(str[x]);
+    //     }
+    // }
+    // console.log(result.join(''));
+
+</script>
+</body>
+</html>
