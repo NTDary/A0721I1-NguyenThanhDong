@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>App</title>
+</head>
+<body>
+<h1>Type anthing slowly</h1>
+<textarea id="fill" cols="40" rows="10" onkeydown="typeTextarea();"></textarea>
+<script>
+    let getIDText = document.getElementById('fill');
+    let myStr = "BÀI GÌ KHÓ QUÁ!!!";
+    let myStr1 = "";
+    let myArray = [];
+    for(let i=0; i<myStr.length; i++){
+        myArray[i] = myStr[i];
+    }
+    console.log(myArray);
+
+    function typeTextarea() {
+        let text = getIDText.value;
+        let j = text.length
+        if(j > 0){
+            for(let i=1; i <= j; i++){
+                myStr1 = myStr1 + myArray[i-1];
+                if(i === myArray.length+1){
+                    getIDText.value = "";
+                    myStr1 = "";
+                }
+            }
+        }
+        getIDText.value = myStr1;
+        myStr1="";
+        setTimeout("typeTextarea()", 1);
+    }
+</script>
+</body>
+</html>

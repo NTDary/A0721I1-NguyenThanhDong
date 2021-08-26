@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    //Bài 3: Viết một chương trình nhập vào một chuỗi và chuyển các ký tự chữ thường trong chuỗi vừa nhập sang thành dạng chữ hoa.
+    // Ví dụ: nếu bạn nhập vào chuỗi 'The Quick Brown Fox' kết quả của chương trình là 'tHE qUICK bROWN fOX'.
+    //Hàm chuyển chữ HOA thành chữ thường: toLowerCase()
+    //Hàm chuyển chữ thường thành chữ HOA: toUpperCase()
+
+    const inStr = prompt("Nhập chuỗi")
+    const myStr = inStr.toString();
+    const result = [];
+
+    for(let i=0; i < myStr.length ; i++){
+        if(myStr[i] == myStr[i].toUpperCase()){
+            result.push(myStr[i].toLowerCase())
+        }else{
+            result.push(myStr[i].toUpperCase())
+        }
+    }
+    console.log(result.join(''));
+
+
+</script>
+</body>
+</html>

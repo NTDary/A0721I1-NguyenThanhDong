@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>TuDien</title>
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+        input{
+            height: 100px;
+            display: block;
+            float: left;
+            font-weight: bold;
+        }
+        .display{
+            display: inline-block;
+        }
+        button{
+            display: block;
+            margin: 0 auto;
+            width: 100px;
+            height: 30px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+<h1>Cambridge Dictionary</h1>
+<div class="display">
+    <input id="Eng" type="text" placeholder="Search English">
+    <input id="Vie" type="text" placeholder="Bản dịch">
+</div>
+<button type="button" onclick="translateENG()">Dịch</button>
+<script>
+    let engWords = ['map','government','way','art','world','computer','people','family','history','school'];
+    let vieWords = ['Bản đồ','Chính phủ','Đường','Nghệ thuật','Thế giới','Máy tính','Người','Gia đình','Lịch sử','Trường'];
+
+    console.log(engWords.length);
+    // ------------Hàm biến đổi chữ HOA thành chữ thường-------------
+    function checkUpperLower(inStr) {
+        const myStr = inStr.toString();
+        const result = [];
+        for(let i=0; i < myStr.length ; i++){
+            if(myStr[i] == myStr[i].toUpperCase()){
+                result.push(myStr[i].toLowerCase())
+            }else{
+                result.push(myStr[i])
+            }
+        }
+        return result.join('');
+    }
+    // --------------------------------------------------------------
+
+    // ------------Hàm tìm kiếm dịch ENG sang VIE -------------------
+    function translateENG() {
+        let getEng = document.getElementById('Eng').value;
+        let getIdVie = document.getElementById('Vie');
+        let wordEng;
+        let result;
+        let flag = false;
+        for(let i=0; i < engWords.length; i++){
+            wordEng = checkUpperLower(getEng);
+            // console.log(wordEng);
+            if(wordEng == engWords[i]){
+                result = vieWords[i]
+               flag = true;
+               break;
+            }
+        }
+        if(flag){
+            getIdVie.value = result;
+        }else{
+            alert("Không tìm thấy")
+        }
+
+    }
+    // --------------------------------------------------------------
+
+
+
+</script>
+</body>
+</html>
