@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài3</title>
+</head>
+<body>
+<script>
+    //Bài 3- Viết chương trình khởi tạo mảng số nguyên.
+    // Hiển hiện giá trị lớn nhất trong mảng đó.
+    // In ra giá trị trung bình của các phần tử trong mảng.
+
+    function nhapMang(){
+        let myArray = [];
+        let count   = 0;
+        let inElement = prompt("Nhập số phần tử");
+        do{
+            let inNum   = prompt("Nhập phần từ thứ" + count);
+            myArray[count] = inNum;
+            count++;
+        }while(count != inElement)
+        return myArray;
+    }
+
+    let myArray = nhapMang();
+    let numMax = myArray[0];
+    let mySum = 0;
+    for(let i = 0; i < myArray.length;i++){
+        if(numMax < myArray[i]){
+            numMax = myArray[i];
+        }
+        mySum += parseInt(myArray[i]);
+    }
+    alert("Giá trị lớn nhất: " + numMax);
+    alert("Giá trị Sum: " + mySum);
+    alert("Giá trị trung bình: " + mySum/myArray.length);
+</script>
+</body>
+</html>

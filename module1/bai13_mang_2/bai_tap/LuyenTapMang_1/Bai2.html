@@ -9,8 +9,66 @@
     //Bài 2- Viết chương trình khởi tạo mảng số nguyên gồm 10 phần tử khác nhau.
     //Chương trình hiển thị ra được phần tử có giá trị lớn nhất trong mảng và vị trí của phần tử đó.
 
+    // let nhapNum = prompt("Nhập số:");
+    // let myArray = [];
+    // let bienTam;
+    // let flag = false;
+    // myArray.push(nhapNum);
+    // console.log(myArray);
+    // for(let i=0; i<5;i++){
+    //     for(let j=0; j<myArray.length;j++){
+    //         if(parseInt(nhapNum) == myArray[j]){
+    //             flag = true;
+    //             console.log('giống');
+    //         }
+    //     }
+    //     if(flag){
+    //
+    //     }else{
+    //         myArray[i] = nhapNum;
+    //         console.log('khác');
+    //     }
+    // }
 
-    
+    function checkSame(num,array) {
+        let flag = false;
+        for(let i=0; i< array.length;i++){
+            if(parseInt(num) == array[i]){  //lỗi chỗ này === fix thành ==
+                console.log(array[i]);
+                flag = true;
+            }
+        }
+        return flag;
+    }
+    function nhapMang() {
+        let arrayB = new Array(10); //lỗi chỗ này sửa arrayB = [5] thành new Array(10)
+        let count = 0;
+        do{                         //lỗi chỗ này Fix Hàm for đổi thành do-while
+            let a = prompt("Nhập phần từ thứ" + count);
+            //false - if(true); true - if(false)
+            if(!checkSame(a,arrayB)){ //!false == true, hàm checkSame false: đưa vào array, true: nhập lại
+                arrayB[count] = a;
+                count++;
+            }else{
+                alert("Nhập lại");
+            }
+        }while(!(arrayB.length == count)) //Fix chỗ này, ghi nhớ thêm điều kiện chỗ này
+        return arrayB
+    }
+
+    let myArray = nhapMang();
+    let numMax = myArray[0];
+    let numPositon;
+    for(let i = 0; i < myArray.length;i++){
+        if(numMax < myArray[i]){
+            numMax = myArray[i];
+            numPositon = i;
+        }
+    }
+    alert("max " + numMax);
+    alert("vị trí "+ numPositon);
+
+
 </script>
 </body>
 </html>
