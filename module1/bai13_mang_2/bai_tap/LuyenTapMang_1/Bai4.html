@@ -2,9 +2,24 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Bai4</title>
 </head>
 <body>
-
+<script>
+    //Bài 4- Viết chương trình khởi tạo/nhập vào một mảng số nguyên và đảo ngược các phần tử trong mảng đó.
+    function nhapMang(){
+        let myArray = [];
+        let count   = 0;
+        let inElement = prompt("Nhập số phần tử");
+        do{
+            let inNum   = prompt("Nhập phần từ thứ" + count);
+            myArray[count] = inNum;
+            count++;
+        }while(count != inElement)
+        return myArray;
+    }
+    let myArray = nhapMang();
+    alert("Mảng ban đầu: " + myArray + " \n" + "Mảng đảo ngược: " + myArray.reverse());
+</script>
 </body>
 </html>
