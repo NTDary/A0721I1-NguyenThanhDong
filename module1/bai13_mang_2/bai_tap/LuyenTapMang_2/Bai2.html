@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bai2</title>
+</head>
+<body>
+<script>
+    //Bài 2: Viết một chương trình để in các ký tự trong một mảng theo thứ tự đảo ngược.
+    //Ví dụ, nếu một mảng chứa các ký tự  [ 'c', 's', 'c', '2', '6', '1' ]
+    //sau khi thực hiện đảo ngược sẽ là "162csc"
+
+    let myArray = ['c','s','c','2','6','1'];
+    let myString = "";
+
+
+    //Cách 1:
+    // myString = myArray.reverse();
+    // console.log(myString.join(""));
+    // alert(myString.join(""));
+    //-----------------------------
+
+    //Cách 2:
+    let first = 0;
+    let last = myArray.length - 1;
+    while (first < last) {
+        let b = myArray[first];
+        myArray[first] = myArray[last];
+        myArray[last] = b;
+        first++;
+        last--;
+    }
+    alert(myArray.join(""));
+    //-----------------------------
+
+
+</script>
+</body>
+</html>
