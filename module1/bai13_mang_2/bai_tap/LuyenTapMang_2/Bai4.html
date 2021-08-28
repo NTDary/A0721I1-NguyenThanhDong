@@ -10,10 +10,10 @@
 
     let myString = ["code",2,"gym"];
 
-
+    //làm thêm trường hợp kiểm tra nếu là string thì đếm
     for(let i=0; i< myString.length; i++){
         if(typeof(myString[i]) == "string"){
-            console.log("Chuỗi: "+ myString[i]);
+            console.log("Chuỗi thứ "+ i + " : " + myString[i]);
             console.log("Có "+ myString[i].length +" từ")
         }
     }
