@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bai7</title>
+</head>
+<body>
+<script>
+    //Bài 7- Viết chương trình khởi tạo/nhập vào một mảng số nguyên gồm 10 phần tử, nhập/tạo phần tử số nguyên V.
+    //Chương trình kiểm tra xem V có thuộc mảng đã cho không,
+    //Nếu V thuộc mảng đã cho xoá V khỏi mảng
+    //(Bản chất việc xoá ở đây tức là dịch phần tử ở bên phải V sang vị trí của V, và gán 0 cho phần tử cuối cùng của mảng)
+
+    //Hàm kiểm tra số nguyên dương/nguyên âm
+    function checkSoNguyen(num) {
+        if(num%2 === 0 || num%2 === 1 || num%2 === -1){
+            return true;
+        }else{
+            return false;
+        }
+    }
+    //----------------------------------------
+
+    //Hàm tạo/nhập mảng số nguyên
+    function nhapMangSoNguyen(){
+        let myArray = [];
+        let count   = 0;
+        let inElement = parseInt(prompt("Nhập số phần tử"));
+        do{
+            let inNum   = parseInt(prompt("Nhập phần từ thứ " + count));
+            if(checkSoNguyen(inNum)){
+                myArray[count] = inNum;
+                count++;
+            }else{
+                alert("Nhập lại")
+            }
+        }while(count !== inElement)
+        return myArray;
+    }
+    //----------------------------------------
+
+    let myArray = nhapMangSoNguyen();
+    let timV    = parseInt(prompt("Nhập số nguyên V cần xóa: "));
+
+    //check = 2      [1,2,3,4,5] length=5; get-indexV=1;
+    //indexV-1 = value-index2 ; value-index2 = value-index3; value-index3 = value-index4; n-1 = 0
+    for(let i=0; i < myArray.length; i++){
+        if(timV === myArray[i]){
+            let count = i;
+            for(let j=i; j < myArray.length; j++){
+                if(j != myArray.length-1){
+                    myArray[j]= myArray[count +1];
+                    count++;
+                }else{
+                    myArray[j] = 0;
+                }
+            }
+            i--;
+        }
+    }
+    alert("Mảng đã xóa phần tử " + timV + " là: " + myArray);
+
+
+
+
+</script>
+</body>
+</html>
