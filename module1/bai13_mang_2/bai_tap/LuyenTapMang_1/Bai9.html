@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bai9</title>
+</head>
+<body>
+<script>
+//Bài 9- Viết chương trình khởi tạo/nhập vào 2 mảng số nguyên gồm 10 phần tử, gọi là mảng a và b.
+//Mảng c là một mảng được khai báo gồm 20 phần tử số nguyên.
+//Chương trình sẽ lưu các phần tử được nối từ hai mảng b và a vào mảng c. Hiển thị mảng c.
+
+
+    //Hàm kiểm tra số nguyên dương/nguyên âm
+    function checkSoNguyen(num) {
+        if(num%2 === 0 || num%2 === 1 || num%2 === -1){
+            return true;
+        }else{
+            return false;
+        }
+    }
+    //----------------------------------------
+
+    ////Hàm tạo/nhập mảng số nguyên
+    function nhapMangSoNguyen(name){
+        let myArray = [];
+        let count   = 0;
+        let inElement = parseInt(prompt("Nhập số phần tử của mảng " + name));
+        do{
+            let inNum   = parseInt(prompt("Nhập phần từ thứ " + count + " của mảng " + name));
+            if(checkSoNguyen(inNum)){
+                myArray[count] = inNum;
+                count++;
+            }else{
+                alert("Nhập lại")
+            }
+        }while(count !== inElement)
+        return myArray;
+    }
+    //----------------------------------------
+
+    let mangA = nhapMangSoNguyen("a");
+    let mangB = nhapMangSoNguyen("b");
+    let mangC = new Array(20);
+
+    mangC = mangA.concat(mangB);
+
+
+</script>
+</body>
+</html>
