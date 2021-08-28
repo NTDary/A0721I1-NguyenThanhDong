@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bai8</title>
+</head>
+<body>
+<script>
+    //Bài 8- Viết chương trình khởi tạo/nhập vào một mảng số nguyên gồm 10 phần tử.
+    //Chương trình sắp xếp mảng theo thứ tự giảm dần và hiển thị ra mảng đã được sắp xếp.
+
+    //Hàm kiểm tra số nguyên dương/nguyên âm
+    function checkSoNguyen(num) {
+        if(num%2 === 0 || num%2 === 1 || num%2 === -1){
+            return true;
+        }else{
+            return false;
+        }
+    }
+    //----------------------------------------
+
+    //Hàm tạo/nhập mảng số nguyên
+    function nhapMangSoNguyen(){
+        let myArray = [];
+        let count   = 0;
+        let inElement = parseInt(prompt("Nhập số phần tử"));
+        do{
+            let inNum   = parseInt(prompt("Nhập phần từ thứ " + count));
+            if(checkSoNguyen(inNum)){
+                myArray[count] = inNum;
+                count++;
+            }else{
+                alert("Nhập lại")
+            }
+        }while(count !== inElement)
+        return myArray;
+    }
+    //----------------------------------------
+
+    //[1,2,3,4] index0 < index1;
+    //2,1,3,4
+    //3,1,2,4
+    //4,1,2,3
+    //[4,1,2,3] index1 < index2;
+    //4,2,1,3
+    //4,3,1,2
+    //[4,3,1,2] index2 < index3;
+    //4,3,2,1
+    //----------------
+
+    let myArray = nhapMangSoNguyen();
+    let tam;
+    let count = 1;
+    for(let j=0; j < myArray.length ; j++){
+        for(let i=count; i < myArray.length; i++){
+            if(myArray[j] < myArray[i]){
+                tam = myArray[j]
+                myArray[j] = myArray[i];
+                myArray[i] = tam;
+            }
+        }
+        count++;
+    }
+    alert(myArray);
+
+</script>
+</body>
+</html>
