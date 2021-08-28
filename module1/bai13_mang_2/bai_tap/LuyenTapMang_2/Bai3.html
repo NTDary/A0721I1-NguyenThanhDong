@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bai3</title>
+</head>
+<body>
+<!--  Note: Bài này em không biết cách kiểm tra được giá trị nhập vào. Vì giá trị nhập vào luôn là kiểu string-->
+<script>
+    //Bài 3: Viết một chương trình khai báo một mảng ký tự và kích thước của mảng.
+    //Chương trình này đếm số ký tự số trong mảng.
+
+    let myArray = [1,"ab",2,"z",5,6,"4"];
+    let lengthArray = myArray.length;
+    let count = 0;
+    for(let i=0; i < lengthArray; i++){
+        if(typeof(myArray[i]) === "number"){
+            count++;
+        }
+    }
+    alert("Số ký tự số trong mảng là :" + count);
+
+
+</script>
+</body>
+</html>
