@@ -9,23 +9,46 @@
     //Bài 6- Viết chương trình khởi tạo/nhập vào một mảng số nguyên gồm 10 phần tử, nhập/tạo phần tử số nguyên V.
     //Chương trình tìm xem V có nằm trong mảng số nguyên không?
     //Nếu V thuộc mảng số nguyên thì in ra "V is in the array" còn lại in ra "V is not in the array".
-    function nhapMang(){
-        let myArray = [];
-        let count   = 0;
-        let inElement = prompt("Nhập số phần tử");
-        do{
-            let inNum   = prompt("Nhập phần từ thứ" + count);
-            myArray[count] = inNum;
-            count++;
-        }while(count != inElement)
-        return myArray;
-    }
 
+    //Hàm kiểm tra số nguyên dương/nguyên âm
     function checkSoNguyen(num) {
-        if(num%2 === 0){
+        if(num%2 === 0 || num%2 === 1 || num%2 === -1){
             return true;
+        }else{
+            return false;
         }
     }
+    //----------------------------------------
+
+    //Hàm tạo/nhập mảng số nguyên
+    function nhapMangSoNguyen(){
+        let myArray = [];
+        let count   = 0;
+        let inElement = parseInt(prompt("Nhập số phần tử"));
+        do{
+            let inNum   = parseInt(prompt("Nhập phần từ thứ " + count));
+            if(checkSoNguyen(inNum)){
+                myArray[count] = inNum;
+                count++;
+            }else{
+                alert("Nhập lại")
+            }
+        }while(count !== inElement)
+        return myArray;
+    }
+    //----------------------------------------
+
+
+    let myArray = nhapMangSoNguyen();
+    let phantuV = parseInt(prompt("Nhập phần tử V"));
+    let thongBao = "V is not in the array";
+
+    for(let i=0; i < myArray.length; i++){
+        if(phantuV === myArray[i]){
+            thongBao = "V is in the array";
+        }
+    }
+    alert(thongBao);
 
 </script>
 </body>
