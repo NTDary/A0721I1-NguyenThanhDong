@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HamKiemTraSoNguyen</title>
+</head>
+<body>
+<script>
+
+    function isPrime(number){
+        let count = 0;
+        for(let i=1; i <= number; i++){
+            if(number%i === 0 ){
+                count++;
+            }
+        }
+        if(count === 2){
+            return true;
+        }else{
+            return false;
+        }
+
+    }
+
+    let kq = '';
+    for(let j=0; j < 10000; j++){
+        if(isPrime(j)){
+            kq += j + " ";
+        }
+    }
+    document.writeln(kq);
+
+
+</script>
+</body>
+</html>
