@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bai3</title>
+</head>
+<body>
+<script>
+    //Bài 3: Tạo hàm nhận vào hai tham số.s
+    //Nếu giá trị của tham số thứ nhất lớn hơn tham số thứ hai,
+    //hiển thị hộp thoại thông báo cho người dùng.
+    //Nếu giá trị của tham số thứ nhất nhỏ hơn hoặc bằng tham số thứ hai, trả về tổng của hai tham số.
+
+    function compareParameters(num1,num2) {
+        let sum = 0;
+        if(num1 <= num2){
+            sum = parseInt(num1) + parseInt(num2);
+            document.writeln("Tổng 2 số: " + sum);
+        }else{
+            alert(num1 + " lớn hơn " + num2)
+        }
+    }
+    compareParameters(2,2);
+</script>
+</body>
+</html>
