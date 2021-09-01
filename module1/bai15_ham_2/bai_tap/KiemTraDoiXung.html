@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>KiemTraDoiXung</title>
+</head>
+<body>
+<script>
+    //Xây dựng chương trình sử dụng đệ quy để kiểm tra một từ có phải là từ đối xứng không.
+    //Phương thức kiểm tra chuỗi đối xứng có nguyên mẫu như sau:
+    //function isPalindrome(s) ;
+    //Phương thức isPalindrome() trả về true nếu chuỗi truyền vào là chuỗi đối xứng. Còn lại trả về false.
+
+
+
+
+    
+    function isPalindrome(myStr) {
+        let last = myStr.length - 1;
+        let first = 0
+        let flag = false;
+        while (first < last){
+            if(myStr[first] === myStr[last]){
+                flag = true;
+            }
+            first++;
+            last--;
+        }
+        return flag;
+    }
+
+    let myStr = prompt("Nhập chuỗi");
+    alert(isPalindrome(myStr));
+   
+</script>
+</body>
+</html>
