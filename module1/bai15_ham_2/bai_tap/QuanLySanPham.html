@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>QLSP</title>
+</head>
+<body>
+<input id="getProduct" type="text" placeholder="New Product">
+<button onclick="addProduct()">Add</button>
+<table id="test">
+    <title>Display All Product</title>
+    <tr><th>Product Name</th>
+</table>
+<script>
+    var myProduct = ["Sony","Samsung","Nokia"];
+
+    function hienthi() {
+        let tb = '<title>Display All Product</title>\n' +
+            '    <tr><th>Product Name</th>'
+        for(let i=0; i<myProduct.length;i++){
+            tb += '<tr>'+
+                '<td>'+ myProduct[i] +'</td>' +
+                '<td>'+ '<button onclick="editProduct('+ i + ')">Edit</button>' +'</td>' +
+                '<td>'+ '<button onclick="deleteProduct('+ i +')">Delete</button>' +'</td>'
+                +'</tr>'
+            document.getElementById("test").innerHTML = tb;
+        }
+    }
+    function addProduct() {
+        let getProduct = document.getElementById("getProduct");
+        if(getProduct.value == ""){
+            alert("Nhập tên sản phẩm");
+        }else{
+            myProduct.push(getProduct.value);
+            getProduct.value = "";
+        }
+        hienthi();
+    }
+    function editProduct(id) {
+        let editProduct = prompt("Nhập tên sản phẩm mới");
+        if(editProduct == ""){
+            alert("Nhập tên sản phẩm:")
+        }else if(editProduct == null){
+            alert("Bạn hủy sửa tên")
+        }else{
+            myProduct[id] = editProduct;
+        }
+        hienthi();
+    }
+    function deleteProduct(id) {
+        let deleteInfor = confirm("Bạn có muốn xóa sảm phẩm "+ myProduct[id] + ' không?');
+        if(deleteInfor){
+            myProduct.splice(id,1)
+        }else{
+            alert("Bạn không xóa sản phẩm")
+        }
+        hienthi();
+    }
+    hienthi();
+</script>
+</body>
+</html>
