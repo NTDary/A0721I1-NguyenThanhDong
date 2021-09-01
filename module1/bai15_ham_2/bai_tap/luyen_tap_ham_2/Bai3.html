@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bai3</title>
+</head>
+<body>
+<script>
+    //Bài 3: Viết hàm tính giai thừa của một số nguyên bất kỳ được đưa vào. Gọi hàm vừa xây dựng được.
+    //3! = 1*2*3
+
+    function giaiThua(n) { //n là n!
+        let kq = 1;        //Quy ước 0! là 1
+        for(let i=1; i <= n; i++){
+            kq *= i;
+        }
+        return kq;
+    }
+    let n = prompt("Nhập n!");
+    alert(n +"! là: "+giaiThua(n));
+</script>
+</body>
+</html>

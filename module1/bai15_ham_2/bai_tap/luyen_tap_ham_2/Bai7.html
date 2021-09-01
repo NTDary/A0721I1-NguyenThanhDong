@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bai7</title>
+</head>
+<body>
+<script>
+    //Bài 7: Viết hàm truyền vào 2 số nguyên bất kì, thực hiện đổi chỗ hai số nguyên đó.
+
+    function reverseNum(number1,number2) {
+        let tam;
+        tam = number1;
+        number1 = number2;
+        number2 = tam;
+        let kq = "Kết quả đổi chỗ hai số: number1 = " + number1 + " number2 = "+number2;
+        return kq;
+    }
+
+    let inNum1 = prompt("Nhập số thứ 1:");
+    let inNum2 = prompt("Nhập số thứ 2:");
+    alert(reverseNum(inNum1,inNum2));
+
+</script>
+</body>
+</html>

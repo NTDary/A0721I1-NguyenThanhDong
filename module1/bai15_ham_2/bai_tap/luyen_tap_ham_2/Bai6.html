@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bai6</title>
+</head>
+<body>
+<script>
+    //Bài 6: Viết hàm nhận vào một số, kiểm tra xem nếu số đưa vào có phải là nguyên dương không.
+    //Nếu là nguyên dương trả về true, ngược lại trả về false.
+    
+    function checkPositiveInt(number) {
+        if(!isNaN(number)){
+            if(parseFloat(number) > 0 && parseFloat(number)%2 === 0 || parseFloat(number)%2 === 1 ){
+                return true;
+            }else{
+                return false;
+            }
+        }else {
+            return false;
+        }
+    }
+    let myNum = prompt("Nhập một số nguyên");
+    alert(checkPositiveInt(myNum));
+
+</script>
+</body>
+</html>

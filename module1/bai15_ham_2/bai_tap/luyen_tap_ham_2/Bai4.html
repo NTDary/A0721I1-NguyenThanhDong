@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bai4</title>
+</head>
+<body>
+<script>
+    //Bài 4: Viết hàm kiểm tra xem ký tự nhập vào có phải là ký tự số không. Nếu là ký tự số hàm trả về true, ngược lại trả về false.
+    //Dùng hàm isNaN để kiểm tra ký tự số
+
+    function checkNumber(str) {
+        if(isNaN(str)){
+            return false;
+        }else{
+            return true;
+        }
+    }
+    let myStr = prompt("Nhập số")
+    alert(checkNumber(myStr));
+
+
+</script>
+</body>
+</html>

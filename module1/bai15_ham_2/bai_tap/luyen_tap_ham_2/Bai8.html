@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bai8</title>
+</head>
+<body>
+<script>
+    //Bài 8: Viết hàm truyền vào mảng số nguyên bất kỳ, sau đó đảo ngược mảng số nguyên đó.
+
+    //Cách 1:
+    function reverseArray1(myArray) {
+        return myArray.reverse();
+    }
+    //Cách 2:
+    function reverseArray2(myArray) {
+        let tam;
+        let length = myArray.length-1;
+        let count = 0;
+        while (count < length){
+            tam = myArray[count];
+            myArray[count] = myArray[length];
+            myArray[length] = tam;
+            count++;
+            length--;
+        }
+        return myArray;
+    }
+
+    let myArray = [1,2,3,4];
+
+    alert(reverseArray2(myArray));
+
+
+</script>
+</body>
+</html>
