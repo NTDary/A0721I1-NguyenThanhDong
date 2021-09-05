@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>BuildDate</title>
+</head>
+<body>
+<script>
+    //Bước 1: Tạo class Mydate, sử dụng class function
+    class MyDate {
+        //Có 3 property: day, month, year
+        constructor(day,month,year) {
+            this.day    = day;
+            this.month  = month;
+            this.year   = year;
+        }
+        //Bước 2: Tạo method getDay, getMonth, getYear
+        getDay(){
+            return this.day;
+        }
+        getMonth(){
+            return this.month;
+        }
+        getYear(){
+            return this.year;
+        }
+        //Bước 3: Tạo method setDay, setMonth, setYear
+        setDay(day){
+            this.day = day;
+        }
+        setMonth(month){
+            this.month = month;
+        }
+        setYear(year){
+            this.year = year;
+        }
+        //Bước 10: Cài đặt thêm method setDate
+        setDate(day, month, year){
+            this.day    = day;
+            this.month  = month;
+            this.year   = year;
+        }
+        //Bước 11: Thêm method toString
+        toString(){
+            return alert(this.day + "/" + this.month + "/" + this.year);
+        }
+
+    }
+    //Bước 4: Tạo object date từ class MyDate
+    let date = new MyDate(2,2,2020);
+
+    //Bước 5: Tạo biến day, month, year save các giá trị từ object 'date' truy cập đến method 'get'. Sử dụng (.)
+    let day     = date.getDay();
+    let month   = date.getMonth();
+    let year    = date.getYear();
+
+    //Bước 6: Hiển thị
+    alert(day + "/" + month + "/" + year);
+
+    //Bước 8: Đặt giá trị mới bằng medthod 'set'
+    date.setDay(23);
+    date.setMonth(2);
+    date.setYear(1996);
+
+    //Bước 9: Sử dụng lại method get để save lại giá trị mới.
+    alert(date.getDay() + "/" + date.getMonth() + "/" + date.getYear());
+
+    //Bước 12: Gọi method setDate
+    date.setDate('05','09','2021');
+
+    //Bước 13: Gọi method toString
+    date.toString();
+
+
+</script>
+</body>
+</html>
