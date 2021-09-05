@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>BuildCircle</title>
+</head>
+<body>
+<script>
+    class Circle {
+        constructor(radius,color) {
+            this.radius = radius;
+            this.color  = color;
+        }
+        Circle(){
+
+        }
+        getRadius(){
+            return this.radius;
+        }
+        getArea(){
+            return Math.PI * this.radius * this.radius;
+        }
+    }
+
+    let myCircle = new Circle(10,"red");
+    let radius = myCircle.getRadius();
+    let area   = myCircle.getArea();
+
+    alert("radius: " + radius + "; area: " + area);
+
+
+
+</script>
+</body>
+</html>
