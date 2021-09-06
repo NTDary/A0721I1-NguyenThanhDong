@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Funny circles</title>
+</head>
+<body>
+<canvas id="myCanvas" width="1368px" height="768px" style="border:1px solid #d3d3d3;"></canvas>
+<script>
+    class Circle{
+        constructor(x, y, radius) {
+            this.x = x;
+            this.y = y;
+            this.radius = radius;
+        }
+        getRandomHex(){
+            return Math.floor(Math.random()*255);
+        }
+        getRandomColor(){
+            var red = this.getRandomHex();
+            var green = this.getRandomHex();
+            var blue = this.getRandomHex();
+            return "rgb(" + red + "," + blue + "," + green +")";
+        }
+        createCircle(){
+            var ctx     = document.getElementById('myCanvas').getContext("2d");
+            var radius = Math.floor(Math.random() * 80);
+            var x = Math.random() * window.innerWidth;
+            var y = Math.random() * window.innerHeight;
+            var color = this.getRandomColor();
+            var circle= new Circle(500, 500, radius);
+            ctx.beginPath(); //Bắt đầu/thiết lặp nét vẽ
+            ctx.arc(x,y,circle.radius, 0, 2 * Math.PI); //Tạo đường tròn
+            ctx.fillStyle = color;
+            ctx.fill() //Đổ màu cho hình (mặc định màu đen)
+        }
+        createMultipleCircle() {
+            for (var i = 0; i < 30; i++) {
+                this.createCircle();
+            }
+        }
+        // Move(){
+        //
+        // }
+    }
+    let multipleCircle = new Circle().createMultipleCircle();
+    multipleCircle;
+
+
+</script>
+</body>
+</html>
