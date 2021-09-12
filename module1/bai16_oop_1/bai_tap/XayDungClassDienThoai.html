@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Mobile</title>
+</head>
+<body>
+<script>
+    //[Bài tập] Xây dựng lớp mô tả điện thoại
+    class Mobile {
+        constructor(name_mobile) {
+            this.name= name_mobile;
+            this.pin = 90;
+            this.memory_soan_sms = "";
+            this.memory_hopthu_den = [];
+            this.memory_hopthu_dagui = [];
+            this.status = false;
+        }
+        //Kiểm tra trạng thái điện thoại
+        mobileStatus(){
+            if(this.status){
+                return "Điện thoại đang on";
+            }else{
+                return "Điện thoại đang off";
+            }
+        }
+        //Bật/tắt điện thoại
+        mobileOnOff(){
+            this.status = !this.status;
+        }
+        //Kiểm tra tình trạng pin
+        checkPin(){
+            if(this.status){
+                return alert(this.name + ': ' + this.pin + '%') ;
+            }else{
+                return "Vui lòng bật máy"
+            }
+        }
+        //Sạc pin
+        chargingPin(){
+            let thongbao;
+                for(let i = this.pin; i <= 100; i++){
+                    if(this.pin == 100){
+                        thongbao = "Điện thoại đã sạc đầy";
+                        alert(thongbao);
+                        break;
+                    }else{
+                        thongbao = "Điện thoại đang sạc ";
+                        thongbao += this.pin++ +"%";
+                        alert(thongbao);
+                    }
+                }
+        }
+        //Soạn tin
+        soanTin(message){
+            this.memory_soan_SMS = message;
+        }
+        //Gửi tin
+        guiTin(mobile,message){
+            if(this.status){
+                this.soanTin(message);
+                if(this.memory_soan_SMS == "" || this.memory_soan_SMS == undefined){
+                    alert("Gửi không thành công");
+                }else{
+                    var memory = {
+                        'nguoigui': this.name,
+                        'nguoinhan': mobile.name,
+                        'sms': this.memory_soan_SMS
+                    }
+                    this.memory_hopthu_dagui.push(memory);
+                    mobile.nhanTin(memory);
+                    this.memory_soan_SMS = "";
+                    alert("Gửi tin nhắn thành công")
+                }
+                this.pin--;
+            }
+        }
+        //Nhặn tin nhắn
+        nhanTin(message){
+            this.memory_hopthu_den.push(message);
+        }
+        //Hộp thư đến
+        hopthuDen(){
+            if(this.status){
+                let sumSMS = this.memory_hopthu_den.length;
+                let memoryHopThuDen ="";
+                if(this.memory_hopthu_den != ""){
+                    for(let i=0; i<sumSMS; i++){
+                        memoryHopThuDen += "Tin nhắn thứ: " + i +
+                            "\n Người gửi: "+this.memory_hopthu_den[i].nguoigui +
+                            "\n Nội dung: " + this.memory_hopthu_den[i].sms+ "\n";
+                    }
+                    alert("Có "+sumSMS+" tin nhắn gửi đến:\n"+ memoryHopThuDen);
+                }else{
+                    alert(sumSMS + " tin nhắn gửi đến");
+                }
+                this.pin--;
+            }
+
+        }
+        //Hộp thử đã gửi
+        hopthuDaGui(){
+            if(this.status){
+                let sumSMS = this.memory_hopthu_dagui.length;
+                let memoryHopThuDaGui ="";
+                if(this.memory_hopthu_dagui != ""){
+                    for(let i=0; i<sumSMS; i++){
+                        memoryHopThuDaGui += "Tin nhắn thứ: " + i +
+                            "\n Người nhận: "+this.memory_hopthu_dagui[i].nguoinhan +
+                            "\n Nội dung: " + this.memory_hopthu_dagui[i].sms+ "\n";
+                    }
+                    alert("Có "+sumSMS+" tin nhắn đã gửi:\n"+ memoryHopThuDaGui);
+                }else{
+                    alert(sumSMS + " tin nhắn đã gửi");
+                }
+                this.pin--;
+            }
+
+        }
+
+
+    }
+    let nokia = new Mobile('nokiaE72'); //Truyền vào tham số tên điện thoại
+    let apple = new Mobile('iphone12');
+    //nokia.Sac_Pin();
+
+    //Bật điện thoại
+    nokia.mobileOnOff();
+    apple.mobileOnOff();
+    //Gửi tin nhắn từ nokia đến apple vs nội dung 'hello'
+    nokia.guiTin(apple,'hello');
+    nokia.guiTin(apple,'How are you?');
+    //Kiểm tra tin đã gửi
+    nokia.hopthuDaGui();
+    //Kiểm tra hộp thư đến
+    apple.hopthuDen();
+    //kiểm tra hộp thư đã gửi
+    apple.hopthuDaGui();
+    //Kiểm tra %pin
+    nokia.checkPin();
+    apple.checkPin();
+
+
+
+
+</script>
+</body>
+</html>
