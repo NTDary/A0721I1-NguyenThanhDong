@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AdamEva</title>
+</head>
+<body>
+<script>
+    class Apple {
+        constructor() {
+            this.weight = 10;
+        }
+        getWeight(){
+            return this.weight;
+        }
+        decrease(){
+            if(this.getWeight() > 0){
+                this.weight--;
+            }
+        }
+        isEmpty(){
+            if(this.getWeight() == 0){
+                return false;
+            }else{
+                return true;
+            }
+        }
+    }
+
+    class Human{
+        constructor(name,gender,weight) {
+            this.name = name;
+            this.gender = gender;
+            this.weight = weight;
+        }
+        isMale(){
+            return (this.gender == true) ? true : false;
+        }
+        setGender(gender){
+            this.gender = gender;
+        }
+        checkApple(Apple){
+            if(Apple.isEmpty()){
+                alert("Tao con");
+                return Apple.isEmpty();
+            }else {
+                alert("Tao het");
+                return Apple.isEmpty();
+            }
+        }
+        setName(name){
+            this.name = name;
+        }
+        getName(){
+            return this.name;
+        }
+
+        setWeight(weight){
+            this.weight = weight;
+        }
+        getWeight(){
+            return this.weight;
+        }
+
+        say(mess){
+            console.log(this.getName() + " : " +mess);
+        }
+        eatApple(Apple){
+            if(this.checkApple(Apple)){
+                Apple.decrease();
+                this.weight++;
+                console.log("ate apple")
+            }
+        }
+
+    }
+    let apple = new Apple();
+    let adam = new Human("Adam",true,70);
+    let eva = new Human("EVa",false,45);
+    adam.say("Hello baby, i have an apple give for you");
+    eva.say("Tks baby, i'll eat your love right now");
+    eva.eatApple(apple);
+    eva.say("so good i ate it and you, try it");
+    adam.say("oky baby");
+    adam.eatApple(apple);
+    console.log(adam.getWeight());
+    console.log(eva.getWeight());
+    console.log(apple.getWeight());
+
+</script>
+</body>
+</html>

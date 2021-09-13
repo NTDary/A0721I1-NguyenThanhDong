@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>XayDungClassDenPin</title>
+</head>
+<body>
+<script>
+    class Battery {
+        constructor() {
+            this.energy = 0;
+        }
+        setEnergy(energy){
+            this.energy = energy;
+        }
+        getEnergy(){
+            return this.energy;
+        }
+        decreaseEnergy(){
+            if(this.energy > 0){
+                this.energy--;
+            }
+        }
+    }
+    class FlashLamp {
+        constructor(Battery) {
+            this.status = false;
+            this.battery = Battery;
+        }
+        setBattery(battery){
+            this.battery = battery;
+        }
+        getBattery(){
+            return this.battery.getEnergy();
+        }
+        theLight(){
+            if(this.status){
+                this.battery.decreaseEnergy();
+                alert("Lighting");
+            }else{
+                alert("Not lighting");
+            }
+        }
+        turnOnOff(){
+            this.status = !this.status;
+        }
+    }
+
+    let battery = new Battery();
+    battery.setEnergy(10);
+
+    let flashLamp = new FlashLamp();
+    flashLamp.setBattery(battery);
+
+    document.write("Battery info:" + flashLamp.getBattery()+ "<br/>");
+    flashLamp.theLight();
+
+    document.write("Turn On <br/>");
+    flashLamp.turnOnOff();
+    flashLamp.theLight();
+    document.write("Battery info:" + flashLamp.getBattery()+ "<br/>");
+
+    document.write("Turn Off <br/>");
+    flashLamp.turnOnOff();
+    flashLamp.theLight();
+
+</script>
+</body>
+</html>
