@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bai4</title>
+</head>
+<body>
+<script>
+    //Bài 4: Viết một chương trình nhập một số từ bàn phím và in ra màn hình bằng chữ.
+    //Ví dụ 1234, kết quả in ra màn hình là một hai ba bốn.
+
+    let inNumber = prompt("Nhập một số từ bàn phím");
+    let arrayAphabet = ['không','một','hai','ba','bốn','năm','sáu','bảy','tám','chín','mười'];
+    let kq = "";
+    for(let i=0;i<inNumber.length;i++){
+        for(let j=0; j<arrayAphabet.length;j++){
+            if(parseInt(inNumber[i]) === j){
+                kq += arrayAphabet[j] + " ";
+            }
+        }
+    }
+    alert(kq);
+
+
+
+
+</script>
+</body>
+</html>

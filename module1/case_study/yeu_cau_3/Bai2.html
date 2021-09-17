@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bai2</title>
+</head>
+<body>
+<script>
+    //Bài 2: Cho 2 mảng A và B chứa số nguyên.
+    //Tìm ra một mảng đã được sắp xếp chứa các phần tử xuất hiện trong mảng B nhưng lại không xuất hiện A
+    //Chú ý các phần tử giống nhau chỉ tính là 1 lần xuất hiện
+    //Ví dụ:  A=[7,2,5,3,5,3] và B=[7,2,5,4,6,3,5,3] thì kết quả missingValue(A, B) = [4, 6]
+
+    const arrayA=[7,2,5,3,5,3];
+    let arrayB=[7,2,5,4,6,3,5,3];
+
+    // let C = [...new Set(A)];
+    // alert(C)
+
+    // const C = B.filter(number => {
+    //     if(A.indexOf(number)=== -1){
+    //         return number
+    //     }
+    // });
+    // console.log(C);
+
+    function Check(number){
+        if(arrayA.indexOf(number) === -1){
+            return number
+        }
+    }
+    const arrayC = arrayB.filter(Check);
+     document.write(arrayC);
+     console.log(arrayC);
+
+
+
+</script>
+</body>
+</html>

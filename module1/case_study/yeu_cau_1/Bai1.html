@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bai1</title>
+</head>
+<body>
+<script>
+    //Bài 1: Vẽ hình chữ nhật rỗng chiều dài n và chiều rộng m theo hình dưới đây.
+
+    let n = 4;
+    let m = 5;
+
+    for(let i = 0; i<n; i++){
+        for(let j=0; j<m;j++){
+            if(i==0 || i==(n-1) || j==0 || j==(m-1)){
+                document.writeln('*')
+            }else {
+                document.writeln('&nbsp&nbsp')
+            }
+        }
+        document.writeln('<br/>');
+        document.writeln('<br/>');
+    }
+
+</script>
+</body>
+</html>

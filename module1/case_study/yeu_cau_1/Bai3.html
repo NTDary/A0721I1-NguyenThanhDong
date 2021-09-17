@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bai3</title>
+</head>
+<body>
+<script>
+    //Bài 3: Vẽ tam giác cân đặc có chiều cao h. Ví dụ: h = 5
+    //-----*------
+    //----***-----  x2 + 1
+    //---*****
+    //--*******
+    //-*********
+
+    let h = 5;
+    let count = h;
+    let m = 0;
+    for(let i=0; i<h; i++){
+        for(let j=0; j<count;j++){
+            document.writeln('&nbsp&nbsp');
+        }
+        count--;
+        for(let k=0;k<=m;k++){
+            document.writeln('*');
+        }
+        m+=2;
+        document.writeln('<br/>');
+        document.writeln('<br/>');
+    }
+
+
+</script>
+</body>
+</html>

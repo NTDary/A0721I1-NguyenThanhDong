@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bai5</title>
+</head>
+<body>
+<div id="display"></div>
+<script>
+    //Bài 5: Giả sử menu của chúng ta có các loại thức uống như sau:
+    //Cafe
+    //Cam vắt
+    //Nước ép cà rốt
+    //Nước ép cà chua
+    //Nước lọc
+    //Nước dừa
+    //Viết một chương trình gọi thức uống đơn giản.
+    // Gợi ý: Trước tiên in ra màn hinh danh sách các loại thức uống cho người dùng chọn lựa
+    //Đánh dấu theo thứ tự 1 (cafe), 2 (cam vắt), 3(nước ép cà rốt), 4(nước ép cà chua), 5(nước lọc), 6(nước dừa), 7(thoát gọi món)
+    //Khi người dùng lựa chọn 1 trong số các thức uống,
+    //chương trình sẽ hiện đơn giá của thức uống đó và cho phép người dùng nhập số lượng.
+    //Cuối cùng hiển thị tổng số tiền người dùng cần phải trả.
+    //Sử dụng vòng lặp do while lặp lại cho người dùng đặt thức uống,
+    //kết thúc quá trình đặt thức uống khi người nhấn số 7
+
+    //let drinkMenu = ['Cafe','Cam vắt','Nước ép cà rốt','Nước ép cà chua','Nước lọc','Nước dừa'];
+
+    let drinkMenu = [
+        ['Cafe',15000],
+        ['Cam vắt',30000],
+        ['Nước ép cà rốt',20000],
+        ['Nước ép cà chua',20000],
+        ['Nước lọc',10000],
+        ['Nước dừa',25000]
+    ];
+    let userOder = new Array();
+    let totalOder = 0;
+    function display(){
+        let table =
+            '<table>' +
+            '<th><label id="test">Menu</label></th>'
+
+            //Hiển thị danh sách menu
+            for(let i=0; i< drinkMenu.length ;i++){
+                table +=
+                    '<tr>' +
+                    '<td>'+ i +" "+drinkMenu[i][0] + '</td>'+
+                    '</tr>'
+            }
+            //-------------------------------
+            table +=
+                '<tr><th><button onclick="chooseProduct()">Đặt món</button></th></tr>'+
+                '<tr><th><br/></th></tr>' +
+                '<tr>' +
+                '<th >Product Oder:</th>' +
+                '<th >SL</th>' +
+                '<th >Price</th>' +
+                '</tr>'
+
+            //Hiển thị dánh sách order
+            for(let i =0; i< userOder.length; i++){
+                table +=
+                    '<tr>' +
+                    '   <td><label id="product">' + userOder[i][0] + '</label></td>' +
+                    '   <td><label id="quality">' + userOder[i][1]+ '</label></td>' +
+                    '   <td><label id="price">' + userOder[i][2] +"VND"+ '</label></td>' +
+                    '</tr>'
+
+                //Tổng bill
+                totalOder += userOder[i][2];
+            }
+            //-------------------------------
+            //Tổng giá các món order
+
+            table +=
+                '<tr>' +
+                '<th>Total:</th>' +
+                '   <td><label id="total">'+ totalOder + "VND" +'</label></td>' +
+                '</tr>' +
+                '</table>'
+
+        document.getElementById('display').innerHTML = table;
+
+    }
+
+    //Hàm xử lý order và tính tổng bill
+    function chooseProduct() {
+        let totalOder = 0;
+        let idProduct;
+
+        //Lặp lại lựa chọn id món và số lượng, nếu nhập 7 sẽ thoát lựa chọn món
+        do{
+            //Nhập id món trong menu
+            idProduct = prompt("Nhập số thứ tự món muốn chọn:");
+
+            //Kiểm tra id lựa chọn nếu có trong danh sách menu thì thực hiện công việc tiếp theo
+            if(idProduct < drinkMenu.length && idProduct !== null && idProduct !== ''){
+
+                //Nhập số lượng món muốn đặt
+                let quantilyProduct = prompt("Đơn giá "+ drinkMenu[idProduct][0]+" là "+ drinkMenu[idProduct][1] +"\n" +
+                    "Nhập số lượng muốn mua");
+
+                //Tổng tiền = số lượng x đơn giá
+                let totalProduct = quantilyProduct * drinkMenu[idProduct][1];
+
+                //Push các món order vào mảng userOrder
+                userOder.push([drinkMenu[idProduct][0],quantilyProduct,totalProduct]);
+
+            }
+        }while (idProduct !== '7')
+        //Hiển thị lại danh sách món và món order
+        display();
+
+    }
+    display()
+
+
+
+</script>
+</body>
+</html>

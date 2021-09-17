@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bai1</title>
+</head>
+<body>
+<script>
+    //Bai1: Cho mảng a chỉ chứa các số nguyên
+    //Xây dựng mảng b là prefix sums của mảng a cụ thể theo công thức:
+    //b[0]   = a[0]
+    //b[1]   = a[0] + a[1]
+    //b[2]   = a[0] + a[1] + a[2]
+    //...
+    //b[n - 1] = a[0] + a[1] + ... + a[n - 1]
+    //với n là độ dài của mảng a.
+    //    Ví dụ: Cho a = [1, 2, 3], thì kết quả prefixSums(a) = [1, 3, 6].
+    //    Mảng b được tạo ra: [1, 1 + 2, 1 + 2 + 3] = [1, 3, 6]
+
+
+    let arrayA = [1,2,3];
+    let lengthA = arrayA.length;
+    let arrayB = new Array(3);
+    let tam = 0;
+    for(let i = 0; i<lengthA; i++){
+        tam = tam + arrayA[i];
+        arrayB[i] = tam;
+    }
+    alert(arrayB);
+
+
+</script>
+</body>
+</html>

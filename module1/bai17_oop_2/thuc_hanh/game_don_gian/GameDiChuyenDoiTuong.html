@@ -27,20 +27,17 @@
             this.left += 20;
             console.log('ok: ' + this.left);
         }
+        // start(){
+        //     if(this.left < window.innerWidth - this.size){
+        //         this.moveRight();
+        //     }
+        //     document.getElementById('game').innerHTML = this.getHeroElement();
+        //     setTimeout(this.start(), 5000);
+        // }
+
     }
-
-    // class start {
-    //     constructor(hero) {
-    //         if(hero.left < window.innerWidth - hero.size){
-    //             hero.moveRight();
-    //         }
-    //         document.getElementById('game').innerHTML = hero.getHeroElement();
-    //         setTimeout(new start(), 500);
-    //     }
-    //
-    // }
-
     var hero = new Hero('pikachu.png', 20, 30, 200);
+
 
     function start(){
         if(hero.left < window.innerWidth - hero.size){

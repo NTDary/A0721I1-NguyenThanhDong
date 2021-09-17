@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bai2</title>
+</head>
+<body>
+<script>
+    //Bài 2: Cho xâu kí tự. Hãy đếm số lượng kí tự khác nhau trong xâu đó
+    //Ví dụ: s = "cabca", thì kết quả differentSymbolsNaive(s) = 3.
+	//=> Có 3 kí tự khác nhau là a, b và c.
+    //cabe
+    //i=0 => c
+    //j=1 => a
+    //i != j
+    //i=1 => a
+    //j=2 => b
+
+    let myStr = "cabca";
+    myStr = [...new Set(myStr)];
+    console.log(myStr);
+    alert(myStr);
+
+    // let myStr1 = "cabca";
+    // myStr1 = [new Set(myStr1)];
+    // console.log(myStr1);
+    // alert(myStr1);
+
+    let dem = 1;
+    let count = 0;
+    for(let i = 0; i<myStr.length;i++){
+        for(let j=dem; j<myStr.length;j++){
+            if(myStr[i] !== myStr[j]){
+                count++
+            }
+        }
+        dem++
+    }
+    document.write("Số ký tự khác nhau trong xâu là: " + count)
+
+</script>
+</body>
+</html>
