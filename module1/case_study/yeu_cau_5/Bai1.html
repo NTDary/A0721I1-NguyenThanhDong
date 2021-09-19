@@ -8,12 +8,41 @@
 <script>
     //Bài 1: Viết hàm tính tổng các số chẵn trong ma trận có kích thước m*n. Với m, n là các số nhập từ bàn phím.
 
-    let myArray = [
-        [1,2,4,5],
-        [6,7,8,9],
-        [2,4,6,8]
-    ]
-    console.log(myArray);
+
+
+    function nhapMang(m,n){
+        let chieuDai  = m;
+        let chieuRong = n;
+        let myArray = new Array();
+        for(let i=0; i<chieuRong; i++){
+            myArray[i] = [];
+            for(let j=0; j<chieuDai;j++){
+                myArray[i][j] = prompt("Nhập number vị trí ["+i+"] [" +j+"] ");
+            }
+        }
+        return myArray;
+    }
+    function tongSoChan(array){
+        let kq = 0;
+        for(let i=0;i<array.length; i++){
+            for(let j=0; j<array.length;j++){
+                if(array[i][j]%2 === 0){
+                    kq += parseInt(array[i][j]);
+                }
+            }
+        }
+        alert(kq);
+    }
+    let chieuDaiArray = parseInt(prompt('Nhập chiều dài mảng'));
+    let chieuRongArray = parseInt(prompt('Nhập chiều rộng mảng'));
+
+    let myArray = nhapMang(chieuDaiArray,chieuRongArray);
+    tongSoChan(myArray);
+
+
+
+
+
 </script>
 </body>
 </html>

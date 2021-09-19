@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bai3</title>
+</head>
+<body>
+<script>
+    //Bài 3: Viết hàm tìm giá trị lớn nhất, nhỏ nhất trong mảng 2 chiều
+
+    function checkMaxMin() {
+        let myArray = [
+            [3,5,2],
+            [7,1,1],
+            [2,5,2]
+        ]
+        let maxNumber = 0;
+        let minNumber = myArray[0][0];
+        for(let i=0;i<myArray.length;i++){
+            for(let j=0;j<myArray.length;j++){ //1 1 2 3 0
+                if(maxNumber < myArray[i][j]){
+                    maxNumber = myArray[i][j]
+                }else if(minNumber > myArray[i][j]){
+                    minNumber = myArray[i][j];
+                }
+            }
+        }
+        document.write("Max: " + maxNumber + "<br/>");
+        document.write("Min: " + minNumber);
+    }
+    checkMaxMin();
+</script>
+</body>
+</html>

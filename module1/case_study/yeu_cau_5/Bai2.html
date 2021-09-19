@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bai2</title>
+</head>
+<body>
+<script>
+//Bài 2: Viết hàm liệt kê các số nguyên tố trong mảng 2 chiều, đếm các số nguyên tố có trong mảng đó.
+
+    function nhapMang2Chieu(chieuDai,chieuRong) {
+        let myArray = new Array();
+        for(let i=0; i<chieuRong; i++){
+            myArray[i] = [];
+            for(let j=0; j<chieuDai;j++){
+                myArray[i][j] = prompt("Nhập number vị trí ["+i+"] [" +j+"] ");
+            }
+        }
+        return myArray;
+    }
+    function checkSoNguyenTo(number) { //number: số cần check
+        let count = 0;
+        for(let i=2; i<=number; i++){
+            if(number%i === 0){
+                count++;
+            }
+        }
+        if(count === 1){
+            return true;
+        }else{
+            return false;
+        }
+    }
+    function lietKeSNT(array) {
+        let soNguyenTo = new Array();
+        for(let i=0;i<array.length;i++){
+            for(let j=0; j<array.length;j++){
+                if(checkSoNguyenTo(array[i][j])){
+                    soNguyenTo.push(array[i][j]);
+                }
+            }
+        }
+        document.write("Số lượng nguyên tố có trong mảng là: "+soNguyenTo.length + "<br/>");
+        document.write(soNguyenTo);
+    }
+
+    let myArray = nhapMang2Chieu(3,3);
+    lietKeSNT(myArray);
+
+</script>
+</body>
+</html>
