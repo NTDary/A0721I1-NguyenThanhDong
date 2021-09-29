@@ -5,6 +5,14 @@
     <title>VietLot</title>
 </head>
 <body>
+<h1>Xổ số CodeGym</h1>
+<div id="display"></div>
+<p id="test"></p>
+<br/>
+<br/>
+<button type="button" onclick="muaVe()">Mua Vé</button>
+<button type="button" onclick="ketQua()">Xem kết quả</button>
+
 <script>
     //Xây dựng ứng dụng mua vé số VietLot
     //Mỗi vé là 6 số nguyên dương tương ứng 6 ô tròn, mua được tối đa 4 vé.
@@ -22,7 +30,40 @@
     //Khi KH may mắn trúng giải nào thì hệ thống sẽ hiển thị kết quả là số tiền sẽ nhận được tương ứng (HV tự defined)
     //Khi KH không trúng giải nào thì hệ thống hiển thị thông báo “Chúc bạn may mắn lần sau”
 
-    
+    class VietLot {
+        constructor() {
+        }
+
+        disPlay() {
+            let display = '<input list="numbers" name="1" size="5px">' +
+                '<datalist id="numbers">';
+            for (let i = 0; i < 100; i++) {
+                display += '<option id="numbers" value="' + i + '">' + " "
+            }
+            display += '</datalist>'
+            return document.getElementById("display").innerHTML = display;
+        }
+
+        muaVe() {
+            let veVietLot = new Array();
+            let chonVe = prompt("Bạn có 2 lựa chọn: \n1.Bạn muốn chọn số.\n2.Hệ thống tự random")
+            if (chonVe === '1') {
+
+            }
+        }
+
+        getValue() {
+            let getID = document.getElementsByName('1')[0];
+            getID.addEventListener('input', function () {
+                document.getElementById('test').innerHTML = this.value;
+            })
+        }
+    }
+
+    // let vietLot = new VietLot();
+    // vietLot.disPlay();
+    // vietLot.getValue();
+
 
 </script>
 </body>

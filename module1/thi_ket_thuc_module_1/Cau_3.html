@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Câu 3</title>
+</head>
+<body>
+<h1 style="text-align: center">Quản Lý Sách</h1>
+<div id="display" style="text-align: center"></div>
+<script>
+    //Câu 3:
+    //Viết chương trình quản lý Sách gồm các thuộc tính như sau:
+    // - Mã số sách (string) gồm 5 ký tự, trong đó ký tự đầu là nhận giá trị từ 1 → 5, 4 ký tự còn lại nhận giá trị từ 0 → 9;
+    // - Tên sách (string)
+    // - Năm xuất bản (number): giới hạn 4 số
+    // - Số quyển (number);
+    // - Tình trạng (boolean): true – nếu các quyển sách chưa cho mượn hết, false – các quyển sách đã cho mượn hết.
+    // *Lưu ý: nếu thêm hoặc mượn đối tượng sách thì tăng, giảm thuộc tính số quyển,
+    // nếu thuộc tính số quyển = 0 thì đổi tính trạng của quyển sách đó sang false.
+    // Giao diện trang list:
+
+    class Book {
+        constructor(maSach, tenSach, namXuatBan, soLuong, tinhTrang) {
+            this.maSoSach = maSach;
+            this.tenSach = tenSach;
+            this.soLuong = soLuong;
+            this.namXuatBan = namXuatBan;
+            this.tinhTrang = tinhTrang;
+        }
+
+        getMaSach() {
+            return this.maSoSach;
+        }
+
+        getTenSach() {
+            return this.tenSach;
+        }
+
+        getNamXuatBan() {
+            return this.namXuatBan;
+        }
+
+        getSoLuong() {
+            return this.soLuong;
+        }
+
+        getTinhTrang() {
+            return this.tinhTrang;
+        }
+        themSoLuong(soLuong){
+            this.soLuong = soLuong;
+        }
+    }
+
+    let book1 = new Book("11110", "Toan", 2000, 2, true)
+    let listBook = [book1];
+    disPlay();
+
+    function disPlay() {
+        let tableString = '<table border="1">' +
+            '<tr>' +
+            '<th>Mã số sách</th>' +
+            '<th>Tên sách</th>' +
+            '<th>Năm xuất bản</th>' +
+            '<th>Số quyển</th>' +
+            '<th>Tình trạng</th>' +
+            '</tr>'
+        for (let i = 0; i < listBook.length; i++) {
+            tableString += '<tr>' +
+                '<td>' + listBook[i].getMaSach() + '</td>' +
+                '<td>' + listBook[i].getTenSach() + '</td>' +
+                '<td>' + listBook[i].getNamXuatBan() + '</td>' +
+                '<td>' + listBook[i].getSoLuong() + '</td>' +
+                '<td>' + listBook[i].getTinhTrang() + '</td>' +
+                '<tr/>'
+        }
+        tableString +=
+            '<table/>' +
+            '<br/>' +
+            '<button onclick="addOldBook()">Thêm sách đã có</button>' +
+            '<button onclick="addNewBook()">Thêm sách mới</button>' +
+            '<button onclick="muonSach()">Mượn sách</button>' +
+            '<button onclick="displayListBook()">Hiển thị sách nhiều nhất</button>'
+
+        document.getElementById('display').innerHTML = tableString;
+    }
+
+    function addNewBook() {
+        let maSach = prompt("Nhập mã sách");
+        let tenSach = prompt("Nhập tên sách");
+        let namXuatBan = prompt("Nhập năm xuất bản");
+        let soLuong = prompt("Nhập số lượng");
+        let trinhTrang = true;
+        let newBook = new Book(maSach, tenSach, namXuatBan, soLuong, trinhTrang);
+        listBook.push(newBook);
+        disPlay();
+    }
+    function addOldBook() {
+
+        display();
+    }
+
+
+</script>
+</body>
+</html>

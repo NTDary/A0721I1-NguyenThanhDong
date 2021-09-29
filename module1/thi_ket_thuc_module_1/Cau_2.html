@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Câu 2</title>
+</head>
+<body>
+<script>
+    //Câu 2:
+    //Viết hàm nhập vào hai số nguyên dương,
+    //kiểm tra xem 2 số đó có phải là cặp số thân thiết hay không ,
+    //trả về true nếu 2 số đó là cặp số thân thiết và false nếu không phải là cặp số thân thiết.
+
+    function kiemtraSoThanThiet(numberA,numberB) {
+        let tongUocA = 0;
+        for (let i = 1; i < numberA; i++) {
+            if (numberA % i === 0) {
+                tongUocA += i;
+            }
+        }
+        if (tongUocA === numberB) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    let numberA = prompt("Nhập number A:")
+    let numberB = prompt("Nhập number B:")
+
+    alert(kiemtraSoThanThiet(numberA, numberB));
+
+
+</script>
+</body>
+</html>

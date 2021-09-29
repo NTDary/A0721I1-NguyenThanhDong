@@ -13,50 +13,59 @@
     //Hàm main sử dụng các hàm này để nhập xâu ký tự từ bàn phím,
     //in ra xâu trước và sau khi chuẩn hóa, 1 từ dài nhất trong xâu đó.
 
-   class XauKyTu {
-       constructor(myStr) {
-           this.myStr = myStr;
-       }
-       chuanHoa(){
-           //Cách 1:
-                //document.write( this.myStr.replace(/' '/g, '') );
-           //Cách 2:
-                //document.write( this.myStr.split(' ').join(' '));
-           //input: "tRuong   TaN  HAI"
-           //output: "Truong   Tan  Hai"
+    class XauKyTu {
+        constructor(myStr) {
+            this.myStr = myStr;
+        }
+
+        chuanHoa() {
+            //Cách 1:
+            //document.write( this.myStr.replace(/' '/g, '') );
+            //Cách 2:
+            //document.write( this.myStr.split(' ').join(' '));
+            //input: "tRuong   TaN  HAI"
+            //output: "Truong   Tan  Hai"
+            let myStr2 = new Array();
             var myStr1 = this.myStr.toLowerCase().split(' ');
-            for(var i=0; i<myStr1.length;i++){
+            for (var i = 0; i < myStr1.length; i++) {
                 myStr1[i] = myStr1[i].charAt(0).toUpperCase() + myStr1[i].substring(1);
             }
-           //Xóa kí tự '' trong mảng: kiểm tra phần tử !== '' thì đưa vào lại mảng myStr1
-            myStr1 = myStr1.filter(element => element.trim() !== '');
-            return myStr1.join(' ');
-       }
-       xauKyTuDaiNhat(str){
-           let myStr1 = str.split(' ');
-           let max = 0;
-           let maxStr;
-           for(let i = 0; i<myStr1.length;i++){
-               if(max < myStr1[i].length){
-                   max = myStr1[i].length;
-                   maxStr = "Xâu kí tự dài nhất là: "+myStr1[i];
-               }
-           }
-           return maxStr;
-       }
-   }
-    //Nhập từ bàn phím xâu kí tự
-   let inString = prompt("Nhập xâu kí tự");
-   document.write("Xâu kí tự chưa chuẩn hóa: " + inString + "<br/>");
-   //Khai báo chuỗi kí tự mới từ class XauKyTu
-   let xauKyTu = new XauKyTu(inString);
-   //Chuẩn hóa xâu kí tự
-   let chuanHoa = xauKyTu.chuanHoa();
-   document.write("Xâu kí tự đã chuẫn hóa: " + chuanHoa + "<br/>");
-   //Kiểm tra xâu dài nhất trong chuỗi
-   let xauDaiNhat = xauKyTu.xauKyTuDaiNhat(chuanHoa);
-   document.write(xauDaiNhat);
+            //Xóa kí tự '' trong mảng: kiểm tra phần tử !== '' thì đưa vào lại mảng myStr1
+            console.log(myStr1); // [Truong,,,,,Tan,,,Hai]
+            for (let j = 0; j < myStr1.length; j++) {
+                if (myStr1[j] !== '') {
+                    myStr2.push(myStr1[j]);
+                }
+            }
+            //myStr1 = myStr1.filter(element => element.trim() !== '');
+            return myStr2.join(' ');
+        }
 
+        xauKyTuDaiNhat(str) {
+            let myStr1 = str.split(' ');
+            let max = 0;
+            let maxStr;
+            for (let i = 0; i < myStr1.length; i++) {
+                if (max < myStr1[i].length) {
+                    max = myStr1[i].length;
+                    maxStr = "Xâu kí tự dài nhất là: " + myStr1[i];
+                }
+            }
+            return maxStr;
+        }
+    }
+
+    //Nhập từ bàn phím xâu kí tự
+    let inString = prompt("Nhập xâu kí tự");
+    document.write("Xâu kí tự chưa chuẩn hóa: " + inString + "<br/>");
+    //Khai báo chuỗi kí tự mới từ class XauKyTu
+    let xauKyTu = new XauKyTu(inString);
+    //Chuẩn hóa xâu kí tự
+    let chuanHoa = xauKyTu.chuanHoa();
+    document.write("Xâu kí tự đã chuẫn hóa: " + chuanHoa + "<br/>");
+    //Kiểm tra xâu dài nhất trong chuỗi
+    let xauDaiNhat = xauKyTu.xauKyTuDaiNhat(chuanHoa);
+    document.write(xauDaiNhat);
 
 
 </script>

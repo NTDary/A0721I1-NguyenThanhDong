@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="button" onclick="addNewStudent()" value="AddNewStudent">
+<p id="result"></p>
+<!--// tạo 1 class student => viết chương trình quản lý student ( hiện thị, thêm, sửa ,xóa)-->
+<script>
+    class Student {
+        constructor(id, name, age) {
+            this.id = id;
+            this.name = name;
+            this.age = age;
+        }
+
+        // tạo setter và getter
+        setId(id) {
+            this.id = id;
+        }
+
+        getId() {
+            return this.id;
+        }
+
+        setName(name) {
+            this.name = name;
+        }
+
+        getName() {
+            return this.name;
+        }
+
+        setAge(age) {
+            this.age = age;
+        }
+
+        getAge() {
+            return this.age;
+        }
+
+        // tạo 1 hàm toString (biểu diễn đối tượng dưới dạng string)=> yêu cầu thì tạo
+        toString() {
+            return "id :" + this.id + " name: " + this.name + " age: " + this.age;
+        }
+
+    }
+
+    // viết chương trình quản lý
+    let student1 = new Student("SV001", "Nguyễn Văn A", 18);
+    let student2 = new Student("SV002", "Nguyễn Văn B", 18);
+    let student3 = new Student("SV003", "Nguyễn Văn C", 18);
+    let studentList = [student1, student2, student3];
+    display();
+
+    function addNewStudent() {
+        let id = prompt("nhập mã sinh viên");
+        let name = prompt("nhập tên sinh viên");
+        let age = prompt("nhập tuổi sinh viên");
+        let newStudent = new Student(id, name, age);
+        studentList.push(newStudent);
+        display();
+    }
+
+    function display() {
+        let tableString = '<table border="1">\n' +
+            '    <tr>\n' +
+            '        <th>STT</th>\n' +
+            '        <th>id</th>\n' +
+            '        <th>name</th>\n' +
+            '        <th>age</th>\n' +
+            '        <th>edit</th>\n' +
+            '        <th>delete</th>\n' +
+            '    </tr>';
+        for (let i = 0; i < studentList.length; i++) {
+            tableString += ' <tr>\n' +
+                '        <td>' + (i + 1) + '</td>\n' +
+                '        <td>' + studentList[i].getId() + '</td>\n' +
+                '        <td>' + studentList[i].getName() + '</td>\n' +
+                '        <td>' + studentList[i].getAge() + '</td>\n' +
+                '        <td><input type="button" value="edit" onclick="editStudent(' + i + ')"></td>\n' +
+                '        <td><input type="button" value="delete" onclick="deleteStudent(' + i + ')"></td>\n' +
+                '    </tr>'
+        }
+        tableString += '</table>'
+        document.getElementById("result").innerHTML = tableString;
+    }
+
+    function editStudent(index) {
+        let flag = true;
+        while (flag) {
+            let chooseEditProperty =prompt("Chọn thuộc tính cần sửa: \n" +
+                "1. Id \n" +
+                "2.Name\n" +
+                "3.Age\n" +
+                "4.OK");
+            let choose =parseInt(chooseEditProperty);
+            switch (choose) {
+                case 1:
+                    let newId = prompt("nhập id cần sửa");
+                    studentList[index].setId(newId);
+                    break;
+                case 2:
+                    let newName = prompt("nhập tên cần sửa");
+                    studentList[index].setName(newName);
+                    break;
+                case 3:
+                    let newAge = prompt("nhập tuổi cần sửa");
+                    studentList[index].setAge(newAge);
+                    break;
+                case 4:
+                    flag = false;
+                    break;
+                default:
+                    if (chooseEditProperty==null){
+                        flag=false;
+                    }else {
+                        alert("bạn đã chọn sai thuộc tính");
+                    }
+            }
+        }
+        display();
+
+
+    }
+
+    function deleteStudent(index) {
+        let confDelete = confirm("Bạn có muốn xóa sinh viên có tên: " + studentList[index].getName() + "?")
+        if (confDelete) {
+            studentList.splice(index, 1);
+        } else {
+            alert("bạn đã không xóa")
+        }
+        display();
+    }
+</script>
+</body>
+</html>

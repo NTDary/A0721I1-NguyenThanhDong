@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Câu1</title>
+</head>
+<body>
+<script>
+    //Câu 1: Nhập từ bàn phím mảng số nguyên gồm n phần tử (n<=50), Hiển thị ra màn hình trung bình cộng các số lẻ ở vị trí chẵn.
+    //Ví dụ: [1,2,3,4,6,7]. Kết quả sau khi thực hiện là: (1+3)/2 =  2
+    //Thang điểm
+    //Thêm được phần tử vào mảng	10
+    //Hiển thị ra được mảng	10
+    //Kiểm tra được số lượng phần tử nhập vào <=50	10
+    //Hiển thị ra trung bình cộng các số lẻ ở vị trí chẵn	10
+    //Viết mã sạch	2
+
+    let nhapNPhanTu = prompt("Nhập chiều dài của mảng:")
+    let myArray = new Array();
+    let avgArray = [];
+    let trungbinhcongArray = 0;
+    if (nhapNPhanTu <= 50) {
+        for (let i = 0; i < nhapNPhanTu; i++) {
+            myArray[i] = prompt("Nhập phần tử thứ " + i);
+        }
+        alert("Mảng vừa nhập là: " + myArray);
+        for (let j = 0; j < myArray.length; j = j + 2) {
+            if (myArray[j] % 2 !== 0) {
+                avgArray.push(myArray[j]);
+                trungbinhcongArray += parseInt(myArray[j]);
+            }
+        }
+        trungbinhcongArray = parseInt(trungbinhcongArray) / parseInt(avgArray.length)
+        alert("Mảng số lẽ ở vị trí chẵn là: " + avgArray);
+        alert("Trung bình cộng mảng số lẽ ở vị trí chẵn là: " + trungbinhcongArray);
+    } else {
+        alert("Vui lòng nhập chiều dài mảng <= 50");
+        nhapNPhanTu = prompt("Nhập chiều dài của mảng:");
+    }
+
+
+</script>
+</body>
+</html>

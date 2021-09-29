@@ -10,20 +10,18 @@
     //Ví dụ 1234, kết quả in ra màn hình là một hai ba bốn.
 
     let inNumber = prompt("Nhập một số từ bàn phím");
-    let arrayAphabet = ['không','một','hai','ba','bốn','năm','sáu','bảy','tám','chín','mười'];
+    let arrayAphabet = ['không', 'một', 'hai', 'ba', 'bốn', 'năm', 'sáu', 'bảy', 'tám', 'chín', 'mười'];
     let kq = "";
-    for(let i=0;i<inNumber.length;i++){
-        for(let j=0; j<arrayAphabet.length;j++){
-            if(parseInt(inNumber[i]) === j){
+    for (let i = 0; i < inNumber.length; i++) {
+        for (let j = 0; j < arrayAphabet.length; j++) {
+            if (parseInt(inNumber[i]) === j) {
                 kq += arrayAphabet[j] + " ";
             }
         }
     }
     alert(kq);
 
-
-
-
+    //ctrl+alt+l
 </script>
 </body>
 </html>
