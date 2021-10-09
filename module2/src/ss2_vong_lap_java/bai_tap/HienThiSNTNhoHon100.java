@@ -7,7 +7,6 @@ public class HienThiSNTNhoHon100 {
                 System.out.print(i + " ");
             }
         }
-
     }
 
     public static boolean findSNT(int n) {
