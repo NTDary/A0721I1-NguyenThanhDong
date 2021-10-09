@@ -13,45 +13,47 @@
 
     //Hàm kiểm tra số nguyên dương/nguyên âm
     function checkSoNguyen(num) {
-        if(num%2 === 0 || num%2 === 1 || num%2 === -1){
+        if (num % 2 === 0 || num % 2 === 1 || num % 2 === -1) {
             return true;
-        }else{
+        } else {
             return false;
         }
     }
+
     //----------------------------------------
 
     //Hàm tạo/nhập mảng số nguyên
-    function nhapMangSoNguyen(){
+    function nhapMangSoNguyen() {
         let myArray = [];
-        let count   = 0;
+        let count = 0;
         let inElement = parseInt(prompt("Nhập số phần tử"));
-        do{
-            let inNum   = parseInt(prompt("Nhập phần từ thứ " + count));
-            if(checkSoNguyen(inNum)){
+        do {
+            let inNum = parseInt(prompt("Nhập phần từ thứ " + count));
+            if (checkSoNguyen(inNum)) {
                 myArray[count] = inNum;
                 count++;
-            }else{
+            } else {
                 alert("Nhập lại")
             }
-        }while(count !== inElement)
+        } while (count !== inElement)
         return myArray;
     }
+
     //----------------------------------------
 
     let myArray = nhapMangSoNguyen();
-    let timV    = parseInt(prompt("Nhập số nguyên V cần xóa: "));
+    let timV = parseInt(prompt("Nhập số nguyên V cần xóa: "));
 
     //check = 2      [1,2,3,4,5] length=5; get-indexV=1;
     //indexV-1 = value-index2 ; value-index2 = value-index3; value-index3 = value-index4; n-1 = 0
-    for(let i=0; i < myArray.length; i++){
-        if(timV === myArray[i]){
+    for (let i = 0; i < myArray.length; i++) {
+        if (timV === myArray[i]) {
             let count = i;
-            for(let j=i; j < myArray.length; j++){
-                if(j != myArray.length-1){
-                    myArray[j]= myArray[count +1];
+            for (let j = i; j < myArray.length; j++) {
+                if (j != myArray.length - 1) {
+                    myArray[j] = myArray[count + 1];
                     count++;
-                }else{
+                } else {
                     myArray[j] = 0;
                 }
             }
@@ -59,8 +61,6 @@
         }
     }
     alert("Mảng đã xóa phần tử " + timV + " là: " + myArray);
-
-
 
 
 </script>
