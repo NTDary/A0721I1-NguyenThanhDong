@@ -1,5 +1,7 @@
 package ss2_vong_lap_java.bai_tap;
+
 import java.util.Scanner;
+
 public class HienThiCacHinh {
     public static void main(String[] args) {
         int choose = 0;
@@ -11,26 +13,26 @@ public class HienThiCacHinh {
         Scanner sc = new Scanner(System.in);
         System.out.println("Please Choose: ");
         choose = sc.nextInt();
-        switch (choose){
+        switch (choose) {
             case 1:
-                for(int i=0; i <4; i++){
-                    for(int j=0; j<4; j++){
+                for (int i = 0; i < 4; i++) {
+                    for (int j = 0; j < 4; j++) {
                         System.out.print("*  ");
                     }
                     System.out.print("\n");
                 }
                 break;
             case 2:
-                for(int i=1; i<6; i++){
-                    for(int j=0; j<i; j++){
+                for (int i = 1; i < 6; i++) {
+                    for (int j = 0; j < i; j++) {
                         System.out.print("*  ");
                     }
                     System.out.println("");
                 }
                 break;
             case 3:
-                for(int i=5; i>0; i--){
-                    for(int j=0; j<i;j++){
+                for (int i = 5; i > 0; i--) {
+                    for (int j = 0; j < i; j++) {
                         System.out.print("*  ");
                     }
                     System.out.print("\n");
