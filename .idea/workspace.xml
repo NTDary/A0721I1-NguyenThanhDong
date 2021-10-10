@@ -3,11 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="d25b156e-5043-4ba6-b6cf-f4f07e0ec7a1" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/module1/bai13_mang_2/bai_tap/LuyenTapMang_1/Bai7.html" beforeDir="false" afterPath="$PROJECT_DIR$/module1/bai13_mang_2/bai_tap/LuyenTapMang_1/Bai7.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/module2/out/production/module2/ss2_vong_lap_java/bai_tap/HienThi20SoNguyenTo.class" beforeDir="false" afterPath="$PROJECT_DIR$/module2/out/production/module2/ss2_vong_lap_java/bai_tap/HienThi20SoNguyenTo.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/module2/out/production/module2/ss3_array_va_method/thuc_hanh/TimGiaTriNhoNhat.class" beforeDir="false" afterPath="$PROJECT_DIR$/module2/out/production/module2/ss3_array_va_method/thuc_hanh/TimGiaTriNhoNhat.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/module2/src/ss2_vong_lap_java/bai_tap/HienThi20SoNguyenTo.java" beforeDir="false" afterPath="$PROJECT_DIR$/module2/src/ss2_vong_lap_java/bai_tap/HienThi20SoNguyenTo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/module2/src/ss3_array_va_method/bai_tap/XoaPhanTuCuaMang.java" beforeDir="false" afterPath="$PROJECT_DIR$/module2/src/ss3_array_va_method/bai_tap/XoaPhanTuCuaMang.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,6 +21,12 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
   </component>
   <component name="SpellCheckerSettings" BundledDictionaries="0" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" Dictionaries="0" CorrectionsLimit="5" DefaultDictionary="application-level" UseSingleDictionary="true" />
   <component name="SvnConfiguration">
@@ -38,7 +39,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1633345931519</updated>
-      <workItem from="1633805106988" duration="1663000" />
+      <workItem from="1633805106988" duration="2863000" />
     </task>
     <servers />
   </component>
