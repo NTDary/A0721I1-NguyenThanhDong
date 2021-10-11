@@ -51,4 +51,7 @@ public class XoaPhanTuCuaMang {
         } while (choose != 0);
 
     }
+    public static void test(){
+        System.out.println("check");
+    }
 }

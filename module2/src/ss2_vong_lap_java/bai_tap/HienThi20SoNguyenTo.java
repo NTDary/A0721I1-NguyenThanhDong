@@ -19,6 +19,8 @@ public class HienThi20SoNguyenTo {
             }
             n++;
         }
+
+
     }
 
     public static boolean findSNT(int n) {
