@@ -6,7 +6,7 @@ public class GopMang {
     public static void main(String[] args) {
         int[] array1 = new int[5];
         int[] array2 = new int[5];
-        
+
         //Cách gọi thông qua object
 //        GopMang gopMang = new GopMang();
 //        gopMang.inputArray(array1);

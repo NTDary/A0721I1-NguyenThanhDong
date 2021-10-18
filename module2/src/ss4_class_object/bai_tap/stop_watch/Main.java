@@ -13,7 +13,7 @@ public class Main {
         Watch watch = new Watch();
 
         //Bắt đầu thời gian
-        watch.start(System.currentTimeMillis());
+        watch.start();
         System.out.println("Thời gian bắt đầu:" + watch.getStartTime());
 
         //Tạo mảng 100.000 số ngẫu nhiên
@@ -33,7 +33,7 @@ public class Main {
             }
         }
         //Kết thúc thời gian
-        watch.stop(System.currentTimeMillis());
+        watch.stop();
         System.out.println("Thời gian kết thúc:" + watch.getEndTime());
 
         //Đo thời gian sau khi sắp xếp

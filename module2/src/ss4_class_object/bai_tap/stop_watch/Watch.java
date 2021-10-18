@@ -12,12 +12,12 @@ public class Watch {
         return endTime;
     }
 
-    public void start(long startTime){
-        this.startTime = startTime;
+    public void start(){
+        this.startTime = System.currentTimeMillis();
     }
 
-    public void stop(long endTime){
-        this.endTime = endTime;
+    public void stop(){
+        this.endTime = System.currentTimeMillis();
     }
 
     public long getElapsedTime(){

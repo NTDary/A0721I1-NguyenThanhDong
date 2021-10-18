@@ -1,12 +1,34 @@
 package ss3_array_va_method.bai_tap;
 
+
 public class test {
-    static public int X = 2;
-    private String a = "static";
-    static {
-
+    public static void main(String[] args) {
+        A a = new A();
+        a.p(10);
+        a.p(10.0);
     }
-    protected void test1(){
+}
 
+//class A extends B {
+//    public void p(double number) {
+//        System.out.println(number);
+//    }
+//}
+//
+//class B {
+//    public void p(double number) {
+//        System.out.println(number * 2);
+//    }
+//}
+
+class A extends B {
+    public void p(int number) {
+        System.out.println(number);
+    }
+}
+
+class B {
+    public void p(double number) {
+        System.out.println(number * 2);
     }
 }
