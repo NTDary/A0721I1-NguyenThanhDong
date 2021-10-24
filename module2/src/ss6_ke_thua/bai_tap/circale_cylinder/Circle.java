@@ -35,9 +35,9 @@ public class Circle {
     @Override
     public String toString() {
         return "A Circle with radius="
-                + getRadius()
+                + getRadius() // 3
                 + " and "
                 + "with color of "
-                + getColor();
+                + getColor(); //white
     }
 }

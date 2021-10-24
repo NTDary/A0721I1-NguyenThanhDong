@@ -1,6 +1,6 @@
 package ss7_abstract_class_and_interface.bai_tap.interface_colorable_hinh;
 
-public class Square extends Rectangle implements Colorable {
+public class Square extends Rectangle implements Colorable,Colorable2 {
     public Square() {
     }
 
@@ -50,5 +50,10 @@ public class Square extends Rectangle implements Colorable {
     @Override
     public void howToColor() {
         System.out.println("Color all four sides");
+    }
+
+    @Override
+    public void howToColor2() {
+        System.out.println("Color2 all four sides2");
     }
 }

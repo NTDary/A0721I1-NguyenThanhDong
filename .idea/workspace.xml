@@ -2,7 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d25b156e-5043-4ba6-b6cf-f4f07e0ec7a1" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module2/src/ss7_abstract_class_and_interface/bai_tap/interface_colorable_hinh/Colorable2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module2/out/production/module2/ss6_ke_thua/bai_tap/point_moveablepoint/MoveablePoint.class" beforeDir="false" afterPath="$PROJECT_DIR$/module2/out/production/module2/ss6_ke_thua/bai_tap/point_moveablepoint/MoveablePoint.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module2/out/production/module2/ss7_abstract_class_and_interface/bai_tap/interface_colorable_hinh/Circle.class" beforeDir="false" afterPath="$PROJECT_DIR$/module2/out/production/module2/ss7_abstract_class_and_interface/bai_tap/interface_colorable_hinh/Circle.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module2/out/production/module2/ss7_abstract_class_and_interface/bai_tap/interface_colorable_hinh/Shape.class" beforeDir="false" afterPath="$PROJECT_DIR$/module2/out/production/module2/ss7_abstract_class_and_interface/bai_tap/interface_colorable_hinh/Shape.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module2/out/production/module2/ss7_abstract_class_and_interface/bai_tap/interface_colorable_hinh/ShapeTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/module2/out/production/module2/ss7_abstract_class_and_interface/bai_tap/interface_colorable_hinh/ShapeTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module2/out/production/module2/ss7_abstract_class_and_interface/bai_tap/interface_colorable_hinh/Square.class" beforeDir="false" afterPath="$PROJECT_DIR$/module2/out/production/module2/ss7_abstract_class_and_interface/bai_tap/interface_colorable_hinh/Square.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module2/src/ss6_ke_thua/bai_tap/circale_cylinder/Circle.java" beforeDir="false" afterPath="$PROJECT_DIR$/module2/src/ss6_ke_thua/bai_tap/circale_cylinder/Circle.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module2/src/ss6_ke_thua/bai_tap/circale_cylinder/ShapeTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/module2/src/ss6_ke_thua/bai_tap/circale_cylinder/ShapeTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module2/src/ss6_ke_thua/bai_tap/point_moveablepoint/MoveablePoint.java" beforeDir="false" afterPath="$PROJECT_DIR$/module2/src/ss6_ke_thua/bai_tap/point_moveablepoint/MoveablePoint.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module2/src/ss7_abstract_class_and_interface/bai_tap/interface_colorable_hinh/Circle.java" beforeDir="false" afterPath="$PROJECT_DIR$/module2/src/ss7_abstract_class_and_interface/bai_tap/interface_colorable_hinh/Circle.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module2/src/ss7_abstract_class_and_interface/bai_tap/interface_colorable_hinh/Shape.java" beforeDir="false" afterPath="$PROJECT_DIR$/module2/src/ss7_abstract_class_and_interface/bai_tap/interface_colorable_hinh/Shape.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module2/src/ss7_abstract_class_and_interface/bai_tap/interface_colorable_hinh/ShapeTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/module2/src/ss7_abstract_class_and_interface/bai_tap/interface_colorable_hinh/ShapeTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module2/src/ss7_abstract_class_and_interface/bai_tap/interface_colorable_hinh/Square.java" beforeDir="false" afterPath="$PROJECT_DIR$/module2/src/ss7_abstract_class_and_interface/bai_tap/interface_colorable_hinh/Square.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,6 +52,7 @@
       <option name="presentableId" value="Default" />
       <updated>1633345931519</updated>
       <workItem from="1633805106988" duration="2863000" />
+      <workItem from="1634985162355" duration="624000" />
     </task>
     <servers />
   </component>

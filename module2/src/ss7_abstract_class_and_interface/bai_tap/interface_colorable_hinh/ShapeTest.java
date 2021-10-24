@@ -11,14 +11,16 @@ public class ShapeTest {
         shapes[0] = new Circle();
         shapes[1] = new Rectangle();
         shapes[2] = new Square();
+
         for (Shape shape : shapes) {
             System.out.println(shape);
 
             if (shape instanceof Colorable) {
-                Colorable colorable = (Colorable) shape;
-                colorable.howToColor();
+//                Colorable colorable = (Square) shape;
+//                colorable.howToColor();
+                ((Colorable)shape).howToColor();
             }
-        };
+        }
 
     }
 }

@@ -46,11 +46,15 @@ public class MoveablePoint extends Point {
     }
 
     public MoveablePoint move() {
-//        getX() += xSpeed; // ?
-//        getY() += ySpeed;
-        setX(getX() + this.xSpeed);
-        setY(getY() + this.ySpeed);
-        System.out.println("đây là this: " + this);
+        float x = getX();
+        float y = getY();
+        x += xSpeed; // ? :
+        y += ySpeed;
+        setX(x);
+        setY(y);
+//        setX(getX() + this.xSpeed);
+//        setY(getY() + this.ySpeed);
+        System.out.println("đây là this: " + this); // obj hiện tại
         return this; //?
     }
 
