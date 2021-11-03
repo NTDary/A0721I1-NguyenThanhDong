@@ -20,7 +20,11 @@ public class MyLinkedList {
             return this.data;
         }
     }
-    public int size(){return numNodes;}
+
+    public int size() {
+        return numNodes;
+    }
+
     public void add(int index, Object data) {
         Node temp = head;
         Node holder;
@@ -45,8 +49,18 @@ public class MyLinkedList {
         Node temp = head;
         for (int i = 0; i < index; i++) {
             temp = temp.next;
+            //dùng temp thay cho head, vì khi gán vẫn bảo tồn head
         }
         return (int) temp.getData();
+    }
+
+    public void deleteNote(int index) {
+        Node temp = head;
+        for (int i = 0; i < index-1; i++){
+            temp = temp.next;
+        }
+        temp.next = temp.next.next;
+        numNodes--;
     }
 
     public void printList() {
