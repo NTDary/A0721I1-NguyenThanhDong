@@ -13,7 +13,6 @@ public class CheckBracket {
         }
 
     }
-
     public static boolean checkBracket(Stack<Character> myStack, String myStr) {
         char[] arrs = myStr.toCharArray();
         for (int i = 0; i < arrs.length; i++) {
