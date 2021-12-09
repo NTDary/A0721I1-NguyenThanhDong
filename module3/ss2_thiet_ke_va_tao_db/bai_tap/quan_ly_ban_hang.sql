@@ -29,3 +29,4 @@ foreign key(oID) references `Order`(oID),
 foreign key(pID) references Product(pID)
 );
 
+-- drop database quanlybanhang;
