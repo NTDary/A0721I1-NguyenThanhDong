@@ -1,14 +1,46 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="d25b156e-5043-4ba6-b6cf-f4f07e0ec7a1" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/module3/ss6_css/bai_tap/dinh_dang_van_ban/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module3/ss6_css/bai_tap/dinh_dang_van_ban/style.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module3/ss6_css/bai_tap/nhung_css/index_external.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module3/ss6_css/bai_tap/nhung_css/index_inline.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module3/ss6_css/bai_tap/nhung_css/index_internal.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module3/ss6_css/bai_tap/nhung_css/style.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module3/ss6_css/thuc_hanh/use_css/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/module1/bai13_mang_2/bai_tap/TicToe.html" beforeDir="false" afterPath="$PROJECT_DIR$/module1/bai13_mang_2/bai_tap/TicToe.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="HTML File" />
+        <option value="CSS File" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -19,15 +51,39 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
+  </component>
+  <component name="RunManager" selected="JavaScript Debug.index.html (1)">
+    <configuration name="index_external.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/A0721I1_Nguyen_Thanh_Dong/module3/ss6_css/bai_tap/nhung_css/index_external.html" useBuiltInWebServerPort="true">
+      <method v="2" />
+    </configuration>
+    <configuration name="index.html (1)" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/A0721I1_Nguyen_Thanh_Dong/module3/ss6_css/bai_tap/dinh_dang_van_ban/index.html" useBuiltInWebServerPort="true">
+      <method v="2" />
+    </configuration>
+    <configuration name="index.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/A0721I1_Nguyen_Thanh_Dong/module3/ss6_css/thuc_hanh/use_css/index.html" useBuiltInWebServerPort="true">
+      <method v="2" />
+    </configuration>
+    <configuration name="index_inline.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/A0721I1_Nguyen_Thanh_Dong/module3/ss6_css/bai_tap/nhung_css/index_inline.html" useBuiltInWebServerPort="true">
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JavaScript Debug.index.html (1)" />
+        <item itemvalue="JavaScript Debug.index_external.html" />
+        <item itemvalue="JavaScript Debug.index_inline.html" />
+        <item itemvalue="JavaScript Debug.index.html" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" BundledDictionaries="0" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" Dictionaries="0" CorrectionsLimit="5" DefaultDictionary="application-level" UseSingleDictionary="true" />
   <component name="SvnConfiguration">
@@ -44,10 +100,22 @@
       <workItem from="1634985162355" duration="624000" />
       <workItem from="1639577213220" duration="14000" />
       <workItem from="1639577259518" duration="1621000" />
+      <workItem from="1639991952003" duration="2247000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="2" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>

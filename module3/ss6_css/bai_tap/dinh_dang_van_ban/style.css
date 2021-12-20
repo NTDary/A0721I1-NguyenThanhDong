@@ -1,0 +1,14 @@
+div {
+    width: 50%;
+}
+h1 {
+    width: 100%;
+    border-bottom: #1D1E20 solid 1px;
+    margin-bottom: 0;
+}
+a {
+    text-decoration: none;
+}
+p {
+    text-indent: 50px;
+}
