@@ -1,14 +1,23 @@
 div {
     width: 50%;
+    padding: 20px;
 }
 h1 {
     width: 100%;
-    border-bottom: #1D1E20 solid 1px;
     margin-bottom: 0;
+
+    border-bottom: #1D1E20 solid 1px;
 }
 a {
     text-decoration: none;
+    color: blue;
 }
 p {
+    font-family: arial, sans-serif;
+    font-size: 16px;
+    text-align: justify;
     text-indent: 50px;
+}
+.color-1 {
+    color: aqua;
 }

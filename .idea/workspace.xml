@@ -20,14 +20,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d25b156e-5043-4ba6-b6cf-f4f07e0ec7a1" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/module3/ss6_css/bai_tap/dinh_dang_van_ban/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/module3/ss6_css/bai_tap/dinh_dang_van_ban/style.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/module3/ss6_css/bai_tap/nhung_css/index_external.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/module3/ss6_css/bai_tap/nhung_css/index_inline.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/module3/ss6_css/bai_tap/nhung_css/index_internal.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/module3/ss6_css/bai_tap/nhung_css/style.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/module3/ss6_css/thuc_hanh/use_css/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module3/ss6_css/bai_tap/tao_trang_doc_truyen/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module3/ss6_css/bai_tap/tao_trang_doc_truyen/style.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module3/ss6_css/bai_tap/dinh_dang_van_ban/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/module3/ss6_css/bai_tap/dinh_dang_van_ban/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module3/ss6_css/bai_tap/dinh_dang_van_ban/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/module3/ss6_css/bai_tap/dinh_dang_van_ban/style.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,6 +52,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="F:/Tài Liệu HTML-CSS-JS/demo header danafood/css/header.css" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
@@ -63,11 +61,14 @@
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
   </component>
-  <component name="RunManager" selected="JavaScript Debug.index.html (1)">
+  <component name="RunManager" selected="JavaScript Debug.index.html (2)">
     <configuration name="index_external.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/A0721I1_Nguyen_Thanh_Dong/module3/ss6_css/bai_tap/nhung_css/index_external.html" useBuiltInWebServerPort="true">
       <method v="2" />
     </configuration>
     <configuration name="index.html (1)" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/A0721I1_Nguyen_Thanh_Dong/module3/ss6_css/bai_tap/dinh_dang_van_ban/index.html" useBuiltInWebServerPort="true">
+      <method v="2" />
+    </configuration>
+    <configuration name="index.html (2)" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/A0721I1_Nguyen_Thanh_Dong/module3/ss6_css/bai_tap/tao_trang_doc_truyen/index.html" useBuiltInWebServerPort="true">
       <method v="2" />
     </configuration>
     <configuration name="index.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/A0721I1_Nguyen_Thanh_Dong/module3/ss6_css/thuc_hanh/use_css/index.html" useBuiltInWebServerPort="true">
@@ -78,6 +79,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JavaScript Debug.index.html (2)" />
         <item itemvalue="JavaScript Debug.index.html (1)" />
         <item itemvalue="JavaScript Debug.index_external.html" />
         <item itemvalue="JavaScript Debug.index_inline.html" />
@@ -100,7 +102,8 @@
       <workItem from="1634985162355" duration="624000" />
       <workItem from="1639577213220" duration="14000" />
       <workItem from="1639577259518" duration="1621000" />
-      <workItem from="1639991952003" duration="2247000" />
+      <workItem from="1639991952003" duration="14184000" />
+      <workItem from="1640166168375" duration="5519000" />
     </task>
     <servers />
   </component>
@@ -117,5 +120,12 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="805" y="311" key="FileChooserDialogImpl" timestamp="1640001902287">
+      <screen x="0" y="0" width="2048" height="1112" />
+    </state>
+    <state x="805" y="311" key="FileChooserDialogImpl/0.0.2048.1112/-1600.0.1600.860@0.0.2048.1112" timestamp="1640001902287" />
   </component>
 </project>
