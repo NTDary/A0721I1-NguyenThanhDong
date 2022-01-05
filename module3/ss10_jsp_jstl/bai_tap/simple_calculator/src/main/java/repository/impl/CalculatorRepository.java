@@ -8,22 +8,22 @@ import java.util.List;
 public class CalculatorRepository implements ICalculatorRepository {
     private static Calculator calculator = new Calculator();
     @Override
-    public float calculatorAdd() {
-        return calculator.getFirstNumber() + calculator.getSecondNumber();
+    public float calculatorAdd(float firstNumber, float secondNumber) {
+        return firstNumber + secondNumber;
     }
 
     @Override
-    public float calculatorSub() {
-        return calculator.getFirstNumber() - calculator.getSecondNumber();
+    public float calculatorSub(float firstNumber, float secondNumber) {
+        return firstNumber - secondNumber;
     }
 
     @Override
-    public float calculatorMulti() {
-        return calculator.getFirstNumber() * calculator.getSecondNumber();
+    public float calculatorMulti(float firstNumber, float secondNumber) {
+        return firstNumber * secondNumber;
     }
 
     @Override
-    public float calculatorDiv() {
-        return calculator.getFirstNumber() / calculator.getSecondNumber();
+    public float calculatorDiv(float firstNumber, float secondNumber) {
+        return firstNumber / secondNumber;
     }
 }

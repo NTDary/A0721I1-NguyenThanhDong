@@ -24,5 +24,6 @@
     Second operand: <input type="text" value="" name="secondNumber">
     <input type="submit">
 </form>
+<h3>${err}</h3>
 </body>
 </html>

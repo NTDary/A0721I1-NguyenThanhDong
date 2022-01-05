@@ -14,7 +14,11 @@
 <body>
 <h3>Result</h3>
 <h3>${a}</h3>
+<h3>${operator}</h3>
 <h3>${b}</h3>
+<span>--------------</span>
+<h3>${result}</h3>
+
 
 </body>
 </html>
