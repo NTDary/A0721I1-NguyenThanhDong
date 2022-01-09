@@ -14,7 +14,7 @@
 <h2>Simple Calculator</h2>
 <form method="post" action="calculate">
     First operand: <input type="text" value="" name="firstNumber">
-    <label for="operator">Choose a car:</label>
+    <label for="operator">Choose operate:</label>
     <select id="operator" name="operator">
         <option value="addition">Addition</option>
         <option value="subtraction">Subtraction</option>

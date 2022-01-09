@@ -21,7 +21,6 @@ public class Servlet extends javax.servlet.http.HttpServlet {
            request.setAttribute("a",firstNumber);
            request.setAttribute("b",secondNumber);
 
-
                switch (calculatorOperator){
                    case "addition":
                        request.setAttribute("operator", "+");
@@ -40,8 +39,13 @@ public class Servlet extends javax.servlet.http.HttpServlet {
                        break;
                    case "division":
                        request.setAttribute("operator", "/");
-                       result = iCalculatorService.calculatorDiv(firstNumber,secondNumber);
-                       request.setAttribute("result",result);
+                       if(secondNumber == 0){
+                           request.setAttribute("err", "the secondNumber can't be zero ");
+                           request.getRequestDispatcher("/index.jsp").forward(request, response);
+                       }else{
+                           result = iCalculatorService.calculatorDiv(firstNumber,secondNumber);
+                           request.setAttribute("result",result);
+                       }
                        break;
                }
                request.getRequestDispatcher("/calculate.jsp").forward(request,response);
