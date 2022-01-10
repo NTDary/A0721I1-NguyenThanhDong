@@ -1,8 +1,8 @@
 <%--
   Created by IntelliJ IDEA.
   User: Thanh Dong
-  Date: 09/01/2022
-  Time: 11:48 CH
+  Date: 10/01/2022
+  Time: 04:17 CH
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
@@ -10,23 +10,13 @@
 
 <html>
 <head>
-    <title>Product List</title>
+    <title>Product Search</title>
 </head>
 <body>
-<h1>Products</h1>
+<h1>Products Search</h1>
 <p>
-    <a href="/products?action=create">Create new products</a>
+    <a href="/products">Back to product list</a>
 </p>
-<div>
-    <label for="site-search">Search the site:</label>
-    <input type="search" id="site-search" name="txt"
-           aria-label="Search through site content">
-
-    <a href="/products?action=search">Search</a>
-<%--    <button type="submit">Search</button>--%>
-</div>
-
-
 <table border="1">
     <tr>
         <td>Id</td>
