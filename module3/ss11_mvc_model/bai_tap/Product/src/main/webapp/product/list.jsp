@@ -17,14 +17,15 @@
 <p>
     <a href="/products?action=create">Create new products</a>
 </p>
-<div>
+<form action="products">
     <label for="site-search">Search the site:</label>
     <input type="search" id="site-search" name="txt"
            aria-label="Search through site content">
-
-    <a href="/products?action=search">Search</a>
-<%--    <button type="submit">Search</button>--%>
-</div>
+    <input hidden type="search" id="site-search" name="action" value="search"
+           aria-label="Search through site content">
+<%--    <a href="/products?action=search">Search</a>--%>
+    <button type="submit">Search</button>
+</form>
 
 
 <table border="1">
