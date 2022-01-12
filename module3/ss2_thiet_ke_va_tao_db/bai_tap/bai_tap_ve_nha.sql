@@ -74,7 +74,7 @@ select * from giang_vien;
 
 insert into tai_khoan(
 username,
-password
+`password`
 )
 values
 ("vananh2212","123456"),
@@ -86,9 +86,11 @@ values
 ("vanty1407","123456");
 select * from tai_khoan;
 
--- Them data hoc vien
-select * from hoc_vien;
+
+-- Reset id
 ALTER TABLE hoc_vien AUTO_INCREMENT = 1;
+
+-- Them data hoc vien
 insert into hoc_vien(
 ten_hoc_vien,
 ngay_sinh,
@@ -104,6 +106,7 @@ values
 ("Nguyen Dao Duy","2001-11-21","nguyendaoduy2111@gmail.com",(SELECT username FROM tai_khoan WHERE username ='daoduy2111'),(SELECT ma_lop_hoc FROM lop WHERE ma_lop_hoc =3)),
 ("Pham Thi Dung","2002-10-27","phamthidung2710@gmail.com",(SELECT username FROM tai_khoan WHERE username ='thidung2710'),(SELECT ma_lop_hoc FROM lop WHERE ma_lop_hoc =3)),
 ("Nguyen Van Ty","2000-07-14","nguyenvanty1407@gmail.com",(SELECT username FROM tai_khoan WHERE username ='vanty1407'),(SELECT ma_lop_hoc FROM lop WHERE ma_lop_hoc =1));
+select * from hoc_vien;
 
 -- Them Data Dia Chi
 insert into dia_chi(
@@ -135,18 +138,6 @@ values
 ("7",3);
 select * from giang_vien_day_lop_hoc;
 
--- Delete 1 dong
-set SQL_SAFE_UPDATES = 0;
-delete from hoc_vien
-where ten_hoc_vien = "Dung";
-set SQL_SAFE_UPDATES = 1;
-
--- Delete toan bo value trong table
-set SQL_SAFE_UPDATES = 0;
-delete from hoc_vien;
-set SQL_SAFE_UPDATES = 1;
-
-
 -- Update hoc_vien
 set SQL_SAFE_UPDATES = 0;
 update tai_khoan set username = "tanphat0505"
@@ -159,3 +150,46 @@ set SQL_SAFE_UPDATES = 1;
 UPDATE dia_chi
    SET ma_hoc_vien =(SELECT ma_hoc_vien FROM hoc_vien WHERE dia_chi.ma_hoc_vien=hoc_vien.ma_hoc_vien);
 select * from dia_chi;
+
+-- Delete 1 dong
+set SQL_SAFE_UPDATES = 0;
+delete from hoc_vien
+where ten_hoc_vien = "Dung";
+set SQL_SAFE_UPDATES = 1;
+
+-- Delete toan bo value trong table
+set SQL_SAFE_UPDATES = 0;
+delete from hoc_vien;
+set SQL_SAFE_UPDATES = 1;
+-- Lấy ra thông tin của các học viên đang theo học tại lớp,
+-- và lớp đó do giảng viên nào dạy?
+use demo_a07;
+select hoc_vien.ten_hoc_vien, giang_vien.ten_giang_vien
+from hoc_vien giang_vien 
+join lop
+on hoc_vien.ma_lop_hoc = lop.ma_lop_hoc
+join giang_vien_day_lop_hoc
+on giang_vien.ma_lop_hoc = giang_vien_day_lop_hoc.ma_lop_hoc
+where
+ma_lop_hoc = 1;
+
+select * from giang_vien;
+
+select ten_hoc_vien
+from hoc_vien as hv inner join giang_vien_day_lop_hoc as l
+on hv.ma_lop_hoc = l.ma_lop_hoc;
+
+select ten_hoc_vien, ten_giang_vien
+from hoc_vien as hv inner join lop l
+on hv.ma_lop_hoc = l.ma_lop_hoc inner join giang_vien_day_lop_hoc as dh
+on l.ma_lop_hoc = dh.ma_lop_hoc inner join giang_vien as gv
+on gv.ma_giang_vien = dh.ma_giang_vien
+where
+l.ma_lop_hoc = 1;
+
+
+select * from student;
+-- where gv.ma_giang_vien = 2;
+
+
+

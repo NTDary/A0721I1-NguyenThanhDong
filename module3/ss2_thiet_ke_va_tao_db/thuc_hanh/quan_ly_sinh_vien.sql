@@ -20,7 +20,7 @@ CREATE TABLE Student
     FOREIGN KEY (ClassId) REFERENCES Class (ClassID)
 );
 
-CREATE TABLE Subject
+CREATE TABLE `Subject`
 (
     SubId   INT         NOT NULL AUTO_INCREMENT PRIMARY KEY,
     SubName VARCHAR(30) NOT NULL,
@@ -39,3 +39,4 @@ CREATE TABLE Mark
     FOREIGN KEY (SubId) REFERENCES Subject (SubId),
     FOREIGN KEY (StudentId) REFERENCES Student (StudentId)
 );
+
