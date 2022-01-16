@@ -70,8 +70,8 @@ public class UserServlet extends HttpServlet {
                 case "sortDESA":
                     sortDESC(request,response);
                     break;
-                case "permision":
-                    addUserPermision(request, response);
+                case "test-use-tran":
+                    testUseTran(request, response);
                     break;
                 default:
                     listUser(request, response);
@@ -164,10 +164,9 @@ public class UserServlet extends HttpServlet {
         RequestDispatcher dispatcher = request.getRequestDispatcher("user/list.jsp");
         dispatcher.forward(request, response);
     }
-    private void addUserPermision(HttpServletRequest request, HttpServletResponse response) {
-        User user = new User("quan", "quan.nguyen@codegym.vn", "vn");
-        int[] permision = {1, 2, 4};
-        userDAO.addUserTransaction(user, permision);
+    private void testUseTran(HttpServletRequest request, HttpServletResponse response) {
+
+        userDAO.insertUpdateUseTransaction();
 
     }
 }
