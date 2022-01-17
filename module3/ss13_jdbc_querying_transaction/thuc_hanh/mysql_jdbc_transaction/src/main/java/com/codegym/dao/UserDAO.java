@@ -247,6 +247,7 @@ public class UserDAO implements IUserDAO{
             int rowAffected = pstmt.executeUpdate();
             // get user id
             rs = pstmt.getGeneratedKeys();
+
             int userId = 0;
             if (rs.next())
                 userId = rs.getInt(1);
