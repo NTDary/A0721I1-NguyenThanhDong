@@ -49,11 +49,12 @@
                 <td><c:out value="${user.country}"/></td>
                 <td>
                     <a href="/users?action=edit&id=${user.id}">Edit</a>
-                    <a href="/users?action=delete&id=${user.id}">Delete</a>
+                    <a onClick="if (confirm('Are you sure you want to delete?')); else return false;" href="/users?action=delete&id=${user.id}">Delete</a>
                 </td>
             </tr>
         </c:forEach>
     </table>
+
 </div>
 </body>
 </html>

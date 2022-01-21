@@ -279,7 +279,6 @@ public class UserDAO implements IUserDAO{
                 System.out.println(e.getMessage());
             }
             System.out.println(ex.getMessage());
-
         } finally {
             try {
                 if (rs != null) rs.close();
