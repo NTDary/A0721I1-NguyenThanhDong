@@ -44,7 +44,7 @@
                 <a class="nav-link" href="customer?action=customer">Customer</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Service</a>
+                <a class="nav-link" href="service?action=service">Service</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="#">Contract</a>
@@ -74,9 +74,17 @@
                     </a>
 
                 </div>
+               
                 <div class="ml-auto p-2">
-                    <form action="customer" class="form-inline my-2 my-lg-0">
-                        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" name="txt">
+                    <form action="service" class="form-inline my-2 my-lg-0">
+                        <input style="width: 120px; margin: 0 5px" class="form-control" type="search" placeholder="Id" aria-label="Search" name="id">
+                        <input style="width: 120px; margin: 0 5px"class="form-control" type="search" placeholder="Name" aria-label="Search" name="name">
+                        <select class="custom-select mr-sm-2" name="rent_type" id="inlineFormCustomSelect">
+                            <option value="">Choose</option>
+                            <c:forEach var="rentType" items="${rentTypeList}">
+                                <option value="${rentType.rentTypeId}">${rentType.rentTypeName}</option>
+                            </c:forEach>
+                        </select>
                         <input hidden class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" name="action" value="search">
                         <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
                     </form>

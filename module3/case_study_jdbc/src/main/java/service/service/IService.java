@@ -14,4 +14,6 @@ public interface IService {
 
     public Service selectService(int id);
     public void updateService(Service service) throws SQLException;
+    void deleteService(int id);
+    List<Service> searchService(String name, int min_type_id,int max_type_id,int min,int max);
 }

@@ -127,8 +127,10 @@ public class ServletCustomer extends HttpServlet {
         Map<String,String> map =  iCustomerService.insertCustomer(newCustomer);
         if(!map.isEmpty()){
             for (Map.Entry<String, String> entry : map.entrySet()) {
-                request.setAttribute(entry.getKey(),entry.getValue() );
+                request.setAttribute(entry.getKey(), entry.getValue());
             }
+            List<CustomerType> customerTypes = iCustomerTypeService.selectAllCustomerType();
+            request.setAttribute("customerTypes",customerTypes);
             RequestDispatcher dispatcher = request.getRequestDispatcher("customer/create.jsp");
             dispatcher.forward(request, response);
         }else{
@@ -159,6 +161,7 @@ public class ServletCustomer extends HttpServlet {
         }
         List<Customer> customerList = iCustomerService.pagingCustomer(index);
         request.setAttribute("endP", endPage);
+        request.setAttribute("tag", index);
         request.setAttribute("customerList", customerList);
         RequestDispatcher dispatcher = request.getRequestDispatcher("customer/customer.jsp");
         dispatcher.forward(request, response);

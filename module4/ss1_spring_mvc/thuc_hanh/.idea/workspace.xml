@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="331921a1-beb9-44ba-8209-92df15947e2f" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../../../module3/thi_ket_thuc/tcomplex/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../module3/thi_ket_thuc/tcomplex/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../module3/thi_ket_thuc/tcomplex/.idea/gradle.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../module3/thi_ket_thuc/tcomplex/.idea/jarRepositories.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../module3/thi_ket_thuc/tcomplex/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../module3/thi_ket_thuc/tcomplex/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../module3/thi_ket_thuc/tcomplex/src/main/java/controller/Servlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../module3/thi_ket_thuc/tcomplex/src/main/java/model/MatBang.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../module3/thi_ket_thuc/tcomplex/src/main/java/repository/IMatBangRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../module3/thi_ket_thuc/tcomplex/src/main/java/repository/impl/BaseRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../module3/thi_ket_thuc/tcomplex/src/main/java/repository/impl/MatBangRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../module3/thi_ket_thuc/tcomplex/src/main/java/service/IMatBangService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../module3/thi_ket_thuc/tcomplex/src/main/java/service/impl/MatBangService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../module3/thi_ket_thuc/tcomplex/src/main/webapp/tcomplex/create.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../module3/thi_ket_thuc/tcomplex/src/main/webapp/tcomplex/list.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../spring_mvc/src/main/java/com/codegym/controller/Hello.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../spring_mvc/src/main/java/com/codegym/controller/HelloController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../spring_mvc/src/main/webapp/WEB-INF/applicationContext.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../spring_mvc/src/main/webapp/WEB-INF/dispatcher-servlet.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../spring_mvc/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spring_greeting/src/main/java/com/codegym/controller/GreetingController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spring_greeting/src/main/webapp/WEB-INF/applicationContext.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spring_greeting/src/main/webapp/WEB-INF/dispatcher-servlet.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spring_greeting/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../module3/case_study_jdbc/.gradle/6.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../../../module3/case_study_jdbc/.gradle/6.1/executionHistory/executionHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../module3/case_study_jdbc/.gradle/6.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../../../module3/case_study_jdbc/.gradle/6.1/executionHistory/executionHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../module3/case_study_jdbc/.gradle/6.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../../../module3/case_study_jdbc/.gradle/6.1/fileHashes/fileHashes.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../module3/case_study_jdbc/.gradle/6.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../../../module3/case_study_jdbc/.gradle/6.1/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../module3/case_study_jdbc/.gradle/6.1/javaCompile/classAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../../../module3/case_study_jdbc/.gradle/6.1/javaCompile/classAnalysis.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../module3/case_study_jdbc/.gradle/6.1/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../../../module3/case_study_jdbc/.gradle/6.1/javaCompile/javaCompile.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../module3/case_study_jdbc/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../../../module3/case_study_jdbc/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../module3/case_study_jdbc/build/classes/java/main/controller/ServletCustomer.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../../module3/case_study_jdbc/build/classes/java/main/controller/ServletCustomer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../module3/case_study_jdbc/build/classes/java/main/controller/ServletService.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../../module3/case_study_jdbc/build/classes/java/main/controller/ServletService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../module3/case_study_jdbc/build/classes/java/main/repository/service/IServiceRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../../module3/case_study_jdbc/build/classes/java/main/repository/service/IServiceRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../module3/case_study_jdbc/build/classes/java/main/repository/service/impl/ServiceRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../../module3/case_study_jdbc/build/classes/java/main/repository/service/impl/ServiceRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../module3/case_study_jdbc/build/classes/java/main/service/service/IService.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../../module3/case_study_jdbc/build/classes/java/main/service/service/IService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../module3/case_study_jdbc/build/classes/java/main/service/service/impl/Service.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../../module3/case_study_jdbc/build/classes/java/main/service/service/impl/Service.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../module3/case_study_jdbc/build/libs/Module2_AccountName_WBE-1.0-SNAPSHOT.war" beforeDir="false" afterPath="$PROJECT_DIR$/../../../module3/case_study_jdbc/build/libs/Module2_AccountName_WBE-1.0-SNAPSHOT.war" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../module3/case_study_jdbc/src/main/java/controller/ServletCustomer.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../module3/case_study_jdbc/src/main/java/controller/ServletCustomer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../module3/case_study_jdbc/src/main/java/controller/ServletService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../module3/case_study_jdbc/src/main/java/controller/ServletService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../module3/case_study_jdbc/src/main/java/repository/service/IServiceRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../module3/case_study_jdbc/src/main/java/repository/service/IServiceRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../module3/case_study_jdbc/src/main/java/repository/service/impl/ServiceRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../module3/case_study_jdbc/src/main/java/repository/service/impl/ServiceRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../module3/case_study_jdbc/src/main/java/service/service/IService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../module3/case_study_jdbc/src/main/java/service/service/IService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../module3/case_study_jdbc/src/main/java/service/service/impl/Service.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../module3/case_study_jdbc/src/main/java/service/service/impl/Service.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../module3/case_study_jdbc/src/main/webapp/bootstrap-4.6.0/css/myStyle.css" beforeDir="false" afterPath="$PROJECT_DIR$/../../../module3/case_study_jdbc/src/main/webapp/bootstrap-4.6.0/css/myStyle.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../module3/case_study_jdbc/src/main/webapp/customer/create.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../../../module3/case_study_jdbc/src/main/webapp/customer/create.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../module3/case_study_jdbc/src/main/webapp/customer/customer.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../../../module3/case_study_jdbc/src/main/webapp/customer/customer.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../module3/case_study_jdbc/src/main/webapp/service/create.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../../../module3/case_study_jdbc/src/main/webapp/service/create.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../module3/case_study_jdbc/src/main/webapp/service/service.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../../../module3/case_study_jdbc/src/main/webapp/service/service.jsp" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../.." />
+  </component>
+  <component name="ProjectId" id="25B2D0OQBjdNg9KlVZzIbgfapHS" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/customer-management" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="331921a1-beb9-44ba-8209-92df15947e2f" name="Default Changelist" comment="" />
+      <created>1644986035987</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1644986035987</updated>
+      <workItem from="1644986037076" duration="8000" />
+    </task>
+    <servers />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="805" y="311" key="FileChooserDialogImpl" timestamp="1644986043201">
+      <screen x="0" y="0" width="2048" height="1112" />
+    </state>
+    <state x="805" y="311" key="FileChooserDialogImpl/0.0.2048.1112/-1600.227.1600.860@0.0.2048.1112" timestamp="1644986043201" />
+  </component>
+</project>

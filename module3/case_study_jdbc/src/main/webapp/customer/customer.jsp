@@ -141,7 +141,7 @@
             <nav aria-label="Page navigation example">
                 <ul class="pagination justify-content-center">
                     <c:forEach begin="1" end="${endP}" var="i">
-                        <li class="page-item"><a class="page-link" href="customer?action=customer&index=${i}">${i}</a>
+                        <li class="page-item"><a class="${tag == i ? "active": ""} page-link" href="customer?action=customer&index=${i}">${i}</a>
                         </li>
                     </c:forEach>
                 </ul>

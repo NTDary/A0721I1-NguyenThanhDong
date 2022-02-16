@@ -115,10 +115,9 @@
                         <th>Service Type:</th>
                         <td>
                             <select class="custom-select mr-sm-2" name="service_type" id="inlineFormCustomSelect1">
+                                <option selected value="">Choose</option>
                                 <c:forEach var="serviceType" items="${serviceTypeList}">
-
                                     <option value="${serviceType.serviceTypeId}">${serviceType.serviceTypeName}</option>
-
                                 </c:forEach>
                             </select>
                         </td>

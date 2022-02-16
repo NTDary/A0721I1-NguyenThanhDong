@@ -44,7 +44,7 @@
                 <a class="nav-link" href="customer?action=customer">Customer</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Service</a>
+                <a class="nav-link" href="service?action=service">Service</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="#">Contract</a>

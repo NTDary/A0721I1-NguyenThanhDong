@@ -51,4 +51,14 @@ public class Service implements IService {
     public void updateService(model.Service service) throws SQLException {
             iServiceRepository.updateService(service);
     }
+
+    @Override
+    public void deleteService(int id) {
+        iServiceRepository.deleteService(id);
+    }
+
+    @Override
+    public List<model.Service> searchService(String name, int min_type_id,int max_type_id, int min, int max) {
+        return iServiceRepository.searchService(name,min_type_id,max_type_id, min, max);
+    }
 }

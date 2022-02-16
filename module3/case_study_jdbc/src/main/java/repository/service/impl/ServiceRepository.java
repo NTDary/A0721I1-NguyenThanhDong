@@ -22,6 +22,8 @@ public class ServiceRepository implements IServiceRepository {
     private static final String SELECT_SERVICE_BY_ID = "select * from service where service_id =?";
     private static final String UPDATE_SERVICE_SQL = "update service set service_name = ?,service_area= ?, service_cost =? , service_max_people =?," +
             "rent_type_id = ?,service_type_id = ?,standard_room = ?, description_other_convenience=? , pool_area = ?, number_of_floors= ? where service_id = ?";
+    private static final String DELETE_SERVICE_SQL =  "delete from service where service_id = ?;";
+    private static final String SEARCH_SERVICE_SQL = "select * from service where (service_id between ? and ?)  and service_name like ? and (service_id between ? and ?) ";
 
     @Override
     public List<Service> selectAllService() {
@@ -210,5 +212,64 @@ public class ServiceRepository implements IServiceRepository {
             e.printStackTrace();
             conn.rollback();
         }
+    }
+
+    @Override
+    public void deleteService(int id) {
+        Connection conn = null;
+        // for insert a new serivce
+        PreparedStatement pstmt = null;
+        // for assign permision to serivce
+        // for getting serivce id
+        ResultSet rs = null;
+        try{
+            conn = baseRepository.getConnection();
+            conn.setAutoCommit(false);
+            pstmt = conn.prepareStatement(DELETE_SERVICE_SQL);
+            pstmt.setInt(1, id);
+            pstmt.executeUpdate();
+            conn.commit();
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        }
+    }
+
+    @Override
+    public List<Service> searchService(String name, int min_type_id, int max_type_id,int min, int max) {
+        List<Service> serviceList = new ArrayList<>();
+        Connection connection = null;
+        ResultSet rs = null;
+
+        try {
+            connection = baseRepository.getConnection();
+            connection.setAutoCommit(false);
+            PreparedStatement pstmt = connection.prepareStatement(SEARCH_SERVICE_SQL);
+            pstmt.setInt(1,min);
+            pstmt.setInt(2,max);
+            pstmt.setString(3,"%"+name+"%");
+            pstmt.setInt(4,min_type_id);
+            pstmt.setInt(5,max_type_id);
+             rs = pstmt.executeQuery();
+            Service service = null;
+            while (rs.next()){
+                service = new Service();
+                service.setServiceId(rs.getInt("service_id"));
+                service.setServiceName(rs.getString("service_name"));
+                service.setServiceArea(rs.getInt("service_area"));
+                service.setServiceCost(rs.getDouble("service_cost"));
+                service.setServiceMaxPeople(rs.getInt("service_max_people"));
+                service.setRentTypeId(rs.getInt("rent_type_id"));
+                service.setServiceTypeId(rs.getInt("service_type_id"));
+                service.setStandardRoom(rs.getString("standard_room"));
+                service.setDescriptionOtherConvenience(rs.getString("description_other_convenience"));
+                service.setPoolArea(rs.getInt("pool_area"));
+                service.setNumberOfFloors(rs.getInt("number_of_floors"));
+                serviceList.add(service);
+            }
+            connection.commit();
+        }catch (SQLException e){
+            e.printStackTrace();
+        }
+        return serviceList;
     }
 }

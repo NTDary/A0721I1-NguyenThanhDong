@@ -17,6 +17,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
@@ -60,10 +61,10 @@ public class ServletService extends HttpServlet {
                     showEditForm(request, response);
                     break;
                 case "delete":
-                    //deleteCustomer(request, response);
+                    deleteService(request, response);
                     break;
                 case "search":
-                    //searchCustomer(request, response);
+                    searchService(request, response);
                     break;
                 case "service":
                     listService(request, response);
@@ -82,6 +83,43 @@ public class ServletService extends HttpServlet {
         RequestDispatcher dispatcher = request.getRequestDispatcher("index.jsp");
         dispatcher.forward(request, response);
     }
+
+    private void searchService(HttpServletRequest request, HttpServletResponse response)
+            throws SQLException, IOException, ServletException {
+
+        //int rent_type = Integer.parseInt(request.getParameter("rent_type"));
+        String name = request.getParameter("name");
+        String rent_type = request.getParameter("rent_type");
+        String id = request.getParameter("id");
+        List<model.Service> serviceList = new ArrayList<>();
+
+        if (id == "" && rent_type == "") {
+            serviceList = iService.searchService(name, 0, Integer.MAX_VALUE, 0, Integer.MAX_VALUE);
+        } else if(id == "" && rent_type != ""){
+            serviceList = iService.searchService(name, Integer.parseInt(rent_type), Integer.parseInt(rent_type), 0, Integer.MAX_VALUE);
+            //serviceList = iService.searchService(name, Integer.parseInt(rent_type), Integer.parseInt(rent_type) , Integer.parseInt(id), Integer.parseInt(id));
+        }else if(id != "" && rent_type == ""){
+            serviceList = iService.searchService(name, 0, Integer.MAX_VALUE, Integer.parseInt(id),Integer.parseInt(id));
+        }else{
+            serviceList = iService.searchService(name, Integer.parseInt(rent_type), Integer.parseInt(rent_type) , Integer.parseInt(id), Integer.parseInt(id));
+        }
+        List<RentType> rentTypeList = iRentTypeService.selectAllRentType();
+        request.setAttribute("rentTypeList", rentTypeList);
+        request.setAttribute("serviceList", serviceList);
+        RequestDispatcher dispatcher = request.getRequestDispatcher("service/service.jsp");
+        dispatcher.forward(request, response);
+    }
+
+    private void deleteService(HttpServletRequest request, HttpServletResponse response)
+            throws SQLException, IOException, ServletException {
+        int id = Integer.parseInt(request.getParameter("id"));
+
+        iService.deleteService(id);
+
+        RequestDispatcher dispatcher = request.getRequestDispatcher("/service?action=service");
+        dispatcher.forward(request, response);
+    }
+
     private void updateService(HttpServletRequest request, HttpServletResponse response)
             throws SQLException, IOException, ServletException {
         int serviceId = Integer.parseInt(request.getParameter("id"));
@@ -96,55 +134,61 @@ public class ServletService extends HttpServlet {
         int poolArea = Integer.parseInt(request.getParameter("pool_area"));
         int numberOfFloors = Integer.parseInt(request.getParameter("number_floor"));
 
-        model.Service newService = new model.Service(serviceId,serviceName,serviceArea,serviceCost,serviceMaxPeople,
-                rentType,serviceTypeId,standardRoom,description,poolArea,numberOfFloors);
+        model.Service newService = new model.Service(serviceId, serviceName, serviceArea, serviceCost, serviceMaxPeople,
+                rentType, serviceTypeId, standardRoom, description, poolArea, numberOfFloors);
 
         iService.updateService(newService);
         response.sendRedirect("/service?action=service");
 
     }
+
     private void showEditForm(HttpServletRequest request, HttpServletResponse response)
             throws SQLException, IOException, ServletException {
         int id = Integer.parseInt(request.getParameter("id"));
         model.Service service = iService.selectService(id);
         List<RentType> rentTypeList = iRentTypeService.selectAllRentType();
         List<ServiceType> serviceTypeList = iServiceTypeService.selectAllServiceType();
-        request.setAttribute("rentType",rentTypeList);
-        request.setAttribute("serviceTypeList",serviceTypeList);
-        request.setAttribute("service",service);
+        request.setAttribute("rentType", rentTypeList);
+        request.setAttribute("serviceTypeList", serviceTypeList);
+        request.setAttribute("service", service);
         RequestDispatcher dispatcher = request.getRequestDispatcher("service/edit.jsp");
         dispatcher.forward(request, response);
     }
+
     private void showNewForm(HttpServletRequest request, HttpServletResponse response)
             throws SQLException, IOException, ServletException {
         List<model.Service> serviceList = iService.selectAllService();
         List<ServiceType> serviceTypeList = iServiceTypeService.selectAllServiceType();
         List<RentType> rentTypeList = iRentTypeService.selectAllRentType();
 
-        request.setAttribute("serviceList",serviceList);
-        request.setAttribute("serviceTypeList",serviceTypeList);
-        request.setAttribute("rentTypeList",rentTypeList);
+        request.setAttribute("serviceList", serviceList);
+        request.setAttribute("serviceTypeList", serviceTypeList);
+        request.setAttribute("rentTypeList", rentTypeList);
         RequestDispatcher dispatcher = request.getRequestDispatcher("service/create.jsp");
         dispatcher.forward(request, response);
     }
+
     private void listService(HttpServletRequest request, HttpServletResponse response)
             throws SQLException, IOException, ServletException {
         String indexPage = request.getParameter("index");
-        if(indexPage == null){
+        if (indexPage == null) {
             indexPage = "1";
         }
         int index = Integer.parseInt(indexPage);
         int count = iService.getTotalService();
-        int endPage = count/3;
-        if(count % 3 != 0){
+        int endPage = count / 3;
+        if (count % 3 != 0) {
             endPage++;
         }
+        List<RentType> rentTypeList = iRentTypeService.selectAllRentType();
+        request.setAttribute("rentTypeList", rentTypeList);
         List<model.Service> serviceList = iService.pagingService(index);
         request.setAttribute("endP", endPage);
         request.setAttribute("serviceList", serviceList);
         RequestDispatcher dispatcher = request.getRequestDispatcher("service/service.jsp");
         dispatcher.forward(request, response);
     }
+
     private void createService(HttpServletRequest request, HttpServletResponse response)
             throws SQLException, IOException, ServletException {
         int serviceId = Integer.parseInt(request.getParameter("id"));
@@ -159,17 +203,17 @@ public class ServletService extends HttpServlet {
         int poolArea = Integer.parseInt(request.getParameter("pool_area"));
         int numberOfFloors = Integer.parseInt(request.getParameter("number_floor"));
 
-        model.Service newService = new model.Service(serviceId,serviceName,serviceArea,serviceCost,serviceMaxPeople,
-                rentType,serviceTypeId,standardRoom,description,poolArea,numberOfFloors);
+        model.Service newService = new model.Service(serviceId, serviceName, serviceArea, serviceCost, serviceMaxPeople,
+                rentType, serviceTypeId, standardRoom, description, poolArea, numberOfFloors);
 
-        Map<String,String> map = iService.createService(newService);
-        if(!map.isEmpty()){
-            for(Map.Entry<String,String> entry : map.entrySet()){
-                request.setAttribute(entry.getKey(),entry.getValue());
+        Map<String, String> map = iService.createService(newService);
+        if (!map.isEmpty()) {
+            for (Map.Entry<String, String> entry : map.entrySet()) {
+                request.setAttribute(entry.getKey(), entry.getValue());
             }
             RequestDispatcher dispatcher = request.getRequestDispatcher("service/create.jsp");
             dispatcher.forward(request, response);
-        }else{
+        } else {
             response.sendRedirect("/service?action=service");
         }
 //        RequestDispatcher dispatcher = request.getRequestDispatcher("index.jsp");
