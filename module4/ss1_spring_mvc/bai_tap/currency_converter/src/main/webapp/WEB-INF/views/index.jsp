@@ -29,7 +29,7 @@
           <td>To:
               <select name="curencyTo" id="curency-to">
                   <option value="usd">USD</option>
-                  <option value="vnd">VND</option>
+                  <option selected value="vnd">VND</option>
               </select>
           </td>
       </tr>

@@ -22,7 +22,7 @@ public class CurrencyConverter {
         return modelAndView;
     }
     @RequestMapping(
-            value = {"/converter"},
+                value = {"/converter"},
             method = {RequestMethod.POST}
     )
     public ModelAndView curencyConverter(@RequestParam("number") String number, @RequestParam("curencyFrom") String fromConvert, @RequestParam("curencyTo") String toConvert){
