@@ -3,13 +3,13 @@ package model;
 public class MailSetting {
     private String language;
     private String pageSize;
-    private String filler;
+    private boolean filler = false;
     private String signature;
 
     public MailSetting() {
     }
 
-    public MailSetting(String    language, String pageSize, String filler, String signature) {
+    public MailSetting(String    language, String pageSize, boolean filler, String signature) {
         this.language = language;
         this.pageSize = pageSize;
         this.filler = filler;
@@ -32,11 +32,11 @@ public class MailSetting {
         this.pageSize = pageSize;
     }
 
-    public String getFiller() {
+    public boolean isFiller() {
         return filler;
     }
 
-    public void setFiller(String filler) {
+    public void setFiller(boolean filler) {
         this.filler = filler;
     }
 

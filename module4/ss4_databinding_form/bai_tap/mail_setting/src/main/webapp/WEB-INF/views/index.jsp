@@ -13,24 +13,56 @@
   <title>$Title$</title>
 </head>
 <body>
+
+
+
 <form:form action="mail" method="post" modelAttribute="mailSetting">
-  <fieldset>
-    <legend>Login</legend>
     <table>
-      <tr>
-        <td><form:label path="account">Account:</form:label></td>
-        <td><form:input path="account"  /></td>
-      </tr>
-      <tr>
-        <td><form:label path="password">Password:</form:label></td>
-        <td><form:input path="password"/></td>
-      </tr>
-      <tr>
-        <td></td>
-        <td><form:button>Login</form:button></td>
-      </tr>
+        <tr>
+           <th>Languages:</th>
+            <td>
+                <form:select path="language" >
+                <form:option value="English" label="English"/>
+                <form:option value="Vietnamese" label="Vietnamese"/>
+                <form:option value="Japanese" label="Japanese"/>
+                <form:option value="Chinese" label="Chinese"/>
+            </form:select>
+            </td>
+        </tr>
+        <tr>
+            <th>Page size:</th>
+            <td>
+                Show
+                <form:select path="pageSize" cssStyle="width: 50px">
+                    <form:option value="5" label="5"/>
+                    <form:option value="10" label="10"/>
+                    <form:option value="15" label="15"/>
+                    <form:option value="25" label="20"/>
+                    <form:option value="50" label="50"/>
+                    <form:option value="100" label="100"/>
+                </form:select>
+                email per page
+            </td>
+        </tr>
+        <tr>
+            <th>Spams filler:</th>
+            <td>
+                <form:checkbox path="filler" label="Enable spams filler"></form:checkbox>
+            </td>
+        </tr>
+        <tr>
+            <th>Signature:</th>
+            <td>
+                <form:textarea path="signature" value=""></form:textarea>
+            </td>
+        </tr>
+        <tr>
+            <td><input type="submit" value="Submit"/></td>
+        </tr>
+
     </table>
-  </fieldset>
+
 </form:form>
+
 </body>
 </html>

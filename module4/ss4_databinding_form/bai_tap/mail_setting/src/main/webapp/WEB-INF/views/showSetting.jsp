@@ -11,6 +11,9 @@
     <title>Title</title>
 </head>
 <body>
-
+<p>${language}</p>
+<p>${pageSize}</p>
+<p>${filler}</p>
+<p>${signature}</p>
 </body>
 </html>
