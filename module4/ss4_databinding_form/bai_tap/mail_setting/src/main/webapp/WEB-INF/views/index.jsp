@@ -12,8 +12,8 @@
 <head>
   <title>$Title$</title>
 </head>
-<body>
 
+<body>
 
 
 <form:form action="mail" method="post" modelAttribute="mailSetting">
@@ -64,5 +64,8 @@
 
 </form:form>
 
+
+
 </body>
+
 </html>
