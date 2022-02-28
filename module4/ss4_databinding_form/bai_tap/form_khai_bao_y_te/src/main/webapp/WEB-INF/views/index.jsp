@@ -234,6 +234,7 @@
                 <td colspan="1"><form:radiobutton path="exposureHistory[2]" value="exposureHistory2 - true"  /></td>
                 <td colspan="1"><form:radiobutton path="exposureHistory[2]" value="exposureHistory2 - false" /></td>
             </tr>
+         
         </table>
         <input type="submit" value="Submit"/>
     </form:form>
