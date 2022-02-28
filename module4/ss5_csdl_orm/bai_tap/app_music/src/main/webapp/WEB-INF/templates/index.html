@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="/layout :: head">
+<body>
+<h3>Products</h3>
+<div class="notify">
+    <div th:if="${message}">
+        <span th:text="${message}"></span>
+    </div>
+</div>
+<!--<p th:text="${keyword}"></p>-->
+<!--<p th:text="${error1}"></p>-->
+<!--<p th:text="${error2}"></p>-->
+<!--<div>-->
+<!--    <form th:action="@{/product/search}" method="post">-->
+<!--        <input type="text" name="keyword" th:value="${keyword}">-->
+<!--        <button type="submit">Search</button>-->
+<!--    </form>-->
+
+<!--</div>-->
+<p>
+    <a th:href="@{/music/create}">
+        Add new product
+    </a>
+</p>
+<table id = "music">
+    <thead>
+    <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Link</th>
+        <th>Edit</th>
+        <th>Delete</th>
+        <th>View</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="row,rowStat : ${music}">
+        <td th:text="${row.getName()}"></td>
+        <td th:text="${row.getType()}"></td>
+        <td th:text="${row.getLink()}"></td>
+        <td><a th:href="@{/music/{id}/edit(id=${row.getId()})}">edit</a></td>
+        <td><a th:href="@{/music/{id}/delete(id=${row.getId()})}">delete</a></td>
+        <td><a th:href="@{/music/{id}/view(id=${row.getId()})}">view</a></td>
+    </tr>
+    </tbody>
+</table>
+<footer th:replace="/layout :: footer"></footer>
+</body>
+</html>
