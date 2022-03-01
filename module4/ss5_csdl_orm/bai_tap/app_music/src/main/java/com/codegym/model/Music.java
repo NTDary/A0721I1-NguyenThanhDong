@@ -9,21 +9,24 @@ public class Music {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
     private String name;
+    private String singer;
     private String type;
     private String link;
 
     public Music() {
     }
 
-    public Music(long id, String name, String type, String link) {
-        this.id = id;
+    public Music(String name, String singer, String type, String link) {
         this.name = name;
+        this.singer = singer;
         this.type = type;
         this.link = link;
     }
 
-    public Music(String name, String type, String link) {
+    public Music(long id, String name, String singer, String type, String link) {
+        this.id = id;
         this.name = name;
+        this.singer = singer;
         this.type = type;
         this.link = link;
     }
@@ -42,6 +45,14 @@ public class Music {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public String getSinger() {
+        return singer;
+    }
+
+    public void setSinger(String singer) {
+        this.singer = singer;
     }
 
     public String getType() {

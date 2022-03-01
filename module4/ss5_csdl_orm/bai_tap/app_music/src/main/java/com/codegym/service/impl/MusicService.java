@@ -3,17 +3,22 @@ package com.codegym.service.impl;
 import com.codegym.model.Music;
 import com.codegym.service.IMusicService;
 import org.hibernate.HibernateException;
+import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
 import org.hibernate.cfg.Configuration;
 import org.springframework.stereotype.Service;
+import org.springframework.web.multipart.MultipartFile;
 
 import javax.persistence.EntityManager;
 import javax.persistence.TypedQuery;
 import java.util.List;
+
 @Service
 public class MusicService implements IMusicService {
     private static SessionFactory sessionFactory;
     private static EntityManager entityManager;
+
     static {
         try {
             SessionFactory sessionFactory = new Configuration()
@@ -24,6 +29,7 @@ public class MusicService implements IMusicService {
             e.printStackTrace();
         }
     }
+
     static {
         try {
             sessionFactory = new Configuration()
@@ -34,6 +40,7 @@ public class MusicService implements IMusicService {
             e.printStackTrace();
         }
     }
+
     @Override
     public List<Music> showAll() {
         String queryStr = "SELECT c FROM Music AS c";
@@ -42,17 +49,79 @@ public class MusicService implements IMusicService {
     }
 
     @Override
-    public void save(Music product) {
+    public void save(Music music) {
+        Session session = null;
+        Transaction transaction = null;
+        try {
+            session = sessionFactory.openSession();
+            transaction = session.beginTransaction();
 
+            Music music1 = findById(music.getId());
+            music1.setName(music.getName());
+            music1.setType(music.getType());
+            music1.setSinger(music.getSinger());
+            music1.setLink(music.getLink());
+            session.saveOrUpdate(music1);
+            transaction.commit();
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            if (transaction != null) {
+                transaction.rollback();
+            }
+        } finally {
+            if (session != null) {
+                session.close();
+            }
+        }
     }
 
     @Override
-    public Music findById(int id) {
-        return null;
+    public Music findById(Long id) {
+        String queryStr = "SELECT c FROM Music AS c WHERE c.id = :id";
+        TypedQuery<Music> query = entityManager.createQuery(queryStr, Music.class);
+        query.setParameter("id", id);
+        return query.getSingleResult();
     }
 
     @Override
-    public void delete(int id) {
+    public void delete(Long id) {
+
+        Session session = null;
+        Transaction transaction = null;
+        try {
+            session = sessionFactory.openSession();
+            transaction = session.beginTransaction();
+
+            Music music = session.load(Music.class, id);
+            session.delete(music);
+            transaction.commit();
+
+//            Music music1 = findById(music.getId());
+//            music1.setName(music.getName());
+//            music1.setType(music.getType());
+//            music1.setSinger(music.getSinger());
+//            music1.setLink(music.getLink());
+//            session.saveOrUpdate(music1);
+
+
+        } catch (Exception e) {
+            e.printStackTrace();
+
+            if (transaction != null) {
+                transaction.rollback();
+            }
+        } finally {
+            if (session != null) {
+                session.close();
+            }
+        }
+
+//        String queryStr = "Delete from Music c where c.id = :id";
+//        TypedQuery<Music> query = entityManager.createQuery(queryStr, Music.class);
+//        query.setParameter("id", id);
+//
+//        query.executeUpdate();
 
     }
 

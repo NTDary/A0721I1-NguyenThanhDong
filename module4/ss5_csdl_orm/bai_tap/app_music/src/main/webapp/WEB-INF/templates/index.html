@@ -28,6 +28,7 @@
     <tr>
         <th>Name</th>
         <th>Type</th>
+        <th>Singer</th>
         <th>Link</th>
         <th>Edit</th>
         <th>Delete</th>
@@ -38,7 +39,8 @@
     <tr th:each="row,rowStat : ${music}">
         <td th:text="${row.getName()}"></td>
         <td th:text="${row.getType()}"></td>
-        <td th:text="${row.getLink()}"></td>
+        <td th:text="${row.getSinger()}"></td>
+        <td><a th:href="${row.getLink()}">Nghe</a></td>
         <td><a th:href="@{/music/{id}/edit(id=${row.getId()})}">edit</a></td>
         <td><a th:href="@{/music/{id}/delete(id=${row.getId()})}">delete</a></td>
         <td><a th:href="@{/music/{id}/view(id=${row.getId()})}">view</a></td>

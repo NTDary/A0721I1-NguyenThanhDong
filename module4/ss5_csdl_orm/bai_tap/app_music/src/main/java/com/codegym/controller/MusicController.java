@@ -19,50 +19,55 @@ public class MusicController {
     private final IMusicService iMusicService = new MusicService();
 
     @GetMapping("")
-    public ModelAndView index(){
-        List<Music> musicList  = iMusicService.showAll();
+    public ModelAndView index() {
+        List<Music> musicList = iMusicService.showAll();
         ModelAndView modelAndView = new ModelAndView("index");
-        modelAndView.addObject("music",musicList);
+        modelAndView.addObject("music", musicList);
         return modelAndView;
     }
+
     @GetMapping("/create")
     public ModelAndView create() {
-        return new ModelAndView("create","music", new Music());
+        return new ModelAndView("create", "music", new Music());
     }
+
     @PostMapping("/save")
     public ModelAndView save(Music music, RedirectAttributes redirectAttrs) {
         ModelAndView modelAndView = new ModelAndView("redirect:/music/");
-        music.setId((int) (Math.random() * 10000));
+        // music.setId((int) (Math.random() * 10000));
         iMusicService.save(music);
-
         redirectAttrs.addFlashAttribute("message", "Added successfully");
+
 
         return modelAndView;
     }
+
     @GetMapping("/{id}/edit")
-    public ModelAndView edit(@PathVariable int id){
-        return new ModelAndView("edit","product",iMusicService.findById(id));
+    public ModelAndView edit(@PathVariable Long id) {
+        return new ModelAndView("edit", "music", iMusicService.findById(id));
     }
+
     @PostMapping("/update")
-    public ModelAndView update(Music music, RedirectAttributes redirectAttributes){
+    public ModelAndView update(Music music, RedirectAttributes redirectAttributes) {
+
         iMusicService.save(music);
         redirectAttributes.addFlashAttribute("message", "Updated successfully");
         return new ModelAndView("redirect:/music/");
     }
-//    @GetMapping("/{id}/delete")
-//    public ModelAndView delete(@PathVariable int id){
-//        return new ModelAndView("delete","music",iMusicService.findById(id));
-//    }
-//    @PostMapping("/delete")
-//    public ModelAndView delete(Music music, RedirectAttributes redirectAttributes){
-//        iMusicService.deleteProduct(product.getId());
-//        redirectAttributes.addFlashAttribute("message", "Deleted successfully");
-//        return new ModelAndView("redirect:/product/");
-//    }
-//    @GetMapping("/{id}/view")
-//    public ModelAndView view(@PathVariable int id){
-//        return new ModelAndView("view","product",iProductService.findById(id));
-//    }
+    @GetMapping("/{id}/delete")
+    public ModelAndView delete(@PathVariable Long id){
+        return new ModelAndView("delete","music",iMusicService.findById(id));
+    }
+    @PostMapping("/delete")
+    public ModelAndView delete(Music music, RedirectAttributes redirectAttributes){
+        iMusicService.delete(music.getId());
+        redirectAttributes.addFlashAttribute("message", "Deleted successfully");
+        return new ModelAndView("redirect:/music/");
+    }
+    @GetMapping("/{id}/view")
+    public ModelAndView view(@PathVariable Long id){
+        return new ModelAndView("view","music",iMusicService.findById(id));
+    }
 //    @PostMapping("/search")
 //    public ModelAndView search(@RequestParam("keyword") String keyword){
 //        ModelAndView modelAndView = new ModelAndView("index");
