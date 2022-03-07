@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="/layer :: head"/>
+<body>
+
+<div class="container-xl">
+    <div class="table-responsive">
+        <div class="table-wrapper">
+            <div class="table-title">
+                <a th:href="@{/}" class="btn btn-success"><span><< Back to list Customer</span></a>
+            </div>
+            <div class="modal-content">
+                <form th:action="@{/save}" th:object="${customer}" method="post">
+                    <div class="modal-header">
+                        <h4 class="modal-title">Add Customer</h4>
+                        <button type="button" class="close" data-dismiss="modal">
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <label>First Name</label>
+                            <input type="text" class="form-control" th:field="*{firstName}" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Last Name</label>
+                            <input type="text" class="form-control" th:field="*{lastName}" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Province Name</label>
+                            <select class="form-control" th:field="*{province}">
+                                <option th:each="province : ${provinces}" th:text="${province.name}" th:value="${province.id}"></option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <input type="submit" class="btn btn-success" value="Add">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
