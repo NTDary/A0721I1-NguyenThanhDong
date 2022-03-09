@@ -20,4 +20,8 @@ public interface ICustomerRepository extends JpaRepository<Customer, Long> {
             nativeQuery=true)
     Page<Customer> searchByName(String firstName, Pageable pageable);
 
+    @Query(value = "SELECT * FROM customer c INNER JOIN province p on c.province_id = p.id where p.id = ?1",
+            nativeQuery = true)
+    Page<Customer> searchByProvince(Long province_id, Pageable pageable);
+
 }

@@ -9,5 +9,5 @@ import org.springframework.data.domain.Pageable;
 public interface IProvinceService extends IGeneralService<Province> {
     Page<Province> findAll(Pageable pageable);
     Page<Province> searchByName(String name, Pageable pageable);
-    Page<Customer> searchByProvince(Long id);
+
 }

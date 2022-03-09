@@ -20,6 +20,12 @@
                     </div>
                 </div>
             </div>
+<!--            <p th:text="${province.name}"></p>-->
+<!--            <th:block th:each="customer : ${province.customer}">-->
+<!--                <p th:text="${customer.id}"></p>-->
+<!--                <p th:text="${customer.firstName}"></p>-->
+<!--                <p th:text="${customer.lastName}"></p>-->
+<!--            </th:block>-->
             <table class="table table-striped table-hover table-bordered">
                 <thead>
                 <tr>
@@ -31,13 +37,14 @@
                 </tr>
                 </thead>
                 <tbody>
-                <tr th:each="customer,test : ${customers}">
-                    <td hidden th:text="${customer.id}"></td>
-                    <td th:text="${customer.id}"></td>
-                    <td th:text="${customer.firstName}" ></td>
-                    <td th:text="${customer.lastName}"></td>
-<!--                    <td th:text="${customer.firstName}"></td>-->
-                    </td>
+                <tr>
+                    <th:block th:each="customer : ${province.customer}">
+                        <td hidden th:text="${province}"></td>
+                        <td th:text="${customer.id}"></td>
+                        <td th:text="${customer.firstName}"></td>
+                        <td th:text="${customer.lastName}"></td>
+                        <td th:text="${customer.province.name}"></td>
+                    </th:block>
                     <td>
                         <a th:href="@{/provinces/view/{id}(id=${province.getId()})}" href="#" class="view" title="View"
                            data-toggle="tooltip"><i class="material-icons">&#xE417;</i></a>
@@ -70,45 +77,44 @@
                             </div>
                         </div>
                     </div>
-                    <!
                 </tr>
                 </tbody>
             </table>
-<!--            <div class="clearfix">-->
-<!--                <div style="text-align: center">Total Items <b th:text="${totalItems}"></b></div>-->
-<!--                <div class="hint-text">Showing <b th:text="${provinces.number + 1}"></b> out of <b-->
-<!--                        th:text="${provinces.totalPages}"></b> entries-->
-<!--                </div>-->
-<!--                <ul class="pagination">-->
+            <!--            <div class="clearfix">-->
+            <!--                <div style="text-align: center">Total Items <b th:text="${totalItems}"></b></div>-->
+            <!--                <div class="hint-text">Showing <b th:text="${provinces.number + 1}"></b> out of <b-->
+            <!--                        th:text="${provinces.totalPages}"></b> entries-->
+            <!--                </div>-->
+            <!--                <ul class="pagination">-->
 
-<!--                    <li class="page-item disabled"><a th:href="@{'/provinces/'(page=${provinces.number - 1},namePro = ${namePro})}"-->
-<!--                                                      th:if="${provinces.hasPrevious()}" href="#"><i-->
-<!--                            class="fa fa-angle-double-left"></i></a></li>-->
-<!--                    <div th:each="i : ${#numbers.sequence(1,provinces.totalPages)}">-->
-<!--                        <li class="page-item"><a th:if="${currentPage != i }" th:href="@{'/provinces/'(page=${i -1},namePro = ${namePro})}"-->
-<!--                                                 th:text="${i}" class="page-link"></a>-->
-<!--                        </li>-->
-<!--                        <li class="page-item"><a th:unless="${currentPage != i }" th:href="@{'/provinces/'(page=${i - 1},namePro = ${namePro})}"-->
-<!--                                                 th:text="${i}" class="page-link"-->
-<!--                                                 style="font-weight: bold; color: red"></a>-->
-<!--                        </li>-->
+            <!--                    <li class="page-item disabled"><a th:href="@{'/provinces/'(page=${provinces.number - 1},namePro = ${namePro})}"-->
+            <!--                                                      th:if="${provinces.hasPrevious()}" href="#"><i-->
+            <!--                            class="fa fa-angle-double-left"></i></a></li>-->
+            <!--                    <div th:each="i : ${#numbers.sequence(1,provinces.totalPages)}">-->
+            <!--                        <li class="page-item"><a th:if="${currentPage != i }" th:href="@{'/provinces/'(page=${i -1},namePro = ${namePro})}"-->
+            <!--                                                 th:text="${i}" class="page-link"></a>-->
+            <!--                        </li>-->
+            <!--                        <li class="page-item"><a th:unless="${currentPage != i }" th:href="@{'/provinces/'(page=${i - 1},namePro = ${namePro})}"-->
+            <!--                                                 th:text="${i}" class="page-link"-->
+            <!--                                                 style="font-weight: bold; color: red"></a>-->
+            <!--                        </li>-->
 
-<!--                    </div>-->
+            <!--                    </div>-->
 
-<!--                    <li class="page-item"><a th:href="@{'/provinces/'(page=${provinces.number + 1},namePro = ${namePro})}"-->
-<!--                                             th:if="${provinces.hasNext()}" href="#" class="page-link"><i-->
-<!--                            class="fa fa-angle-double-right"></i></a></li>-->
-<!--                </ul>-->
-<!--            </div>-->
-<!--        </div>-->
+            <!--                    <li class="page-item"><a th:href="@{'/provinces/'(page=${provinces.number + 1},namePro = ${namePro})}"-->
+            <!--                                             th:if="${provinces.hasNext()}" href="#" class="page-link"><i-->
+            <!--                            class="fa fa-angle-double-right"></i></a></li>-->
+            <!--                </ul>-->
+            <!--            </div>-->
+            <!--        </div>-->
+        </div>
     </div>
-</div>
-<script>
-    $('#confirm-delete').on('show.bs.modal', function (e) {
-        $(this).find('.btn-ok').attr('href', $(e.relatedTarget).data('href'));
+    <script>
+        $('#confirm-delete').on('show.bs.modal', function (e) {
+            $(this).find('.btn-ok').attr('href', $(e.relatedTarget).data('href'));
 
-        $('.debug-url').html('Delete URL: <strong>' + $(this).find('.btn-ok').attr('href') + '</strong>');
-    });
-</script>
+            $('.debug-url').html('Delete URL: <strong>' + $(this).find('.btn-ok').attr('href') + '</strong>');
+        });
+    </script>
 </body>
 </html>

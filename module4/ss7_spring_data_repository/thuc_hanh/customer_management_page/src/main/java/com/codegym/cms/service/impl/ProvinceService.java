@@ -49,8 +49,6 @@ public class ProvinceService implements IProvinceService {
         return iProvinceRepository.searchByName(name,pageable);
     }
 
-    @Override
-    public Page<Customer> searchByProvince(Long id) {
-        return iProvinceRepository.searchByProvince(id);
-    }
+
+
 }

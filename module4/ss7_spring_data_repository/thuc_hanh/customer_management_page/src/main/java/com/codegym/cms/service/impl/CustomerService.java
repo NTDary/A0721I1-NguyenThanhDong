@@ -52,4 +52,9 @@ public class CustomerService implements ICustomerService {
         return customerRepository.searchByName(firstName,pageable);
     }
 
+    @Override
+    public Page<Customer> searchByProvince(Long province_id, Pageable pageable) {
+        return customerRepository.searchByProvince(province_id, pageable);
+    }
+
 }

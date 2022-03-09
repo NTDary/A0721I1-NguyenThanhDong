@@ -100,4 +100,17 @@ public class CustomerController {
         }
     }
 
+    @GetMapping("/view/{id}")
+    public ModelAndView viewProvince(@PathVariable Long id, @PageableDefault(size = 5) Pageable pageable){
+        ModelAndView modelAndView = new ModelAndView("list");
+        Page<Customer> customers = iCustomerService.searchByProvince(id,pageable);
+        if(!customers.isEmpty()){
+            modelAndView.addObject("customers",customers);
+            //modelAndView.addObject("province",provinceService.findById(id));
+            return modelAndView;
+        }else {
+            return new ModelAndView("error404");
+        }
+    }
+
 }

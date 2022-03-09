@@ -21,6 +21,14 @@ public class Province {
         this.name = name;
     }
 
+    public Set<Customer> getCustomer() {
+        return customer;
+    }
+
+    public void setCustomer(Set<Customer> customer) {
+        this.customer = customer;
+    }
+
     public Long getId() {
         return id;
     }

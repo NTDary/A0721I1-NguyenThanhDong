@@ -60,19 +60,18 @@ public class ProvinceController {
             return new ModelAndView("error404");
         }
     }
-    @GetMapping("/view/{id}")
-    public ModelAndView viewProvince(@PathVariable Long id){
-        ModelAndView modelAndView = new ModelAndView("/province/view");
-        Optional<Customer> customerList = provinceService.searchByProvince(id);
-        if(!customerList.isEmpty()){
-            modelAndView.addObject("customers",customerList);
-            //modelAndView.addObject("province",provinceService.findById(id));
-            return modelAndView;
-        }else {
-            return new ModelAndView("error404");
-        }
-
-    }
+//    @GetMapping("/view/{id}")
+//    public ModelAndView viewProvince(@PathVariable Long id, @PageableDefault(size = 5) Pageable pageable){
+//        ModelAndView modelAndView = new ModelAndView("/province/view");
+//        Province province = provinceService.searchByProvince(id);
+//        if(province != null){
+//            modelAndView.addObject("province",province);
+//            //modelAndView.addObject("province",provinceService.findById(id));
+//            return modelAndView;
+//        }else {
+//            return new ModelAndView("error404");
+//        }
+//    }
     @GetMapping("/delete/{id}")
     public ModelAndView deleteProvince(@PathVariable Long id){
         Optional<Province> province = provinceService.findById(id);

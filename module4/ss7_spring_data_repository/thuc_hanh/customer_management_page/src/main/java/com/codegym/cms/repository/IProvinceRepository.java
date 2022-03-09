@@ -16,9 +16,5 @@ public interface IProvinceRepository extends JpaRepository<Province, Long> {
             nativeQuery=true)
     Page<Province> searchByName(String name, Pageable pageable);
 
-//    @Query(value = "SELECT * FROM customer c INNER JOIN province p on c.province_id = p.id where p.id = ?1",
-//            nativeQuery = true)
-@Query(value = "SELECT * FROM customer WHERE province_id = ?1",
-        nativeQuery=true)
-    Page<Customer> searchByProvince(Long province_id);
+
 }

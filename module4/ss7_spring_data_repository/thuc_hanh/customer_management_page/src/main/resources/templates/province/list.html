@@ -38,7 +38,7 @@
                     <td th:text="${province.name}" style="font-weight: bold"></td>
                     </td>
                     <td>
-                        <a th:href="@{/provinces/view/{id}(id=${province.getId()})}" href="#" class="view" title="View"
+                        <a th:href="@{/view/{id}(id=${province.getId()})}" href="#" class="view" title="View"
                            data-toggle="tooltip"><i class="material-icons">&#xE417;</i></a>
                         <a th:href="@{/provinces/edit/{id}(id=${province.getId()})}" class="edit" title="Edit"
                            data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a>
