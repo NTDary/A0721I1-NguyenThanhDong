@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
@@ -24,14 +25,11 @@ public class UserController {
         return modelAndView;
     }
     @PostMapping("/create")
-    public ModelAndView createUser(@Valid User user, RedirectAttributes r, BindingResult bindingResult){
-        ModelAndView modelAndView = new ModelAndView("list");
+    public ModelAndView createUser(@Valid User user, BindingResult bindingResult){
         if(bindingResult.hasFieldErrors()){
-            new ModelAndView("create");
-            return modelAndView;
+            return new ModelAndView("create");
         }
         iUserService.saveUser(user);
-//        r.addFlashAttribute("messager","Created");
-        return modelAndView;
+        return new ModelAndView("list", "user", user);
     }
 }
