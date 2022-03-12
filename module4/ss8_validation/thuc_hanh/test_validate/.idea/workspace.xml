@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="86a7febf-fa90-4586-a101-0cc5e4232709" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ss1_spring_mvc/thuc_hanh/customer-management" beforeDir="false" afterPath="$PROJECT_DIR$/../../../ss1_spring_mvc/thuc_hanh/customer-management" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ss2_spring_controller/thuc_hanh/customer-management" beforeDir="false" afterPath="$PROJECT_DIR$/../../../ss2_spring_controller/thuc_hanh/customer-management" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ss5_csdl_orm/thuc_hanh/customer-management" beforeDir="false" afterPath="$PROJECT_DIR$/../../../ss5_csdl_orm/thuc_hanh/customer-management" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../bai_tap/register/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../bai_tap/register/build.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../bai_tap/register/gradle/wrapper/gradle-wrapper.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../bai_tap/register/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../bai_tap/register/gradlew" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../bai_tap/register/gradlew.bat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../bai_tap/register/settings.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../bai_tap/register/src/main/java/com/codegym/register/RegisterApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../bai_tap/register/src/main/java/com/codegym/register/ServletInitializer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../bai_tap/register/src/main/resources/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../bai_tap/register/src/test/java/com/codegym/register/RegisterApplicationTests.java" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Class" />
+        <option value="HTML File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../../.." />
+  </component>
+  <component name="ProjectId" id="268a6XPSb0lOf9dcr1mDIJsjm6r" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="RequestMappingsPanelOrder0" value="0" />
+    <property name="RequestMappingsPanelOrder1" value="1" />
+    <property name="RequestMappingsPanelWidth0" value="75" />
+    <property name="RequestMappingsPanelWidth1" value="75" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+  </component>
+  <component name="RunManager">
+    <configuration name="GymApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="gym.main" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.code.gym.GymApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="86a7febf-fa90-4586-a101-0cc5e4232709" name="Default Changelist" comment="" />
+      <created>1646807491427</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1646807491427</updated>
+      <workItem from="1646807496678" duration="7797000" />
+      <workItem from="1646827677009" duration="146000" />
+      <workItem from="1646904541790" duration="1820000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="2" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="801" y="358" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1646810522233">
+      <screen x="0" y="0" width="2048" height="1112" />
+    </state>
+    <state x="801" y="358" key="#com.intellij.fileTypes.FileTypeChooser/0.0.2048.1112/-1600.227.1600.860@0.0.2048.1112" timestamp="1646810522233" />
+    <state x="830" y="272" key="#com.intellij.ide.util.MemberChooser" timestamp="1646809987027">
+      <screen x="0" y="0" width="2048" height="1112" />
+    </state>
+    <state x="830" y="272" key="#com.intellij.ide.util.MemberChooser/0.0.2048.1112/-1600.227.1600.860@0.0.2048.1112" timestamp="1646809987027" />
+    <state x="-971" y="468" key="FileChooserDialogImpl" timestamp="1646914727078">
+      <screen x="-1600" y="227" width="1600" height="860" />
+    </state>
+    <state x="-971" y="468" key="FileChooserDialogImpl/0.0.2048.1112/-1600.227.1600.860@-1600.227.1600.860" timestamp="1646914727078" />
+    <state x="805" y="311" key="FileChooserDialogImpl/0.0.2048.1112/-1600.227.1600.860@0.0.2048.1112" timestamp="1646822270861" />
+    <state width="1557" height="305" key="GridCell.Tab.0.bottom" timestamp="1646823837015">
+      <screen x="-1600" y="227" width="1600" height="860" />
+    </state>
+    <state width="1557" height="305" key="GridCell.Tab.0.bottom/0.0.2048.1112/-1600.227.1600.860@-1600.227.1600.860" timestamp="1646823837015" />
+    <state width="2005" height="305" key="GridCell.Tab.0.bottom/0.0.2048.1112/-1600.227.1600.860@0.0.2048.1112" timestamp="1646814395940" />
+    <state width="1557" height="305" key="GridCell.Tab.0.center" timestamp="1646823837015">
+      <screen x="-1600" y="227" width="1600" height="860" />
+    </state>
+    <state width="1557" height="305" key="GridCell.Tab.0.center/0.0.2048.1112/-1600.227.1600.860@-1600.227.1600.860" timestamp="1646823837015" />
+    <state width="2005" height="305" key="GridCell.Tab.0.center/0.0.2048.1112/-1600.227.1600.860@0.0.2048.1112" timestamp="1646814395940" />
+    <state width="1557" height="305" key="GridCell.Tab.0.left" timestamp="1646823837015">
+      <screen x="-1600" y="227" width="1600" height="860" />
+    </state>
+    <state width="1557" height="305" key="GridCell.Tab.0.left/0.0.2048.1112/-1600.227.1600.860@-1600.227.1600.860" timestamp="1646823837015" />
+    <state width="2005" height="305" key="GridCell.Tab.0.left/0.0.2048.1112/-1600.227.1600.860@0.0.2048.1112" timestamp="1646814395940" />
+    <state width="1557" height="305" key="GridCell.Tab.0.right" timestamp="1646823837015">
+      <screen x="-1600" y="227" width="1600" height="860" />
+    </state>
+    <state width="1557" height="305" key="GridCell.Tab.0.right/0.0.2048.1112/-1600.227.1600.860@-1600.227.1600.860" timestamp="1646823837015" />
+    <state width="2005" height="305" key="GridCell.Tab.0.right/0.0.2048.1112/-1600.227.1600.860@0.0.2048.1112" timestamp="1646814395940" />
+    <state width="1557" height="305" key="GridCell.Tab.1.bottom" timestamp="1646823837016">
+      <screen x="-1600" y="227" width="1600" height="860" />
+    </state>
+    <state width="1557" height="305" key="GridCell.Tab.1.bottom/0.0.2048.1112/-1600.227.1600.860@-1600.227.1600.860" timestamp="1646823837016" />
+    <state width="2005" height="305" key="GridCell.Tab.1.bottom/0.0.2048.1112/-1600.227.1600.860@0.0.2048.1112" timestamp="1646814395941" />
+    <state width="1557" height="305" key="GridCell.Tab.1.center" timestamp="1646823837016">
+      <screen x="-1600" y="227" width="1600" height="860" />
+    </state>
+    <state width="1557" height="305" key="GridCell.Tab.1.center/0.0.2048.1112/-1600.227.1600.860@-1600.227.1600.860" timestamp="1646823837016" />
+    <state width="2005" height="305" key="GridCell.Tab.1.center/0.0.2048.1112/-1600.227.1600.860@0.0.2048.1112" timestamp="1646814395940" />
+    <state width="1557" height="305" key="GridCell.Tab.1.left" timestamp="1646823837016">
+      <screen x="-1600" y="227" width="1600" height="860" />
+    </state>
+    <state width="1557" height="305" key="GridCell.Tab.1.left/0.0.2048.1112/-1600.227.1600.860@-1600.227.1600.860" timestamp="1646823837016" />
+    <state width="2005" height="305" key="GridCell.Tab.1.left/0.0.2048.1112/-1600.227.1600.860@0.0.2048.1112" timestamp="1646814395940" />
+    <state width="1557" height="305" key="GridCell.Tab.1.right" timestamp="1646823837016">
+      <screen x="-1600" y="227" width="1600" height="860" />
+    </state>
+    <state width="1557" height="305" key="GridCell.Tab.1.right/0.0.2048.1112/-1600.227.1600.860@-1600.227.1600.860" timestamp="1646823837016" />
+    <state width="2005" height="305" key="GridCell.Tab.1.right/0.0.2048.1112/-1600.227.1600.860@0.0.2048.1112" timestamp="1646814395941" />
+    <state x="-1237" y="395" key="new project wizard" timestamp="1646914728764">
+      <screen x="-1600" y="227" width="1600" height="860" />
+    </state>
+    <state x="-1237" y="395" key="new project wizard/0.0.2048.1112/-1600.227.1600.860@-1600.227.1600.860" timestamp="1646914728764" />
+    <state x="465" y="217" key="new project wizard/0.0.2048.1112/-1600.227.1600.860@0.0.2048.1112" timestamp="1646822272066" />
+  </component>
+</project>

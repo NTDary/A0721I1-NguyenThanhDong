@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="/layer :: head"/>
+<style>
+    .error{
+        color: red;
+        font-style: italic;
+    }
+</style>
+<body>
+
+<div class="container-xl">
+    <div class="table-responsive">
+        <div class="table-wrapper">
+            <div class="table-title">
+                <a th:href="@{/}" class="btn btn-success"><span><< Back to list Music</span></a>
+            </div>
+            <div class="modal-content">
+                <form th:action="@{/save}" th:object="${music}" method="post">
+                    <input hidden th:field="*{id}">
+                    <div class="modal-header">
+                        <h4 class="modal-title">Add Music</h4>
+                        <button type="button" class="close" data-dismiss="modal">
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <label>Song Name</label>
+                            <input type="text" class="form-control" th:field="*{nameMusic}">
+                            <span class="error" th:if="${#fields.hasErrors('nameMusic')}" th:errors="*{nameMusic}">name error</span>
+                        </div>
+                        <div class="form-group">
+                            <label>Artist Name</label>
+                            <input type="text" class="form-control" th:field="*{nameArtist}" >
+                            <span class="error" th:if="${#fields.hasErrors('nameArtist')}" th:errors="*{nameArtist}">name error</span>
+                        </div>
+                        <div class="form-group">
+                            <label>Kind Of Music</label>
+                            <input type="text" class="form-control" th:field="*{kindOfMusic}" >
+                            <span class="error" th:if="${#fields.hasErrors('kindOfMusic')}" th:errors="*{kindOfMusic}">name error</span>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <input type="submit" class="btn btn-success" value="Add">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

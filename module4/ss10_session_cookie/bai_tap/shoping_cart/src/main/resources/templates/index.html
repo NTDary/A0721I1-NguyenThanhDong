@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="/layer :: head"/>
+<body>
+<!-- Navigation-->
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container px-4 px-lg-5">
+        <a class="navbar-brand" href="#!">Start Bootstrap</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
+                <li class="nav-item"><a class="nav-link active" aria-current="page" href="#!">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="#!">About</a></li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Shop</a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <li><a class="dropdown-item" href="#!">All Products</a></li>
+                        <li><hr class="dropdown-divider" /></li>
+                        <li><a class="dropdown-item" href="#!">Popular Items</a></li>
+                        <li><a class="dropdown-item" href="#!">New Arrivals</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <form th:object="${cart}" method="post" class="d-flex">
+                <a th:href="@{/shopping-cart}" class="btn btn-outline-dark" type="submit">
+                    <i class="bi-cart-fill me-1"></i>
+                    Cart
+                    <span th:text="*{countItemQuantity()}" class="badge bg-dark text-white ms-1 rounded-pill">0</span>
+                </a>
+            </form>
+        </div>
+    </div>
+</nav>
+<!-- Header-->
+<header th:replace="/layer ::header"/>
+<!-- Section-->
+<section class="py-5">
+    <div class="container px-4 px-lg-5 mt-5">
+        <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
+            <div th:each="product:${products}" class="col mb-5">
+                <div class="card h-100">
+                    <!-- Product image-->
+                    <img class="card-img-top" th:src="@{${'/images/' + product.img}} " alt="..."/>
+                    <!-- Product details-->
+                    <div class="card-body p-4">
+                        <div class="text-center">
+                            <!-- Product name-->
+                            <h5 th:text="${product.name}" class="fw-bolder">Fancy Product</h5>
+                            <!-- Product price-->
+                            <span th:text="${product.price}"/>
+                        </div>
+                    </div>
+                    <!-- Product actions-->
+                    <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                        <div class="text-center"><a th:href="@{/detail/__${product.id}__}"
+                                                    class="btn btn-outline-dark mt-auto" href="#">View options</a></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Page-->
+
+<!--        <div class="clearfix">-->
+<!--            <div style="text-align: center">Total Items <b th:text="${totalItems}"></b></div>-->
+<!--            <div class="hint-text">Showing <b th:text="${customers.number + 1}"></b> out of <b-->
+<!--                    th:text="${customers.totalPages}"></b> entries-->
+<!--            </div>-->
+<!--            <ul class="pagination">-->
+
+<!--                <li class="page-item disabled"><a th:href="@{'/'(page=${customers.number - 1}, nameCus=${nameCus})}"-->
+<!--                                                  th:if="${customers.hasPrevious()}" href="#"><i-->
+<!--                        class="fa fa-angle-double-left"></i></a></li>-->
+<!--                <div th:each="i : ${#numbers.sequence(1,customers.totalPages)}">-->
+<!--                    <li class="page-item"><a th:if="${currentPage != i }" th:href="@{'/'(page=${i -1}, nameCus=${nameCus})}"-->
+<!--                                             th:text="${i}" class="page-link"></a>-->
+<!--                    </li>-->
+<!--                    <li class="page-item"><a th:unless="${currentPage != i }" th:href="@{'/'(page=${i - 1}, nameCus=${nameCus})}"-->
+<!--                                             th:text="${i}" class="page-link"-->
+<!--                                             style="font-weight: bold; color: red"></a>-->
+<!--                    </li>-->
+
+<!--                </div>-->
+
+<!--                &lt;!&ndash;                    <li class="page-item"><a href="#" class="page-link">1</a></li>&ndash;&gt;-->
+<!--                &lt;!&ndash;                    <li class="page-item"><a href="#" class="page-link">2</a></li>&ndash;&gt;-->
+<!--                &lt;!&ndash;                    <li class="page-item active"><a href="#" class="page-link">3</a></li>&ndash;&gt;-->
+<!--                &lt;!&ndash;                    <li class="page-item"><a href="#" class="page-link">4</a></li>&ndash;&gt;-->
+<!--                &lt;!&ndash;                    <li class="page-item"><a href="#" class="page-link">5</a></li>&ndash;&gt;-->
+<!--                <li class="page-item"><a th:href="@{'/'(page=${customers.number + 1}, nameCus=${nameCus})}"-->
+<!--                                         th:if="${customers.hasNext()}" href="#" class="page-link"><i-->
+<!--                        class="fa fa-angle-double-right"></i></a></li>-->
+<!--            </ul>-->
+<!--        </div>-->
+<!-- Footer-->
+<footer th:replace="/layer :: footer"/>
+<!-- Bootstrap core JS-->
+<script th:replace="/layer :: script-bt"/>
+</body>
+</html>
