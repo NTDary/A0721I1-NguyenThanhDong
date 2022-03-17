@@ -1,23 +1,35 @@
-package com.codegym.cms.model;
+package com.example.blogresfulapi.model;
+
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 
 import javax.persistence.*;
 import java.util.Set;
 
 @Entity
-public class Province {
+public class Category {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String name;
 
+
+    @JsonBackReference
     @OneToMany(mappedBy = "id")
-    private Set<Customer> customer;
+    private Set<Blog> blogs;
 
-
-    public Province() {
+    public Set<Blog> getBlogs() {
+        return blogs;
     }
 
-    public Province(Long id, String name) {
+    public void setBlogs(Set<Blog> blogs) {
+        this.blogs = blogs;
+    }
+
+    public Category() {
+    }
+
+    public Category(Long id, String name) {
         this.id = id;
         this.name = name;
     }
@@ -37,4 +49,6 @@ public class Province {
     public void setName(String name) {
         this.name = name;
     }
+
+
 }
