@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script>
+        function addNewBlog() {
+            let title = $('#title').val();
+            let content = $('#content').val();
+            let newBlog = {
+                title: title,
+                content: content
+            };
+            //Goi ajax
+            $.ajax({
+                headers: {
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json'
+                },
+                type: "POST",
+                data: JSON.stringify(newBlog),
+                //ten Api
+                url: "/api-blog",
+                //xu ly khi thanh cong
+                success: console.log('success'),
+                success: showListBlog
+            });
+            event.preventDefault();
+        }
+
+        //hien thi list blog
+        function showListBlog() {
+            $.ajax({
+                type: "GET",
+                url: "/api-blog",
+                success: function (data) {
+                    let content = '    <tr>\n' +
+                        '        <td>Title</td>\n' +
+                        '        <td>Content</td>\n' +
+                        '        <td>Delete</td>\n' +
+                        '    </tr>';
+                    for (let i = 0; i< data.length; i++){
+                        content +=
+                            '<tr>'+
+                                '<td>'+ data[i].title +'</td>'+
+                                '<td>' + data[i].content +'</td>'+
+                                "<td><a class='deleteBlog' href='"+ data[i].id +"'>Delete</a></td>"+
+                            '</tr>'
+                    }
+                    $('#blogList').html(content) ;
+                }
+            })
+        }
+        //function delete
+        $(document).ready(function () {
+            //su kien thuc hien ajax
+            $('.deleteBlog').on("click", function (event) {
+                //lay du lieu
+                let a = $(this);
+                let blogId = a.attr("href");
+                $.ajax({
+                    type: "DELETE",
+                    //ten api
+                    url: `/api-blog/${blogId}`,
+                    //xu ly thanh cong
+                    success:function (data) {
+                        a.parent().parent().remove();
+                    }
+                })
+                //chan su kien mac dinh cua the
+                event.preventDefault();
+            })
+        })
+
+        //function search
+        $(document).ready(function () {
+            //su kien thuc hien ajax
+            $('#search').on("click", function (event) {
+                //lay du lieu
+                let text = $('#searchText').val();
+                console.log(text);
+                $.ajax({
+                    type: "GET",
+                    //ten api
+                    url: `/api-blog/search/${text}`,
+                    //xu ly thanh cong
+                    success:function (data) {
+                        let content = '    <tr>\n' +
+                            '        <td>Title</td>\n' +
+                            '        <td>Content</td>\n' +
+                            '        <td>Delete</td>\n' +
+                            '    </tr>';
+                        for (let i = 0; i< data.length; i++){
+                            content +=
+                                '<tr>'+
+                                '<td>'+ data[i].title +'</td>'+
+                                '<td>' + data[i].content +'</td>'+
+                                "<td><a class='deleteBlog' href='"+ data[i].id +"'>Delete</a></td>"+
+                                '</tr>'
+                        }
+                        $('#blogList').html(content) ;
+                    }
+                })
+                //chan su kien mac dinh cua the
+                event.preventDefault();
+            })
+        })
+
+    </script>
+</head>
+<body>
+<form >
+    <input type="text" id="searchText" placeholder="search" name="searchText" value="">
+    <input id="search" type="submit" value="submit">
+</form>
+<form id="add-blog">
+    <table>
+        <tr>
+            <td>Title:</td>
+            <td><input type="text" id="title" placeholder="producer"></td>
+        </tr>
+        <tr>
+            <td>Content:</td>
+            <td><input type="text" id="content" placeholder="model"></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><input type="submit" value="Add" onclick="addNewBlog()"></td>
+        </tr>
+    </table>
+</form>
+<h1>Blog List</h1>
+<table id="blogList">
+    <tr>
+        <td>Title</td>
+        <td>Content</td>
+        <td>Delete</td>
+    </tr>
+    <th:block th:each="blog: ${blogs}">
+        <tr>
+            <td th:text="${blog.title}"></td>
+            <td th:text="${blog.content}"></td>
+            <td><a class="deleteBlog" th:href="${blog.getId()}">Delete</a></td>
+        </tr>
+    </th:block>
+</table>
+</body>
+</html>

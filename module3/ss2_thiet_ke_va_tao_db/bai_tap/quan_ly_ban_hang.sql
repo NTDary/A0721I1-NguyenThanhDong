@@ -23,7 +23,8 @@ pPrice int
 
 create table OrderDetail(
 oID int,
-pID int primary key auto_increment,
+pID int,
+primary key(oID,pID),
 odQTY int default 1 check(odQTY >= 1),
 foreign key(oID) references `Order`(oID),
 foreign key(pID) references Product(pID)
