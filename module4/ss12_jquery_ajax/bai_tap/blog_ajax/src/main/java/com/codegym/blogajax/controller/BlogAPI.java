@@ -9,11 +9,15 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 import org.thymeleaf.util.StringUtils;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Optional;
 
 @RestController
 @RequestMapping("/api-blog")
 public class BlogAPI {
+    private final int ROW_LIMIT = 2;
+
     @Autowired
     private IBlogService blogService;
 
@@ -23,10 +27,35 @@ public class BlogAPI {
         return new ResponseEntity<>(blogService.findAll(), HttpStatus.OK);
     }
 
-    @GetMapping("/search/{textS}")
-    public ResponseEntity<Iterable<Blog>> searchBlog(@PathVariable(name = "textS", required = false) String textS) {
-        String check =  StringUtils.isEmpty(textS) ? "" : textS;
-            return new ResponseEntity<>(blogService.search(check), HttpStatus.OK);
+    @GetMapping("/search")
+    public ResponseEntity<Iterable<Blog>> searchBlog(@RequestParam String textS) {
+        List<Blog> blogsList = (List<Blog>) blogService.search(textS);
+        if(!blogsList.isEmpty()){
+            return new ResponseEntity<>(blogsList, HttpStatus.OK);
+        }else {
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
+
+    }
+
+    @GetMapping("/load")
+    public ResponseEntity<Iterable<Blog>> loadBlog(@RequestParam String row, @RequestParam String textS) {
+        List<Blog> temp = (List<Blog>)blogService.search(textS);
+        List<Blog> blogList = new ArrayList<>();
+        if(!temp.isEmpty()){
+            //row = 2 , size = 2 + row --- row = 4, size = 2 + 4
+            int numberRow = Integer.parseInt(row);
+            for (int i = numberRow; i < numberRow + ROW_LIMIT; i++) {
+                if(i < temp.size()){
+                    blogList.add(temp.get(i));
+                }else {
+                    break;
+                }
+            }
+            return new ResponseEntity<>(blogList, HttpStatus.OK);
+        }else {
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
 
     }
 

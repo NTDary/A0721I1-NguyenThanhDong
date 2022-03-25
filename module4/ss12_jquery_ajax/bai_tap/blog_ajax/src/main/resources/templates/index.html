@@ -40,18 +40,19 @@
                         '        <td>Content</td>\n' +
                         '        <td>Delete</td>\n' +
                         '    </tr>';
-                    for (let i = 0; i< data.length; i++){
+                    for (let i = 0; i < data.length; i++) {
                         content +=
-                            '<tr>'+
-                                '<td>'+ data[i].title +'</td>'+
-                                '<td>' + data[i].content +'</td>'+
-                                "<td><a class='deleteBlog' href='"+ data[i].id +"'>Delete</a></td>"+
+                            "<tr id='" + i + "'>" +
+                            '<td>' + data[i].title + '</td>' +
+                            '<td>' + data[i].content + '</td>' +
+                            "<td><a class='deleteBlog' href='" + data[i].id + "'>Delete</a></td>" +
                             '</tr>'
                     }
-                    $('#blogList').html(content) ;
+                    $('#blogList').html(content);
                 }
             })
         }
+
         //function delete
         $(document).ready(function () {
             //su kien thuc hien ajax
@@ -64,7 +65,7 @@
                     //ten api
                     url: `/api-blog/${blogId}`,
                     //xu ly thanh cong
-                    success:function (data) {
+                    success: function (data) {
                         a.parent().parent().remove();
                     }
                 })
@@ -83,23 +84,27 @@
                 $.ajax({
                     type: "GET",
                     //ten api
-                    url: `/api-blog/search/${text}`,
+                    data: {textS: text},
+                    url: `/api-blog/search`,
                     //xu ly thanh cong
-                    success:function (data) {
+                    success: function (data) {
+                        let index = 0;
                         let content = '    <tr>\n' +
                             '        <td>Title</td>\n' +
                             '        <td>Content</td>\n' +
                             '        <td>Delete</td>\n' +
                             '    </tr>';
-                        for (let i = 0; i< data.length; i++){
+                        for (let i = 0; i < data.length; i++) {
                             content +=
-                                '<tr>'+
-                                '<td>'+ data[i].title +'</td>'+
-                                '<td>' + data[i].content +'</td>'+
-                                "<td><a class='deleteBlog' href='"+ data[i].id +"'>Delete</a></td>"+
+                                "<tr id='" + ++index + "'>" +
+                                '<td hidden>' + +'</td>' +
+                                '<td>' + data[i].title + '</td>' +
+                                '<td>' + data[i].content + '</td>' +
+                                "<td><a class='deleteBlog' href='" + data[i].id + "'>Delete</a></td>" +
                                 '</tr>'
                         }
-                        $('#blogList').html(content) ;
+
+                        $('#blogList').html(content);
                     }
                 })
                 //chan su kien mac dinh cua the
@@ -107,10 +112,45 @@
             })
         })
 
+        //fuction load
+        $(document).ready(function () {
+            $('#load').on("click", function (event) {
+                //var x = document.getElementById("listBlog").rows.length;
+                let getRow = $('#blogList tr:last').attr('id');
+                let text = $('#searchText').val();
+                // let lastRow = $('#listBlog').rows[ $('#listBlog').rows.length - 1 ];
+                var table = document.getElementById("blogList");
+                $.ajax({
+                    type: "GET",
+                    data: {
+                        row: getRow,
+                        textS: text
+                    },
+                    url: `/api-blog/load`,
+                    //xu ly thanh cong
+                    success: function (data) {
+                        let content = '';
+                        for (let i = 0; i < data.length; i++) {
+                            let tr = table.insertRow(++getRow);
+                            let cell1 = tr.insertCell(0);
+                            let cell2 = tr.insertCell(1);
+                            let cell3 = tr.insertCell(2);
+                            tr.id = getRow;
+                            //     "<tr id='"+  parseInt(++getRow) +"'>" +
+                            cell1.innerHTML = '<td>' + data[i].title + '</td>'
+                            cell2.innerHTML = '<td>' + data[i].content + '</td>'
+                            cell3.innerHTML = "<td><a class='deleteBlog' href='" + data[i].id + "'>Delete</a></td>"
+                            // '</tr>'
+                        }
+                    }
+                })
+            })
+        })
+
     </script>
 </head>
 <body>
-<form >
+<form>
     <input type="text" id="searchText" placeholder="search" name="searchText" value="">
     <input id="search" type="submit" value="submit">
 </form>
@@ -137,13 +177,14 @@
         <td>Content</td>
         <td>Delete</td>
     </tr>
-    <th:block th:each="blog: ${blogs}">
-        <tr>
+    <th:block th:each="blog,test: ${blogs}">
+        <tr th:id="${test.count}">
             <td th:text="${blog.title}"></td>
             <td th:text="${blog.content}"></td>
             <td><a class="deleteBlog" th:href="${blog.getId()}">Delete</a></td>
         </tr>
     </th:block>
 </table>
+<button id="load"> Tải Thêm</button>
 </body>
 </html>
