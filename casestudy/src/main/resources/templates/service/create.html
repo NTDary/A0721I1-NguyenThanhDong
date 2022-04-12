@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="/layer :: head"/>
+<body>
+<nav th:replace="/layer :: nav"/>
+<div class="container-xl">
+    <div class="table-responsive">
+        <div class="table-wrapper">
+            <div class="table-title">
+                <a th:href="@{/service}" class="btn btn-success"><span><< Back to list Service</span></a>
+            </div>
+            <div class="modal-content">
+                <form th:action="@{/service/save}" th:object="${service}" method="post">
+                    <div class="modal-header">
+                        <h4 class="modal-title">Add Service</h4>
+                        <button type="button" class="close" data-dismiss="modal">
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <label>Service Name</label>
+                            <input type="text" class="form-control" th:field="*{service_name}" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Area</label>
+                            <input type="text" class="form-control" th:field="*{service_area}" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Cost</label>
+                            <input type="text" class="form-control" th:field="*{service_cost}" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Max People</label>
+                            <input type="number" class="form-control" th:field="*{service_max_people}" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Rent Type</label>
+                            <select class="form-control" th:field="*{rentType}">
+                                <option value="" label="--- Chọn ---"></option>
+                                <option th:each="rentT : ${rentTypes}" th:text="${rentT.rent_type_name}" th:value="${rentT.rent_type_id}"></option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Service Type</label>
+                            <select id="serviceType" class="form-control" th:field="*{serviceType}">
+                                <option value="" label="--- Chọn ---"></option>
+                                <option th:each="serviceT : ${serviceTypes}" th:text="${serviceT.service_type_name}" th:value="${serviceT.service_type_id}"></option>
+                            </select>
+                        </div>
+                        <span id="st"></span>
+                        <div class="form-group">
+                            <label>Standard Room</label>
+                            <input type="text" class="form-control" th:field="*{standard_room}" required>
+                        </div>
+                        <div id="description" class="form-group">
+                            <label>Description Other Convenience</label>
+                            <input type="text" class="form-control" th:field="*{description_other_convenience}" required>
+                        </div>
+                        <div style="display: none" id="pool" class="form-group">
+                            <label>Pool Area</label>
+                            <input id="pool-area" type="text" class="form-control" th:field="*{pool_area}" value="" required>
+                        </div>
+                        <div style="display: none"  id="floor" class="form-group">
+                            <label>Number of Floors</label>
+                            <input id="floor-number" type="text" class="form-control" th:field="*{number_of_floors}" value="" required>
+                        </div>
+<!--                        <div class="form-group">-->
+<!--                            <label>Address</label>-->
+<!--                            <select class="form-control" th:field="*{educationDegree}">-->
+<!--                                <option th:each="education : ${educationDegrees}" th:text="${education.education_degree_name}" th:value="${education.education_degree_id}"></option>-->
+<!--                            </select>-->
+<!--                        </div>-->
+                    </div>
+                    <div class="modal-footer">
+                        <input type="submit" class="btn btn-success" value="Add">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    function displayVals() {
+        var VILA = 1;
+        var HOUSE = 2;
+        var serviceType = $( "#serviceType" ).val();
+
+        if(serviceType == VILA){
+            $('#pool').show();
+            $('#floor').show();
+        }else if(serviceType == HOUSE){
+            $('#pool').hide();
+            $('#floor').show();
+            $('#pool-area').val(0);
+        }else {
+            $('#pool').hide();
+            $('#floor').hide();
+            $('#pool-area').val(0);
+            $('#floor-number').val(0);
+        }
+        // $('#st').html(serviceType);
+    }
+    $( "select" ).change( displayVals );
+    // displayVals();
+</script>
+</body>
+</html>

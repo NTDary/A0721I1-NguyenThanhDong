@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="/layer :: head"/>
+<body>
+<nav th:replace="/layer :: nav"/>
+<div class="container-xl">
+    <div class="table-responsive">
+        <div class="table-wrapper">
+            <div class="table-title">
+                <a th:href="@{/contract}" class="btn btn-success"><span><< Back to list Contract</span></a>
+            </div>
+            <div class="modal-content">
+                <form th:action="@{/contract/save}" th:object="${contract}" method="post">
+                    <div class="modal-header">
+                        <h4 class="modal-title">Add Contract</h4>
+                        <button type="button" class="close" data-dismiss="modal">
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <label>Start Date</label>
+                            <input type="date" class="form-control" th:field="*{contract_start_date}" required>
+                        </div>
+                        <div class="form-group">
+                            <label>End Date</label>
+                            <input type="date" class="form-control" th:field="*{contract_end_date}" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Deposit</label>
+                            <input type="number" class="form-control" th:field="*{contract_deposit}" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Total money</label>
+                            <input type="number" class="form-control" th:field="*{contract_total_money}" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Employee</label>
+                            <select class="form-control" th:field="*{employee}">
+                                <option th:each="e : ${employees}" th:text="${e.employee_name}" th:value="${e.employee_id}"></option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Customer</label>
+                            <select class="form-control" th:field="*{customer}">
+                                <option th:each="c : ${customers}" th:text="${c.customer_name}" th:value="${c.customer_id}"></option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Service</label>
+                            <select class="form-control" th:field="*{service}">
+                                <option th:each="s : ${services}" th:text="${s.service_name}" th:value="${s.service_id}"></option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <input type="submit" class="btn btn-success" value="Add">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

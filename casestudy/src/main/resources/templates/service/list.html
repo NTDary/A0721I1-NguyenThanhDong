@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="/layer :: head">
+<body>
+<nav th:replace="/layer :: nav"/>
+<!-- Responsive navbar-->
+<div class="container-xl">
+    <div class="table-responsive">
+        <div class="table-wrapper">
+            <div class="table-title">
+                <div class="row">
+                    <div class="col-sm-8"><h2>Service <b>List</b></h2></div>
+                    <div class="col-sm-4">
+                        <form action="">
+                            <div class="search-box">
+                                <i class="material-icons">&#xE8B6;</i>
+                                <input th:value="${nameE}" name="nameE" type="text" class="form-control"
+                                       placeholder="Search&hellip;">
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="table-title">
+                <a th:href="@{/service/create}" class="btn btn-success"><span>Add New Service</span></a>
+<!--                <a href="#" class="btn btn-success"><span>Position</span></a>-->
+<!--                <a href="#" class="btn btn-success"><span>Education Degree</span></a>-->
+<!--                <a href="#" class="btn btn-success"><span>Division</span></a>-->
+            </div>
+            <table class="table table-striped table-hover table-bordered">
+                <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Service Name</th>
+                    <th>Area</th>
+                    <th>Cost</th>
+                    <th>Max People</th>
+                    <th>Rent Type</th>
+                    <th>Service Type</th>
+                    <th>Standard Room</th>
+                    <th>Description</th>
+                    <th>Pool Area</th>
+                    <th>Number Floors</th>
+                    <th>Action</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="service,test : ${services}">
+                    <td hidden th:text="${service.service_id}"></td>
+                    <td th:text="${test.count + (services.number*5)}"></td>
+                    <td th:text="${service.service_name}" style="font-weight: bold"></td>
+                    <td th:text="${service.service_area}">
+                    <td th:text="${service.service_cost}">
+                    <td th:text="${service.service_max_people}">
+                    <td th:text="${service.rentType.getRent_type_name()}">
+                    <td th:text="${service.serviceType.getService_type_name()}">
+                    <td th:text="${service.standard_room}">
+                    <td th:text="${service.description_other_convenience}">
+                    <td th:text="${service.pool_area} != 0 ? ${service.pool_area} : 'null' ">
+                    <td th:text="${service.number_of_floors} != 0 ? ${service.number_of_floors} : 'null'">
+<!--                    <td th:text="${employee.user.getUsername()}">-->
+                    </td>
+                    <td>
+<!--                        <a th:href="@{/{id}/view(id=${employee.getEmployee_id()})}" href="#" class="view" title="View"-->
+<!--                           data-toggle="tooltip"><i class="material-icons">&#xE417;</i></a>-->
+                        <a th:href="@{service/{id}/edit(id=${service.getService_id()})}" class="edit" title="Edit"
+                           data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a>
+                        <a href="#" th:attr="data-href='/service/'+ ${service.getService_id()} + '/delete'"
+                           data-target="#confirm-delete" data-toggle="modal" class="delete" title="Delete"><i
+                                class="material-icons" data-toggle="tooltip">&#xE872;</i></a>
+                    </td>
+                    <div class="modal fade" id="confirm-delete" tabindex="-1" role="dialog"
+                         aria-labelledby="myModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+
+                                <div class="modal-header">
+                                    <h4 class="modal-title" id="myModalLabel">Confirm Delete</h4>
+                                </div>
+
+                                <div class="modal-body">
+                                    <p>You are about to delete one track, this procedure is irreversible.</p>
+                                    <p>Do you want to proceed?</p>
+                                    <p class="debug-url"></p>
+                                </div>
+
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                                    <a class="btn btn-danger btn-ok">Delete</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!
+                </tr>
+                </tbody>
+            </table>
+            <div class="clearfix">
+                <div style="text-align: center">Total Items <b th:text="${totalItems}"></b></div>
+                <div class="hint-text">Showing <b th:text="${services.number + 1}"></b> out of <b
+                        th:text="${services.totalPages}"></b> entries
+                </div>
+                <ul class="pagination">
+                    <li class="page-item disabled"><a th:href="@{'/service'(page=${services.number - 1}, nameE=${nameE})}"
+                                                      th:if="${services.hasPrevious()}" href="#"><i
+                            class="fa fa-angle-double-left"></i></a></li>
+                    <div th:each="i : ${#numbers.sequence(1,services.totalPages)}">
+                        <li class="page-item"><a th:if="${currentPage != i }" th:href="@{'/service'(page=${i -1}, nameE=${nameE})}"
+                                                 th:text="${i}" class="page-link"></a>
+                        </li>
+                        <li class="page-item"><a th:unless="${currentPage != i }" th:href="@{'/service'(page=${i - 1}, nameE=${nameE})}"
+                                                 th:text="${i}" class="page-link"
+                                                 style="font-weight: bold; color: red"></a>
+                        </li>
+
+                    </div>
+                    <!--                    <li class="page-item"><a href="#" class="page-link">1</a></li>-->
+                    <!--                    <li class="page-item"><a href="#" class="page-link">2</a></li>-->
+                    <!--                    <li class="page-item active"><a href="#" class="page-link">3</a></li>-->
+                    <!--                    <li class="page-item"><a href="#" class="page-link">4</a></li>-->
+                    <!--                    <li class="page-item"><a href="#" class="page-link">5</a></li>-->
+                    <li class="page-item"><a th:href="@{'/service'(page=${services.number + 1})}"
+                                             th:if="${services.hasNext()}" href="#" class="page-link"><i
+                            class="fa fa-angle-double-right"></i></a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<footer th:replace="/layer :: footer"/>
+<script>
+    $('#confirm-delete').on('show.bs.modal', function (e) {
+        $(this).find('.btn-ok').attr('href', $(e.relatedTarget).data('href'));
+        $('.debug-url').html('Delete URL: <strong>' + $(this).find('.btn-ok').attr('href') + '</strong>');
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="/layer :: head">
+<body>
+<nav th:replace="/layer :: nav"/>
+<!-- Responsive navbar-->
+<div class="container-xl">
+    <div class="table-responsive">
+        <div class="table-wrapper">
+            <div class="table-title">
+                <div class="row">
+                    <div class="col-sm-8"><h2>Customer <b>List</b></h2></div>
+                    <div class="col-sm-4">
+                        <form action="">
+                            <div class="search-box">
+                                <i class="material-icons">&#xE8B6;</i>
+                                <input th:value="${name}" name="nameC" type="text" class="form-control"
+                                       placeholder="Search&hellip;">
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="table-title">
+                <a th:href="@{/service}" class="btn btn-success"><span>Go to Service</span></a>
+            </div>
+            <table class="table table-striped table-hover table-bordered">
+                <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Customer ID</th>
+                    <th>Customer Name</th>
+                    <th>Customer Type</th>
+                    <th>Contract ID</th>
+                    <th>Service Name</th>
+                    <th>Attach Service</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="customer,test :${useServices}">
+                    <td th:text="${test.count + (useServices.number*5)}"></td>
+                    <td th:text="${customer.getCustomer_id()}"></td>
+                    <td th:text="${customer.getCustomer_name()}"></td>
+                    <td th:text="${customer.getCustomerType().getCustomer_type_name()}"></td>
+                    <th:block th:each="contract: ${customer.getContracts()}">
+                    <td th:text="${contract.contract_id}"></td>
+                    <td th:text="${contract.getService().getService_name()}"></td>
+                    </th:block>
+                    <td>
+                        <div th:each="contract: ${customer.getContracts()}">
+                            <p th:each="contractDetail: ${contract.contractDetails}" th:text="${contractDetail.attachService.attach_service_name}"></p>
+                        </div>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+<!--            <div class="clearfix">-->
+<!--                <div style="text-align: center">Total Items <b th:text="${totalItems}"></b></div>-->
+<!--                <div class="hint-text">Showing <b th:text="${useServices.number + 1}"></b> out of <b-->
+<!--                        th:text="${useServices.totalPages}"></b> entries-->
+<!--                </div>-->
+<!--                <ul class="pagination">-->
+<!--                    <li class="page-item disabled"><a th:href="@{'/'(page=${useServices.number - 1}, nameC=${name})}"-->
+<!--                                                      th:if="${useServices.hasPrevious()}" href="#"><i-->
+<!--                            class="fa fa-angle-double-left"></i></a></li>-->
+<!--                    <div th:each="i : ${#numbers.sequence(1,useServices.totalPages)}">-->
+<!--                        <li class="page-item"><a th:if="${currentPage != i }" th:href="@{'/'(page=${i -1}, nameC=${name})}"-->
+<!--                                                 th:text="${i}" class="page-link"></a>-->
+<!--                        </li>-->
+<!--                        <li class="page-item"><a th:unless="${currentPage != i }" th:href="@{'/'(page=${i - 1}, nameC=${name})}"-->
+<!--                                                 th:text="${i}" class="page-link"-->
+<!--                                                 style="font-weight: bold; color: red"></a>-->
+<!--                        </li>-->
+
+<!--                    </div>-->
+<!--                    &lt;!&ndash;                    <li class="page-item"><a href="#" class="page-link">1</a></li>&ndash;&gt;-->
+<!--                    &lt;!&ndash;                    <li class="page-item"><a href="#" class="page-link">2</a></li>&ndash;&gt;-->
+<!--                    &lt;!&ndash;                    <li class="page-item active"><a href="#" class="page-link">3</a></li>&ndash;&gt;-->
+<!--                    &lt;!&ndash;                    <li class="page-item"><a href="#" class="page-link">4</a></li>&ndash;&gt;-->
+<!--                    &lt;!&ndash;                    <li class="page-item"><a href="#" class="page-link">5</a></li>&ndash;&gt;-->
+<!--                    <li class="page-item"><a th:href="@{'/'(page=${useServices.number + 1})}"-->
+<!--                                             th:if="${useServices.hasNext()}" href="#" class="page-link"><i-->
+<!--                            class="fa fa-angle-double-right"></i></a></li>-->
+<!--                </ul>-->
+<!--            </div>-->
+        </div>
+    </div>
+</div>
+<footer th:replace="/layer :: footer"/>
+<script>
+    $('#confirm-delete').on('show.bs.modal', function (e) {
+        $(this).find('.btn-ok').attr('href', $(e.relatedTarget).data('href'));
+
+        $('.debug-url').html('Delete URL: <strong>' + $(this).find('.btn-ok').attr('href') + '</strong>');
+    });
+</script>
+</body>
+</html>

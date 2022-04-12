@@ -68,7 +68,6 @@ public class CustomerController {
         }else {
             return new ModelAndView("error404");
         }
-
     }
     @PostMapping("/update")
     public ModelAndView updateCustomer(Customer customer, RedirectAttributes redirectAttributes){

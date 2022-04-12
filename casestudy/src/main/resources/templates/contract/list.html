@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="/layer :: head">
+<body>
+<nav th:replace="/layer :: nav"/>
+<!-- Responsive navbar-->
+<div class="container-xl">
+    <div class="table-responsive">
+        <div class="table-wrapper">
+            <div class="table-title">
+                <div class="row">
+                    <div class="col-sm-8"><h2>Contract <b>List</b></h2></div>
+                    <div class="col-sm-4">
+                        <form action="">
+                            <div class="search-box">
+                                <i class="material-icons">&#xE8B6;</i>
+                                <input th:value="${nameC}" name="nameC" type="text" class="form-control"
+                                       placeholder="Search&hellip;">
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="table-title">
+                <a th:href="@{/contract/create}" class="btn btn-success"><span>Add New Contract</span></a>
+<!--                <a href="#" class="btn btn-success"><span>Position</span></a>-->
+<!--                <a href="#" class="btn btn-success"><span>Education Degree</span></a>-->
+<!--                <a href="#" class="btn btn-success"><span>Division</span></a>-->
+            </div>
+            <table class="table table-striped table-hover table-bordered">
+                <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Start Date</th>
+                    <th>End Date</th>
+                    <th>Deposit</th>
+                    <th>Total Money</th>
+                    <th>Employee</th>
+                    <th>Customer</th>
+                    <th>Service</th>
+                    <th>Action</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="contract,test : ${contracts}">
+                    <td th:text="${contract.contract_id}"></td>
+<!--                    <td th:text="${test.count + (contracts.number*5)}"></td>-->
+                    <td th:text="${contract.contract_start_date}"></td>
+                    <td th:text="${contract.contract_end_date}" style="font-weight: bold">
+                    <td th:text="${contract.contract_deposit}">
+                    <td th:text="${contract.contract_total_money}">
+                    <td th:text="${contract.employee.getEmployee_name()}">
+                    <td th:text="${contract.customer.getCustomer_name()}">
+                    <td th:text="${contract.service.getService_name()}">
+                    <td>
+<!--                        <a th:href="@{/{id}/view(id=${employee.getEmployee_id()})}" href="#" class="view" title="View"-->
+<!--                           data-toggle="tooltip"><i class="material-icons">&#xE417;</i></a>-->
+                        <a th:href="@{contract/{id}/edit(id=${contract.getContract_id()})}" class="edit" title="Edit"
+                           data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a>
+                        <a href="#" th:attr="data-href='/contract/'+ ${contract.getContract_id()} + '/delete'"
+                           data-target="#confirm-delete" data-toggle="modal" class="delete" title="Delete"><i
+                                class="material-icons" data-toggle="tooltip">&#xE872;</i></a>
+                    </td>
+                    <div class="modal fade" id="confirm-delete" tabindex="-1" role="dialog"
+                         aria-labelledby="myModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+
+                                <div class="modal-header">
+                                    <h4 class="modal-title" id="myModalLabel">Confirm Delete</h4>
+                                </div>
+
+                                <div class="modal-body">
+                                    <p>You are about to delete one track, this procedure is irreversible.</p>
+                                    <p>Do you want to proceed?</p>
+                                    <p class="debug-url"></p>
+                                </div>
+
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                                    <a class="btn btn-danger btn-ok">Delete</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!
+                </tr>
+                </tbody>
+            </table>
+            <div class="clearfix">
+                <div style="text-align: center">Total Items <b th:text="${totalItems}"></b></div>
+                <div class="hint-text">Showing <b th:text="${contracts.number + 1}"></b> out of <b
+                        th:text="${contracts.totalPages}"></b> entries
+                </div>
+                <ul class="pagination">
+                    <li class="page-item disabled"><a th:href="@{'/contract'(page=${contracts.number - 1}, nameC=${nameC})}"
+                                                      th:if="${contracts.hasPrevious()}" href="#"><i
+                            class="fa fa-angle-double-left"></i></a></li>
+                    <div th:each="i : ${#numbers.sequence(1,contracts.totalPages)}">
+                        <li class="page-item"><a th:if="${currentPage != i }" th:href="@{'/contract'(page=${i -1}, nameC=${nameC})}"
+                                                 th:text="${i}" class="page-link"></a>
+                        </li>
+                        <li class="page-item"><a th:unless="${currentPage != i }" th:href="@{'/contract'(page=${i - 1}, nameC=${nameC})}"
+                                                 th:text="${i}" class="page-link"
+                                                 style="font-weight: bold; color: red"></a>
+                        </li>
+
+                    </div>
+                    <!--                    <li class="page-item"><a href="#" class="page-link">1</a></li>-->
+                    <!--                    <li class="page-item"><a href="#" class="page-link">2</a></li>-->
+                    <!--                    <li class="page-item active"><a href="#" class="page-link">3</a></li>-->
+                    <!--                    <li class="page-item"><a href="#" class="page-link">4</a></li>-->
+                    <!--                    <li class="page-item"><a href="#" class="page-link">5</a></li>-->
+                    <li class="page-item"><a th:href="@{'/contract'(page=${contracts.number + 1})}"
+                                             th:if="${contracts.hasNext()}" href="#" class="page-link"><i
+                            class="fa fa-angle-double-right"></i></a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<footer th:replace="/layer :: footer"/>
+<script>
+    $('#confirm-delete').on('show.bs.modal', function (e) {
+        $(this).find('.btn-ok').attr('href', $(e.relatedTarget).data('href'));
+
+        $('.debug-url').html('Delete URL: <strong>' + $(this).find('.btn-ok').attr('href') + '</strong>');
+    });
+</script>
+</body>
+</html>

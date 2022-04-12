@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="/layer :: head">
+<body>
+<nav th:replace="/layer :: nav"/>
+<!-- Responsive navbar-->
+<div class="container-xl">
+    <div class="table-responsive">
+        <div class="table-wrapper">
+            <div class="table-title">
+                <div class="row">
+                    <div class="col-sm-8"><h2>Contract Detail <b>List</b></h2></div>
+                    <div class="col-sm-4">
+                        <form action="">
+                            <div class="search-box">
+                                <i class="material-icons">&#xE8B6;</i>
+                                <input th:value="${nameE}" name="nameE" type="text" class="form-control"
+                                       placeholder="Search&hellip;">
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="table-title">
+                <a th:href="@{/contract-detail/create}" class="btn btn-success"><span>Add New Contract Detail</span></a>
+<!--                <a href="#" class="btn btn-success"><span>Position</span></a>-->
+<!--                <a href="#" class="btn btn-success"><span>Education Degree</span></a>-->
+<!--                <a href="#" class="btn btn-success"><span>Division</span></a>-->
+            </div>
+            <table class="table table-striped table-hover table-bordered">
+                <thead>
+                <tr>
+                    <th>ID Detail</th>
+                    <th>Contract Id</th>
+                    <th>Attach Service</th>
+                    <th>Quantity</th>
+                    <th>Action</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="detail,test : ${contractDetails}">
+                    <td th:text="${detail.getContract_detail_id()}"></td>
+                    <td th:text="${detail.contract.getContract_id()}"></td>
+<!--                    <td th:text="${test.count + (contractDetails.number*5)}"></td>-->
+                    <td th:text="${detail.attachService.getAttach_service_name()}" style="font-weight: bold"></td>
+                    <td th:text="${detail.quality}">
+                    <td>
+<!--                        <a th:href="@{/{id}/view(id=${employee.getEmployee_id()})}" href="#" class="view" title="View"-->
+<!--                           data-toggle="tooltip"><i class="material-icons">&#xE417;</i></a>-->
+                        <a th:href="@{contract-detail/{id}/edit(id=${detail.getContract_detail_id()})}" class="edit" title="Edit"
+                           data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a>
+                    <a href="#" th:attr="data-href='/service/'+ ${detail.getContract_detail_id()} + '/delete'"
+                       data-target="#confirm-delete" data-toggle="modal" class="delete" title="Delete"><i
+                            class="material-icons" data-toggle="tooltip">&#xE872;</i></a>
+                    </td>
+                    <div class="modal fade" id="confirm-delete" tabindex="-1" role="dialog"
+                         aria-labelledby="myModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+
+                                <div class="modal-header">
+                                    <h4 class="modal-title" id="myModalLabel">Confirm Delete</h4>
+                                </div>
+
+                                <div class="modal-body">
+                                    <p>You are about to delete one track, this procedure is irreversible.</p>
+                                    <p>Do you want to proceed?</p>
+                                    <p class="debug-url"></p>
+                                </div>
+
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                                    <a class="btn btn-danger btn-ok">Delete</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!
+                </tr>
+                </tbody>
+            </table>
+            <div class="clearfix">
+                <div style="text-align: center">Total Items <b th:text="${totalItems}"></b></div>
+                <div class="hint-text">Showing <b th:text="${contractDetails.number + 1}"></b> out of <b
+                        th:text="${contractDetails.totalPages}"></b> entries
+                </div>
+                <ul class="pagination">
+                    <li class="page-item disabled"><a th:href="@{'/contract-detail'(page=${contractDetails.number - 1}, nameE=${nameE})}"
+                                                      th:if="${contractDetails.hasPrevious()}" href="#"><i
+                            class="fa fa-angle-double-left"></i></a></li>
+                    <div th:each="i : ${#numbers.sequence(1,contractDetails.totalPages)}">
+                        <li class="page-item"><a th:if="${currentPage != i }" th:href="@{'/contract-detail'(page=${i -1}, nameE=${nameE})}"
+                                                 th:text="${i}" class="page-link"></a>
+                        </li>
+                        <li class="page-item"><a th:unless="${currentPage != i }" th:href="@{'/contract-detail'(page=${i - 1}, nameE=${nameE})}"
+                                                 th:text="${i}" class="page-link"
+                                                 style="font-weight: bold; color: red"></a>
+                        </li>
+
+                    </div>
+                    <!--                    <li class="page-item"><a href="#" class="page-link">1</a></li>-->
+                    <!--                    <li class="page-item"><a href="#" class="page-link">2</a></li>-->
+                    <!--                    <li class="page-item active"><a href="#" class="page-link">3</a></li>-->
+                    <!--                    <li class="page-item"><a href="#" class="page-link">4</a></li>-->
+                    <!--                    <li class="page-item"><a href="#" class="page-link">5</a></li>-->
+                    <li class="page-item"><a th:href="@{'/contract-detail'(page=${contractDetails.number + 1})}"
+                                             th:if="${contractDetails.hasNext()}" href="#" class="page-link"><i
+                            class="fa fa-angle-double-right"></i></a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<footer th:replace="/layer :: footer"/>
+<script>
+    $('#confirm-delete').on('show.bs.modal', function (e) {
+        $(this).find('.btn-ok').attr('href', $(e.relatedTarget).data('href'));
+
+        $('.debug-url').html('Delete URL: <strong>' + $(this).find('.btn-ok').attr('href') + '</strong>');
+    });
+</script>
+</body>
+</html>
