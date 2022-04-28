@@ -1,0 +1,8 @@
+{
+  "compilerOptions": {
+    "outDir": "myJs", //noi chua file js
+    "module": "commonjs",
+    "target": "ES6", //version
+    "watch": false // tu dong update file myjs ko can khai bao lai
+  }
+}
