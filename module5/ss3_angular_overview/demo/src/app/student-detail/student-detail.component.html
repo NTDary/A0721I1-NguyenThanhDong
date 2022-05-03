@@ -1,13 +1,24 @@
-<h1>Student Detail</h1>
-<p>Id: {{student.id}}</p>
-<p>Name: {{student.name}}</p>
-<p>Age: {{student.age}}</p>
-<p>Mark: {{student.mark}}</p>
+<!--<h1>Student Detail</h1>-->
+<!--<p>Id: {{student.id}}</p>-->
+<!--<p>Name: {{student.name}}</p>-->
+<!--<p>Age: {{student.age}}</p>-->
+<!--<p>Mark: {{student.mark}}</p>-->
 
-<div>
-  <img [src]="student.avatar">
-</div>
-<div>
-  <label>Change Mark: </label>
-  <input type="number" [(ngModel)]="student.mark">
-</div>
+<!--<div>-->
+<!--  <img [src]="student.avatar">-->
+<!--</div>-->
+<!--<div>-->
+<!--  <label>Change Mark: </label>-->
+<!--  <input type="number" [(ngModel)]="student.mark">-->
+<!--</div>-->
+
+<!--Databinding-->
+<!--<h1 [ngClass]= "{-->
+<!--'with-border' : withBorder,-->
+<!--'other-class' : true,-->
+<!--'try-class'   : true-->
+<!--}">Welcoem to {{title}}</h1>-->
+<h1 [class.with-border]="withBorder" [textContent]="title"></h1>
+<button (click)="onButtonClick()">{{withBorder ? 'Hide' : 'Show'}}</button>
+<!--<img src="{{imageSrc}}">-->
+<!--<img [src]="imageSrc">-->

@@ -1,0 +1,27 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+nav {
+  display: flex; /* 1 */
+  justify-content: space-between; /* 2 */
+  padding: 1rem 2rem; /* 3 */
+  background: black /* 4 */
+}
+
+nav ul {
+  display: flex; /* 5 */
+  list-style: none; /* 6 */
+}
+
+nav li {
+  padding-left: 1rem; /* 7! */
+  font-weight: bold;
+}
+nav a {
+  text-decoration: none;
+  color: limegreen;
+}
+nav h2 {
+  color: limegreen;
+}

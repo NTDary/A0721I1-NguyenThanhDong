@@ -1,0 +1,4 @@
+.with-border{
+  border: 1px solid green;
+  border-radius: 0.25rem;
+}
