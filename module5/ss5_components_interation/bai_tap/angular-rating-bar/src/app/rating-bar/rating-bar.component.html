@@ -1,0 +1,3 @@
+<div class="container">
+    <button *ngFor="let r of rating" class="btn" type="button" [ngClass]="r.active ? 'active': 'unactive'" (click)="choose(r.value)">{{r.value}}</button>
+</div>

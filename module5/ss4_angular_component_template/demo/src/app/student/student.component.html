@@ -1,0 +1,47 @@
+<div class="row">
+  <div class="col-sm-6">
+    <div class="card">
+      <div class="card-body">
+        <table class="table">
+          <tr>
+            <th>#</th>
+            <th>Name</th>
+            <th>Gender</th>
+            <th>Point</th>
+            <th>Result</th>
+          </tr>
+          <tr *ngFor="let s of students; let i = index" (click)="showDetail(s)">
+            <td>{{i}}</td>
+            <td>{{s.name}}</td>
+            <!--      <td >{{s.gender == 0 ? 'Male': (s.gender == 1)? 'Female': 'Dif' }}</td>-->
+            <td [ngSwitch]="s.gender">
+              <label *ngSwitchCase="0">Male</label>
+              <label *ngSwitchCase="1">Female</label>
+              <label *ngSwitchDefault>Dif</label>
+            </td>
+            <td [ngStyle]="{color: s.point == 0 ? 'red': ''}" >{{s.point}}</td>
+            <!--      Cach 1-->
+            <!--      <td *ngIf="s.point >= 75">Pass</td>-->
+            <!--      <td *ngIf="s.point <= 75">False</td>-->
+            <!--      Cach 2-->
+            <td *ngIf="s.point >= 75; else elseBlock">Pass</td>
+            <ng-template #elseBlock>
+              <td >False</td>
+            </ng-template>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-6">
+    <div class="card">
+      <app-student-detail [studentDetail]="student"></app-student-detail>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <app-student-create (newStudent) = "addStudent($event)"></app-student-create>
+</div>
+
+
+

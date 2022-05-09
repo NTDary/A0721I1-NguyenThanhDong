@@ -1,0 +1,13 @@
+
+
+    <div class="card-body" *ngIf="studentDetail; else noData">
+      <p class="card-text">{{studentDetail.name}}</p>
+      <p class="card-text">{{studentDetail.point}}</p>
+    </div>
+    <ng-template #noData>
+        <div class="card-body">
+          <p class="card-text">No Data</p>
+        </div>
+    </ng-template>
+
+

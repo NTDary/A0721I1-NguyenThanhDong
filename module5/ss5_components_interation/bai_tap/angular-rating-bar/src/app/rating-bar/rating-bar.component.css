@@ -1,0 +1,19 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+.container {
+  text-align: center;
+  margin-top: 100px;
+}
+.btn {
+  width: 50px;
+  height: 50px;
+  margin: 0 5px;
+}
+.active {
+  background-color: lime;
+}
+.unactive {
+  background-color: transparent;
+}

@@ -1,0 +1,29 @@
+
+  <div class="card mt-3">
+    <div class="card-header">
+      Create
+    </div>
+    <div class="card-body">
+      <h5 class="card-title">Create Student</h5>
+      <form class="card-text" >
+        <div class="mb-3">
+          <label class="form-label">Name</label>
+          <input type="text" class="form-control" #name>
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Gender</label>
+          <div class="form-check form-check-inline">
+            <input type="radio" value="0" name="gender" #gender1> Male
+            <input type="radio" value="1" name="gender" #gender2> Female
+            <input type="radio" value="2" name="gender" #gender3> Dif
+          </div>
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Poitn</label>
+          <input type="number" class="form-control" min="0" max="10" #point>
+        </div>
+        <button type="button" class="btn btn-primary" (click)="createStudent(name.value,gender1.checked ? gender1.value : gender2.checked ? gender2.value : gender3.checked ? gender3.value : '', point.value)">Submit</button>
+      </form>
+    </div>
+  </div>
+
