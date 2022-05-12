@@ -1,0 +1,19 @@
+<form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+<div>
+  <label>email:</label>
+  <input type="text" formControlName="email">
+  <span *ngIf="email?.invalid && (email.dirty || email.touched)">
+    <div [hidden]="!email.errors.required">Required input</div>
+    <div [hidden]="!email.errors.pattern">Khong dung dinh dang</div>
+  </span>
+</div>
+  <div>
+    <label>password:</label>
+    <input type="password" formControlName="pass">
+    <span *ngIf="pass?.invalid && (pass.dirty || pass.touched)">
+      <div [hidden]="!pass.errors.required">Required input</div>
+      <div [hidden]="!pass.errors.minlength">Minlength 6</div>
+    </span>
+  </div>
+  <button type="submit">Login</button>
+</form>

@@ -1,0 +1,156 @@
+<!--&lt;!&ndash;C1: Template driven form&ndash;&gt;-->
+<!--<form #userForm="ngForm" (ngSubmit)="submitForm(userForm)">-->
+<!--  <table>-->
+<!--    <tr>-->
+<!--      <th>Email</th>-->
+<!--      <td>-->
+<!--        <input type="email" [(ngModel)]="user.email" name="txtName" required="required" #email="ngModel">-->
+<!--        <span *ngIf="email.touched && email.errors?.required" style="color: red">Required input</span>-->
+<!--      </td>-->
+<!--    </tr>-->
+<!--    <tr>-->
+<!--      <th>Password</th>-->
+<!--      <td>-->
+<!--        <input type="password" [(ngModel)]="user.password" name="txtPassword" #pass="ngModel" minlength="6" required="required">-->
+<!--        <span *ngIf="pass.touched && pass.errors?.minlength" style="color: red">Minlength 6</span>-->
+<!--      </td>-->
+<!--    </tr>-->
+<!--    <tr>-->
+<!--      <th>Confirm Password</th>-->
+<!--      <td>-->
+<!--        <input type="password" name="cfPassword" min="6" [(ngModel)]="cfPassword" #cpass="ngModel" minlength="6" required="required">-->
+<!--        <span *ngIf="cpass.touched && cpass.errors?.minlength" style="color: red">Minlength 6</span>-->
+<!--      </td>-->
+<!--    </tr>-->
+<!--    <tr>-->
+<!--      <th>Country</th>-->
+<!--      <td>-->
+<!--        <select name="country" [(ngModel)]="user.country">-->
+<!--          <option value="HaNoi">Ha Noi</option>-->
+<!--          <option value="DaNang">Da Nang</option>-->
+<!--          <option value="HoChiMinh">Ho Chi Minh</option>-->
+<!--        </select>-->
+<!--      </td>-->
+<!--    </tr>-->
+<!--    <tr>-->
+<!--      <th>Age</th>-->
+<!--      <td>-->
+<!--        <input type="number" [(ngModel)]="user.age" name="txtAge" #age="ngModel" min="18">-->
+<!--        <span *ngIf="age.touched && age.errors?.min" style="color: red">Age > 18</span>-->
+<!--      </td>-->
+<!--    </tr>-->
+<!--    <tr>-->
+<!--      <th>Gender</th>-->
+<!--      <td *ngIf="user.gender">-->
+<!--        <label>Male</label>-->
+<!--        <input type="radio" name="gender" value="male" checked>-->
+<!--        <label>Female</label>-->
+<!--        <input type="radio" name="gender" value="female">-->
+<!--      </td>-->
+<!--      <td *ngIf="!user.gender">-->
+<!--        <label>Male</label>-->
+<!--        <input type="radio" name="gender" value="male" >-->
+<!--        <label>Female</label>-->
+<!--        <input type="radio" name="gender" value="female" checked>-->
+<!--      </td>-->
+<!--    </tr>-->
+<!--    <tr>-->
+<!--      <th>Phone</th>-->
+<!--      <td>-->
+<!--        <input type="number" [(ngModel)]="user.phone" name="txtPhone" >-->
+<!--      </td>-->
+<!--    </tr>-->
+<!--    <tr>-->
+<!--      <td> </td>-->
+<!--      <td *ngIf="userForm.valid"><button type="submit">Create</button></td>-->
+<!--      <td *ngIf="!userForm.valid"><button type="submit" DISABLED>Create</button></td>-->
+<!--    </tr>-->
+<!--  </table>-->
+<!--</form>-->
+
+<!--C2: Reactive Form-->
+<!--C1: Template driven form-->
+<form [formGroup]="register" (ngSubmit)="onSubmit()">
+  <table>
+    <tr>
+      <th>Email</th>
+      <td>
+        <input type="email"  name="userEmail" formControlName="userEmail" required="required">
+        <span *ngIf="register.controls.userEmail.touched &&
+        register.controls.userEmail.errors?.required" style="color: red">Required Input</span>
+      </td>
+    </tr>
+    <fieldset formGroupName="pwGroup">
+    <tr>
+        <th>Password</th>
+        <td>
+          <input type="password"  formControlName="userPass" required="required">
+          <span *ngIf="userPass?.invalid && (userPass.dirty || userPass.touched)" >
+            <div [hidden]="!userPass.errors.required">  Password is  required</div>
+            <div [hidden]="!userPass.errors.minlength">  Min 6</div>
+          </span>
+        </td>
+    </tr>
+      <tr>
+        <th>Confirm Password</th>
+        <td>
+          <input type="password" formControlName="userCPass">
+          <span *ngIf="userCPass?.invalid && (userCPass.dirty || userCPass.touched)" >
+            <div [hidden]="!userCPass.errors.required">  Password is  required</div>
+            <div [hidden]="!userCPass.errors.minlength">  Min 6</div>
+          </span>
+          <span *ngIf="register.hasError('passwordnotmatch',['pwGroup']) && register.get('pwGroup').touched" style="color: red">Password does not match</span>
+        </td>
+      </tr>
+    </fieldset>
+    <tr>
+      <th>Country</th>
+      <td>
+        <select name="country" formControlName="userCountry" required="required">
+          <option value="HaNoi">Ha Noi</option>
+          <option value="DaNang">Da Nang</option>
+          <option value="HoChiMinh">Ho Chi Minh</option>
+        </select>
+        <span *ngIf="register.controls.userCountry.touched &&
+        register.controls.userCountry.errors?.required" style="color: red">Required Input</span>
+      </td>
+    </tr>
+    <tr>
+      <th>Age</th>
+      <td>
+        <input type="number" formControlName="userAge" required="required">
+        <span *ngIf="register.controls.userAge.touched &&
+        register.controls.userAge.errors?.required" style="color: red">Required Input</span>
+        <span *ngIf="register.controls.userAge.errors?.min" style="color: red">Min 18</span>
+      </td>
+    </tr>
+    <tr>
+      <th>Gender</th>
+      <td >
+        <label>Male</label>
+        <input type="radio"  value="male" formControlName="userGender" required="required">
+        <label>Female</label>
+        <input type="radio"  value="female" formControlName="userGender" required="required">
+        <span *ngIf="register.controls.userGender.touched &&
+        register.controls.userGender.errors?.required" style="color: red">Required Input</span>
+      </td>
+    </tr>
+    <tr>
+      <th>Phone</th>
+      <td>
+        <input type="text" formControlName="userPhone" required="required">
+        <span *ngIf="register.controls.userPhone.touched &&
+        register.controls.userPhone.errors?.required" style="color: red">Required Input</span>
+        <span *ngIf="register.controls.userPhone.errors?.pattern" style="color: red">bắt đầu với +84, và theo sau là 9 đến 10 chữ số</span>
+      </td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td><button type="submit" [disabled]="register.invalid" >Create</button></td>
+    </tr>
+  </table>
+</form>
+<div *ngFor="let user of users">
+  <p>{{this.user.userEmail}}</p>
+  <p>{{this.user.userPhone}}</p>
+</div>
