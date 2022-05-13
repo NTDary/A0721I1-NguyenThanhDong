@@ -1,0 +1,17 @@
+<h1>Tạo sản phẩm mới</h1>
+<form [formGroup]="wordForm" (ngSubmit)="submit()">
+  <table>
+    <tr>
+      <td>English:</td>
+      <td><input type="text" formControlName="word"></td>
+    </tr>
+    <tr>
+      <td>Vietnames:</td>
+      <td><input type="text" formControlName="mean"></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><button>Tạo mới</button></td>
+    </tr>
+  </table>
+</form>

@@ -1,0 +1,15 @@
+<h1>Từ điển tiếng anh</h1>
+<table>
+  <tr>
+    <td>STT</td>
+    <td>English</td>
+    <td>Vietnames</td>
+    <td>Action</td>
+  </tr>
+  <tr *ngFor="let w of myWord; index as i">
+    <td>{{i + 1}}</td>
+    <td>{{w.word}}</td>
+    <td>{{w.mean}}</td>
+    <td><button [routerLink]="['/detail',w.word]">Detail</button></td>
+  </tr>
+</table>
