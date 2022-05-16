@@ -1,13 +1,6 @@
 {
   "products": [
     {
-      "id": 1,
-      "name": "IPhone 12",
-      "price": 2400000,
-      "description": "New",
-      "category": 1
-    },
-    {
       "id": 2,
       "name": "IPhone 11",
       "price": 1560000,
@@ -30,16 +23,16 @@
     },
     {
       "id": 5,
-      "name": "IPhone 15 Pro",
-      "price": 260000,
-      "description": "Like new",
-      "category": 1
+      "name": "asdasdasd",
+      "price": "1231",
+      "description": "zxczxc",
+      "category": 2
     }
   ],
   "categorys": [
     {
-      "name": "SamSung",
-      "id": 1
+      "id": 1,
+      "name": "SamSung"
     },
     {
       "id": 2,

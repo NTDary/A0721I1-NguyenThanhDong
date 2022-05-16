@@ -4,22 +4,30 @@
     <div class="table-wrapper">
       <div class="table-title mt-5">
         <div class="row">
-          <div class="col-sm-12"><h2>Product <b>List</b></h2></div>
-
+          <div class="col-sm-8"><h2>Product <b>List</b></h2></div>
+          <div class="col-sm-4">
+            <form [formGroup]="searchForm" (ngSubmit)="search()">
+              <div class="search-box">
+                <i class="material-icons">&#xE8B6;</i>
+                <input name="nameC" type="text" class="form-control" formControlName="text"
+                       placeholder="Search&hellip;">
+              </div>
+            </form>
+          </div>
         </div>
       </div>
-<!--      <div class="table-title mt-3">-->
-<!--        <a href="#" class="btn btn-success"><span>Add New Customer</span></a>-->
-<!--        &lt;!&ndash;                <a href="#" class="btn btn-success"><span>Position</span></a>&ndash;&gt;-->
-<!--        &lt;!&ndash;                <a href="#" class="btn btn-success"><span>Education Degree</span></a>&ndash;&gt;-->
-<!--        &lt;!&ndash;                <a href="#" class="btn btn-success"><span>Division</span></a>&ndash;&gt;-->
-<!--      </div>-->
+      <div class="table-title mt-3">
+        <a routerLink="/product/create" class="btn btn-success"><span>Add New Product</span></a>
+        <!--                <a href="#" class="btn btn-success"><span>Position</span></a>-->
+        <!--                <a href="#" class="btn btn-success"><span>Education Degree</span></a>-->
+        <!--                <a href="#" class="btn btn-success"><span>Division</span></a>-->
+      </div>
       <table class="table table-striped table-hover table-bordered mt-5">
         <thead>
         <tr>
           <th>#</th>
           <th>Tên</th>
-          <th>Giá</th>
+          <th (click)="sort()">Giá</th>
           <th>Mô tả</th>
           <th>Category</th>
           <th>Action</th>
@@ -27,7 +35,7 @@
         </thead>
         <tbody>
         <tr *ngFor="let p of products; index as i">
-          <td>{{i+1}}</td>
+          <td >{{i+1}}</td>
           <td style="font-weight: bold">{{p.name}}</td>
           <td style="font-weight: bold">{{p.price}}</td>
           <td>{{p.description}}</td>
@@ -38,15 +46,33 @@
           <td>
             <!--                        <a th:href="@{/{id}/view(id=${employee.getEmployee_id()})}" href="#" class="view" title="View"-->
             <!--                           data-toggle="tooltip"><i class="material-icons">&#xE417;</i></a>-->
-            <a [routerLink]="'/product/edit/' + p.id" class="edit" title="Edit"
+            <a  [routerLink]="'/product/edit/' + p.id" class="edit" title="Edit"
                data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a>
-            <a [routerLink]="'/product/delete/' + p.id"
-               data-target="#confirm-delete" data-toggle="modal" class="delete" title="Delete"><i
+            <a (click)="setId(p.id)"
+               role="button" data-bs-toggle="modal" data-bs-target="#exampleModal" class="delete" title="Delete"><i
               class="material-icons" data-toggle="tooltip">&#xE872;</i></a>
           </td>
         </tr>
         </tbody>
       </table>
+    </div>
+  </div>
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          {{id}}
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary" data-bs-dismiss="modal" (click)="deleteProduct(id)">Save changes</button>
+        </div>
+      </div>
     </div>
   </div>
 </div>

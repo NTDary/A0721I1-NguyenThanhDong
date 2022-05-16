@@ -9,6 +9,7 @@
           <div class="modal-header">
             <h4 class="modal-title">Add Product</h4>
           </div>
+
           <div class="modal-body">
             <div class="form-group">
               <label>Name</label>
@@ -46,7 +47,8 @@
             <div class="form-group">
               <label>Category</label>
               <select class="form-control" formControlName="category" >
-                <option [ngValue]="null" disabled>--Select Category--</option>
+                <option value="" selected disabled hidden>Choose here</option>
+<!--                <option [ngValue]="null" disabled selected>&#45;&#45;Select Category&#45;&#45;</option>-->
                 <option *ngFor="let c of categorys" [ngValue]="c.id">{{c.name}}</option>
               </select>
             </div>

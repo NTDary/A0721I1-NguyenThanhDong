@@ -7,6 +7,7 @@ import {Observable} from "rxjs";
   providedIn: 'root'
 })
 export class ProductServiceService {
+  nameSearch = '';
   private API_URL = "http://localhost:3000/products";
   products: Product[] = [
     //   {
@@ -90,5 +91,15 @@ export class ProductServiceService {
     //Cach 3: ket noi backend
     return this._httpClient.delete(this.API_URL + '/' + id)
 
+  }
+  searchProduct(text: string): Observable<Product[]>{
+    this.nameSearch = text;
+    return this._httpClient.get<Product[]>(this.API_URL + '/?q=' + text);
+  }
+  sortByPrice(sorted): Observable<Product[]> {
+    if (sorted) {
+      return this._httpClient.get<Product[]>(this.API_URL + '?' + '_sort=price&_order=desc&name_like=' + this.nameSearch);
+    }
+    return this._httpClient.get<Product[]>(this.API_URL + '?' + '_sort=price&_order=asc&name_like=' + this.nameSearch);
   }
 }
