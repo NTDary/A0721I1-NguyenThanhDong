@@ -1,0 +1,88 @@
+/* You can add global styles to this file, and also import other style files */
+/* You can add global styles to this file, and also import other style files */
+@import '~@angular/material/prebuilt-themes/indigo-pink.css';
+#navbar, #dropdown{
+  background-color: #046056;
+}
+
+.error {
+  color: red;
+}
+body{
+  /*background: linear-gradient(to right, #00ff99 0%, #00ccff 100%);*/
+}
+.carousel-item img{
+  /*max-height: 100%;*/
+  height: 750px;
+  width: 100%;
+}
+.carousel-item{
+  height: 750px;
+  width: 100%;
+  background: no-repeat center center fixed;
+  background-size: cover;
+}
+/*.nav-link{*/
+/*  position: relative;*/
+/*}*/
+/*.nav-link:after,*/
+/*.nav-link:after {*/
+/*  position: absolute;*/
+/*  bottom: 0;*/
+/*  left: 0;*/
+/*  right: 0;*/
+/*  margin: auto;*/
+/*  width: 0%;*/
+/*  content: '.';*/
+/*  color: transparent;*/
+/*  background: #aaa;*/
+/*  height: 1px;*/
+/*}*/
+/*.nav-link:hover:after {*/
+/*  width: 100%;*/
+/*}*/
+
+/*.nav-link {*/
+/*  transition: all 2s;*/
+/*}*/
+
+/*.nav-link:after {*/
+/*  text-align: left;*/
+/*  content: '.';*/
+/*  margin: 0;*/
+/*  opacity: 0;*/
+/*}*/
+/*.nav-link:hover {*/
+/*  color: #fff;*/
+/*  z-index: 1;*/
+/*}*/
+/*.nav-link:hover:after {*/
+/*  z-index: -10;*/
+/*  animation: fill 1s forwards;*/
+/*  -webkit-animation: fill 1s forwards;*/
+/*  -moz-animation: fill 1s forwards;*/
+/*  opacity: 1;*/
+/*}*/
+
+/*!* Keyframes *!*/
+/*@-webkit-keyframes fill {*/
+/*  0% {*/
+/*    width: 0%;*/
+/*    height: 1px;*/
+/*  }*/
+/*  50% {*/
+/*    width: 100%;*/
+/*    height: 1px;*/
+/*  }*/
+/*  100% {*/
+/*    width: 100%;*/
+/*    height: 100%;*/
+/*    background: #333;*/
+/*  }*/
+/*}*/
+
+.dropdown-menu :hover {
+  opacity: 1;
+  background-color: powderblue;
+}
+

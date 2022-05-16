@@ -1,0 +1,25 @@
+<a class="btn btn-warning m-2" routerLink="/product/create">Create Product</a>
+<h1>Danh sách sản phẩm</h1>
+<table class="table">
+  <thead>
+  <tr>
+    <th>STT</th>
+    <th>Tên</th>
+    <th>Giá</th>
+    <th>Mô tả</th>
+    <th>Action</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let product of products; index as i">
+    <td>{{i + 1}}</td>
+    <td>{{product.name}}</td>
+    <td>{{product.price}}</td>
+    <td>{{product.description}}</td>
+    <td>
+      <a class="btn btn-info m-2" [routerLink]="['/product/edit', product.id]">Edit</a>
+      <a class="btn  btn-danger m-2" [routerLink]="['/product/delete', product.id]">Delete</a>
+    </td>
+  </tr>
+  </tbody>
+</table>

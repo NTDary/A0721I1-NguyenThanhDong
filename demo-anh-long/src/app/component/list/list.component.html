@@ -1,0 +1,67 @@
+<div class="row mt-4">
+  <div class="col-12">
+    <table class="table text-center">
+      <thead class="thead-light text-center">
+      <tr>
+        <th scope="col">Mã Sinh Viên</th>
+        <th scope="col">Họ Tên</th>
+        <th scope="col">Tên Nhóm</th>
+        <th scope="col">Tên Đề Tài</th>
+        <th scope="col">Tên Giáo Viên</th>
+        <th scope="col">Email</th>
+        <th scope="col">Số Điện Thoại</th>
+        <th colspan="2" scope="col">Thao Tác</th>
+      </tr>
+      </thead>
+      <tbody>
+            <ng-container
+              *ngFor="let sinhVien of listSinhVien; let i = index">
+              <tr>
+                <td>{{sinhVien.id}}</td>
+                <td>{{sinhVien.ten_sinh_vien}}</td>
+                <td>{{sinhVien.ten_nhom}}</td>
+                <td>{{sinhVien.ten_de_tai}}</td>
+                <td>{{sinhVien.giao_vien_huong_dan}}</td>
+                <td>{{sinhVien.email}}</td>
+                <td>{{sinhVien.so_dien_thoai}}</td>
+                <td><a [routerLink]="'/edit/' + sinhVien.id">
+                  <i class="fa fa-pencil-square-o"></i>
+                </a></td>
+                <td>
+                  <!-- Button trigger modal -->
+                  <a href="#" data-toggle="modal" [attr.data-target]="'#myModal'+ sinhVien.id">
+                    <i class="fa fa-trash"></i>
+                  </a>
+                  <!-- Modal -->
+                  <div class="modal fade" [id]="'myModal' +sinhVien.id" tabindex="-1" role="dialog"
+                       aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered" role="document">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+                          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                          </button>
+                        </div>
+                        <div class="modal-body">
+                          <span>Bạn Có Muốn Xoá Thông Tin Sinh Viên Có ID: {{sinhVien.id}} </span>
+                        </div>
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-secondary" data-dismiss="modal">Không</button>
+                          <button type="button" class="btn btn-primary" data-dismiss="modal">
+                            <a class="text-black-50" [routerLink]="'/delete/' + sinhVien.id">
+                              Có
+                            </a>
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </td>
+              </tr>
+            </ng-container>
+      </tbody>
+    </table>
+  </div>
+</div>
+

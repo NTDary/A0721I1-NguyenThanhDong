@@ -1,0 +1,40 @@
+{
+  "students": [
+    {
+      "id": 1003,
+      "ten_sinh_vien": "Lương Mạnh Quân",
+      "ten_nhom": "nhóm 3",
+      "ten_de_tai": "Sử dụng Azure Microsoft để xây dựng webservice ",
+      "giao_vien_huong_dan": "Hoàng Thanh Sơn",
+      "email": "manhquan@gmail.com",
+      "so_dien_thoai": "0122343453"
+    },
+    {
+      "id": 1004,
+      "ten_sinh_vien": "Nguyễn Phi Sơn",
+      "ten_nhom": "nhóm 2",
+      "ten_de_tai": "bảo mật website bằng Laravel",
+      "giao_vien_huong_dan": "Doãn Bá Hùng",
+      "email": "phison@gmail.com",
+      "so_dien_thoai": "0903994332"
+    },
+    {
+      "id": 1005,
+      "ten_sinh_vien": "Lê Hoàng Quốc Anh",
+      "ten_nhom": "nhóm 3",
+      "ten_de_tai": "Sử dụng Azure Microsoft để xây dựng webservice ",
+      "giao_vien_huong_dan": "Hoàng Thanh Sơn",
+      "email": "quocanh@gmail.com",
+      "so_dien_thoai": "0934456024"
+    },
+    {
+      "id": 1006,
+      "ten_sinh_vien": "Nguyễn Lê Trần Nam",
+      "ten_nhom": "nhóm 1",
+      "ten_de_tai": "xây dựng website bằng spring mvc",
+      "giao_vien_huong_dan": "Trần Hoàng Nam",
+      "email": "trannam@gmail.com",
+      "so_dien_thoai": "0977893022"
+    }
+  ]
+}

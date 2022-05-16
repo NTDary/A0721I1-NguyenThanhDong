@@ -1,0 +1,44 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "IPhone 12",
+      "price": 2400000,
+      "description": "New"
+    },
+    {
+      "id": 2,
+      "name": "IPhone 11",
+      "price": 1560000,
+      "description": "Like new"
+    },
+    {
+      "id": 3,
+      "name": "IPhone X",
+      "price": 968000,
+      "description": "97%"
+    },
+    {
+      "id": 4,
+      "name": "IPhone 99999",
+      "price": 7540000,
+      "description": "98%"
+    },
+    {
+      "id": 5,
+      "name": "IPhone 15 Pro",
+      "price": 260000,
+      "description": "Like new"
+    }
+  ],
+  "categorys": [
+    {
+      "name": "New2021",
+      "id": 1
+    },
+    {
+      "id": 2,
+      "name": "New2022"
+    }
+  ]
+}

@@ -71,8 +71,17 @@ export class ProductService {
   //   }
   // }
   deleteProduct(id: number) {
+    // Lấy ra những product có id khắc vs id truyền vào
+    // Cách 1
     this.products = this.products.filter(product => {
       return product.id !== id;
     });
+    // Cách 2
+    // tslint:disable-next-line:prefer-for-of
+    // for (let i = 0; i < this.products.length ; i++){
+    //   if (this.products[i].id === id){
+    //     this.products.slice(i, 1);
+    //   }
+    // }
   }
 }

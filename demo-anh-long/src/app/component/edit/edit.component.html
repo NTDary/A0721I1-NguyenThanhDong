@@ -1,0 +1,76 @@
+<div class="row align-items-center mt-3">
+  <div class="col-2"></div>
+  <div class="col-8 card border-warning">
+    <form (submit)="onSubmit()" [formGroup]="editForm">
+      <div class="form-group mt-2">
+        <label for="exampleFormControlInput1">Mã Sinh Viên</label>
+        <input formControlName="id" readonly type="text" class="form-control" id="exampleFormControlInput1">
+      </div>
+      <div class="form-group">
+        <label for="exampleFormControlInput1">Họ Tên Sinh Viên</label>
+        <input formControlName="ten_sinh_vien" type="text" class="form-control">
+        <p class="error" *ngIf="(editForm.get('ten_sinh_vien').hasError('pattern') && editForm.get('ten_sinh_vien').dirty)
+          || (editForm.get('ten_sinh_vien').hasError('required') && editForm.get('ten_sinh_vien').touched)">
+          Tên Sinh Viên Không Được Để Trống, Không Chứa Số Và Ký Tự Đặc Biệt
+        </p>
+      </div>
+      <div class="form-group">
+        <label for="exampleFormControlInput1">Email</label>
+        <input formControlName="email" type="text" class="form-control">
+        <p class="error" *ngIf="(editForm.get('email').hasError('pattern') && editForm.get('email').dirty)
+          || (editForm.get('email').hasError('required') && editForm.get('email').touched)">
+          Email Không Được Để Trống Và Phải Theo Định Dạng: abc@def.com
+        </p>
+      </div>
+      <div class="form-group">
+        <label for="exampleFormControlInput1">Số Điện Thoại</label>
+        <input formControlName="so_dien_thoai" type="text" class="form-control">
+        <p class="error" *ngIf="(editForm.get('so_dien_thoai').hasError('pattern') && editForm.get('so_dien_thoai').dirty)
+          || (editForm.get('so_dien_thoai').hasError('required') && editForm.get('so_dien_thoai').touched)">
+          Sô Điện Thoại Không Được Để Trống Và Phải Chứa 10 - 12 Số.
+        </p>
+      </div>
+      <div class="form-group">
+        <label for="exampleFormControlInput1">Tên Nhóm</label>
+        <input formControlName="ten_nhom" type="text" class="form-control">
+                <p class="error" *ngIf="(editForm.get('ten_nhom').hasError('pattern') && editForm.get('ten_nhom').dirty)
+                  || (editForm.get('ten_nhom').hasError('required') && editForm.get('ten_nhom').touched)">
+                  Chỉ Được Chọn Tên Nhóm 1, Nhóm 2, Nhóm 3
+                </p>
+      </div>
+      <div class="form-group">
+        <label for="exampleFormControlInput1">Tên Đề Tài</label>
+        <input formControlName="ten_de_tai" type="text" class="form-control">
+        <p class="error"
+           *ngIf="(editForm.get('ten_de_tai').hasError('required') && editForm.get('ten_de_tai').touched)">
+          Tên Nhóm Không Được Để Trống
+        </p>
+      </div>
+      <div class="form-group">
+        <label for="exampleFormControlSelect1">Giáo Viên Hướng Dẫn</label>
+        <select formControlName="giao_vien_huong_dan" class="form-control" id="exampleFormControlSelect1">
+          <option [ngValue]="'Trần Hoàng Nam'">Trần Hoàng Nam</option>
+          <option [ngValue]="'Doãn Bá Hùng'">Doãn Bá Hùng</option>
+          <option [ngValue]="'Hoàng Thanh Sơn'">Hoàng Thanh Sơn</option>
+        </select>
+        <p class="error"
+           *ngIf="(editForm.get('giao_vien_huong_dan').hasError('required') && editForm.get('giao_vien_huong_dan').touched)">
+          Chọn Giáo Viên Hướng Dẫn
+        </p>
+      </div>
+      <div class="text-center m-3">
+        <button class="btn btn-danger mr-5">
+        <a id="huy" [routerLink]="'/list'">
+          <i class="fa fa-paper-plane"></i>
+          Huỷ</a>
+        </button>
+        <button type="submit" class="btn btn-primary">
+          <i class="fa fa-paper-plane"></i>
+          <span class="ml-1">Cập Nhật</span>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
+<div class="col-2"></div>
+
